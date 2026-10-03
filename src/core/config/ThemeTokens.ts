@@ -1,0 +1,56 @@
+/**
+ * Nocturnal Safari Editorial design system tokens.
+ * Single source of truth aligning CSS variables, Tailwind classes, and runtime components.
+ */
+export const ThemeTokens = {
+  colors: {
+    surface: '#10131a',
+    surfaceDim: '#10131a',
+    surfaceBright: '#363941',
+    surfaceContainerLowest: '#0b0e15',
+    surfaceContainerLow: '#191b23',
+    surfaceContainer: '#1d1f27',
+    surfaceContainerHigh: '#272a32',
+    surfaceContainerHighest: '#32353d',
+    onSurface: '#e1e2ec',
+    onSurfaceVariant: '#d6c3b3',
+    outline: '#9e8e7f',
+    outlineVariant: '#514438',
+    surfaceTint: '#ffb868',
+    primary: '#ffc27e',
+    onPrimary: '#482900',
+    primaryContainer: '#e8a455',
+    onPrimaryContainer: '#643b00',
+    inversePrimary: '#875204',
+    secondary: '#ffb77d',
+    onSecondary: '#4d2600',
+    secondaryContainer: '#d97707',
+    onSecondaryContainer: '#432100',
+    tertiary: '#c6cddc',
+    onTertiary: '#29313c',
+    tertiaryContainer: '#aab2c1',
+    onTertiaryContainer: '#3d4551',
+    error: '#ffb4ab',
+    onError: '#690005',
+    errorContainer: '#93000a',
+    onErrorContainer: '#ffdad6',
+  },
+  spacing: {
+    margin: '4rem',
+    marginMobile: '1.5rem',
+    gutter: '2rem',
+    gutterMobile: '1rem',
+    spaceXs: '0.375rem',
+    spaceSm: '0.75rem',
+    spaceMd: '1.5rem',
+    spaceLg: '2.5rem',
+    spaceXl: '4.5rem',
+  },
+  borderRadius: {
+    default: '0px', // Strict razor-sharp per DESIGN.md and button specs
+    tailwindDefault: '0.25rem',
+    lg: '0.5rem',
+    xl: '0.75rem',
+    full: '9999px',
+  },
+} as const;

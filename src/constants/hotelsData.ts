@@ -1,0 +1,228 @@
+export interface HotelItem {
+  id: string;
+  slug: string;
+  name: string;
+  category: 'ultra-luxury' | 'heritage-fort' | 'boutique-lodge' | 'eco-glamping';
+  categoryLabel: string;
+  location: string;
+  tag: string;
+  rating: string;
+  image: string;
+  gallery?: string[];
+  overview: string;
+  keyFeatures: string[];
+  amenities: string[];
+  idealFor: string;
+  pricingTier: string;
+  distanceFromStation: string;
+}
+
+export const JAWAI_HOTELS: HotelItem[] = [
+  {
+    id: 'HOTEL-SUJAN-01',
+    slug: 'sujan-jawai',
+    name: 'SUJÁN JAWAI',
+    category: 'ultra-luxury',
+    categoryLabel: 'Ultra-Luxury Relais & Châteaux',
+    location: 'Bisalpur / Bera Hills, Jawai',
+    tag: 'World Top 50 Hotel',
+    rating: '5.0 ★ (Ultra Luxury)',
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'A globally acclaimed Relais & Châteaux masterpiece nestled directly among billion-year-old granite kopjes. Features bespoke canvas suites with private heated plunge pools, mid-century leather and stainless steel interiors, private master trackers, and dramatic bush dining.',
+    keyFeatures: [
+      'Private temperature-controlled plunge pool in Royal Tent suites',
+      'Exclusive custom 4x4 open safari vehicle with Senior Master Tracker',
+      'Wilderness Spa by SUJÁN and organic farm-to-table culinary experiences',
+      '100% sustainable, solar-assisted and conservation-funded operations',
+    ],
+    amenities: ['Private Heated Plunge Pool', 'Dedicated Chauffeur & Tracker', 'Spa Pavilion', 'Bush Fine Dining', 'Starry Night Deck', 'High-Speed Wi-Fi'],
+    idealFor: 'Ultra-luxury travelers, honeymooners, global wildlife connoisseurs',
+    pricingTier: 'Price on Request (Ultra Luxury Tier)',
+    distanceFromStation: '22 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-BRIJ-02',
+    slug: 'brij-pola-jawai',
+    name: 'Brij Pola Jawai — Luxury Safari Tents',
+    category: 'ultra-luxury',
+    categoryLabel: 'Ultra-Luxury Tented Retreat',
+    location: 'Bera Corridor, Jawai',
+    tag: 'Private Pool Suites',
+    rating: '4.9 ★',
+    image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'Immersive luxury tented suites engineered for refined seclusion. Each expansive suite boasts a private plunge pool, panoramic glass façades framing wild leopard hills, dedicated butler hospitality, and bespoke wilderness dining.',
+    keyFeatures: [
+      'Expansive air-conditioned luxury canvas suites with private heated pool',
+      'Customized leopard tracking drives in private open-top Gypsies',
+      'Granite boulder high-tea and sunset cocktails on secluded hilltops',
+      'Curated Mewari & Marwari regional degustation menus',
+    ],
+    amenities: ['Private Plunge Pool', 'Personal Butler Service', 'Infinity Lounge Pool', 'Granite Sundowner', 'Fine Dining Restaurant', 'Air Conditioning'],
+    idealFor: 'Couples, luxury anniversary escapes, high-end wildlife explorers',
+    pricingTier: 'Price on Request (Luxury Tier)',
+    distanceFromStation: '18 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-CHEETAGARH-03',
+    slug: 'cheetagarh-resort-spa',
+    name: 'WelcomHeritage Cheetagarh Resort & Spa',
+    category: 'ultra-luxury',
+    categoryLabel: 'Luxury Wilderness & Spa Resort',
+    location: 'Bera Wildlife Belt, Jawai',
+    tag: 'Lakeside Chalets',
+    rating: '4.9 ★',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'A sprawling 20-acre sanctuary surrounded by tranquil lakes and boulder hills. Offers opulent lake-facing chalets and presidential villas with private swimming pools, an Ayurvedic wellness spa, and curated crocodile & leopard game drives.',
+    keyFeatures: [
+      'Lakefront Luxury Chalets and Royal 2-Bedroom Villas with private pools',
+      'Mayaa Spa offering Ayurvedic therapies, yoga, and meditation pavilions',
+      'Lakeside dining pavilion serving royal Rajasthani and continental delicacies',
+      'Tailored safaris for birding enthusiasts, crocodiles, and leopard tracking',
+    ],
+    amenities: ['Lake View Chalets', 'Full-Service Spa', 'Main Swimming Pool', 'Private Plunge Pool Options', 'Multicuisine Restaurant', 'Kids Activity Area'],
+    idealFor: 'Families, wellness travelers, multi-generational groups',
+    pricingTier: 'Price on Request (Premium Luxury)',
+    distanceFromStation: '16 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-AMRITARA-04',
+    slug: 'amritara-jawai-resort',
+    name: 'Amritara Jawai Resort & Spa',
+    category: 'boutique-lodge',
+    categoryLabel: 'Boutique Granite Stone Lodge',
+    location: 'Sena / Jawai Sanctuary Corridor',
+    tag: 'Panoramic Kopje Views',
+    rating: '4.8 ★',
+    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'Constructed with indigenous pink granite stone, Amritara Jawai blends organically into the prehistoric boulder landscape. Features luxurious cottages with floor-to-ceiling wilderness views, a cliffside swimming pool, and authentic Rabari village trails.',
+    keyFeatures: [
+      'Stone-crafted luxury cottages with uninterrupted Kopje views',
+      'Central swimming pool nestled between dramatic rock formations',
+      'Daily 4x4 open safari expeditions led by experienced local naturalists',
+      'Outdoor bonfire dinners accompanied by traditional Rajasthani musicians',
+    ],
+    amenities: ['Swimming Pool', 'Stone Cottages', 'Bonfire Courtyard', 'Multi-Cuisine Dining', 'Free Wi-Fi', 'Safari Booking Desk'],
+    idealFor: 'Couples, photography groups, nature lovers',
+    pricingTier: 'Price on Request (Premium Tier)',
+    distanceFromStation: '14 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-JAWAI-CASTLE-05',
+    slug: 'jawai-castle-bera',
+    name: 'Jawai Castle Resort (Bera)',
+    category: 'heritage-fort',
+    categoryLabel: '16th-Century Royal Heritage Fort',
+    location: 'Bera Royal Estate, Jawai',
+    tag: 'Royal Rajput Living',
+    rating: '4.8 ★',
+    image: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'A magnificent 16th-century fortress restored into an intimate heritage safari palace. Step into antique stone arches, royal courtyards, period suites with antique four-poster beds, and experience firsthand the ancestral hospitality of the Thakurs of Bera.',
+    keyFeatures: [
+      'Authentic heritage fort architecture with centuries-old ramparts and courtyards',
+      'Homestyle royal Mewari feasts prepared from family heirloom recipes',
+      'Direct coordination with local trackers who pioneered Jawai leopard conservation',
+      'Heritage walks through historic Bera village and ancient stepwells',
+    ],
+    amenities: ['Heritage Suites', 'Royal Courtyard Dining', 'Campfire Evenings', 'Antique Furnishings', 'Private Safari Drives', 'Cultural Programs'],
+    idealFor: 'Heritage enthusiasts, culture travelers, slow luxury seekers',
+    pricingTier: 'Price on Request (Heritage Tier)',
+    distanceFromStation: '12 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-SENA-BAGH-06',
+    slug: 'sena-bagh-jawai',
+    name: 'Sena Bagh Luxury Safari Lodge',
+    category: 'heritage-fort',
+    categoryLabel: 'Heritage Orchard Safari Estate',
+    location: 'Sena Village, Jawai',
+    tag: 'Lush Green Sanctuary',
+    rating: '4.8 ★',
+    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'An oasis of lush guava orchards and vintage Rajput safari pavilions nestled in Sena village. Combines classic colonial safari elegance with manicured lawns, swimming pool, and proximity to the famous Sena leopard rocks.',
+    keyFeatures: [
+      'Colonial safari suites and private cottages surrounded by lush fruit orchards',
+      'Sparkling outdoor swimming pool overlooking distant granite ridges',
+      'Orchard breakfast and fireside barbecue under ancient banyan trees',
+      'Proximity to prime leopard territories in Sena and Perwa granite ranges',
+    ],
+    amenities: ['Orchard Swimming Pool', 'Colonial Safari Cottages', 'Bonfire & Barbecue', 'Farm-to-Table Meals', 'Private 4x4 Safaris', 'Lush Gardens'],
+    idealFor: 'Families, corporate leadership offsites, private group buyouts',
+    pricingTier: 'Price on Request (Boutique Heritage Tier)',
+    distanceFromStation: '15 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-VARAWAL-07',
+    slug: 'varawal-leopard-camp',
+    name: 'Varawal Leopard Camp & Glamping',
+    category: 'eco-glamping',
+    categoryLabel: 'Authentic Rabari Glamping Camp',
+    location: 'Varawal / Bera Foothills, Jawai',
+    tag: 'Pioneer Naturalists',
+    rating: '4.9 ★ (Traveler Favorite)',
+    image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'Run by pioneering local naturalists with deep generational ties to Jawai leopards. Features comfortable Swiss luxury tents at the base of dramatic kopjes, providing high sighting rates, ethical tracking, and heartfelt Rabari cultural walks.',
+    keyFeatures: [
+      'Pioneer tracking naturalists with exceptional sighting records',
+      'Deluxe air-conditioned Swiss glamping tents with ensuite private bathrooms',
+      'Nightly campfires with tracker stories, stargazing, and folk music',
+      'Guided walks into pastoral Rabari settlements and camel herder shelters',
+    ],
+    amenities: ['Air-Conditioned Swiss Tents', 'Ensuite Bathrooms', 'Open-Air Dining', 'Campfire Circle', 'Dedicated Open 4x4 Gypsy', 'Tea/Coffee Maker'],
+    idealFor: 'Passionate wildlife photographers, solo explorers, budget-conscious safari lovers',
+    pricingTier: 'Price on Request (Value & Comfort Tier)',
+    distanceFromStation: '10 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-CAMP-JAWAI-08',
+    slug: 'camp-jawai-nature-resort',
+    name: 'Camp Jawai — Boutique Safari Glamping',
+    category: 'eco-glamping',
+    categoryLabel: 'Wilderness Glamping Resort',
+    location: 'Jawai Dam Catchment Belt',
+    tag: 'Dam & Kopje Views',
+    rating: '4.7 ★',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'Set near the serene water catchment of Jawai Dam, Camp Jawai delivers a tranquil wilderness glamping experience. Enjoy Swiss safari tents, crocodile wetland drives, migratory bird watching, and rock bouldering drives.',
+    keyFeatures: [
+      'Modern safari tents equipped with air conditioning and private sit-out verandas',
+      'Close proximity to Jawai Dam for flamingos, pelicans, and crocodile spotting',
+      'Customized sunrise and sunset drives with certified drivers',
+      'Freshly prepared local Rajasthani buffet meals',
+    ],
+    amenities: ['Glamping Tents', 'Private Verandas', 'Dining Gazebo', 'Campfire Evenings', 'Dam Birding Tours', 'Luggage Assistance'],
+    idealFor: 'Birders, weekenders from Udaipur/Jodhpur, family groups',
+    pricingTier: 'Price on Request (Comfort Glamping Tier)',
+    distanceFromStation: '8 km from Jawai Bandh Station (JWB)',
+  },
+  {
+    id: 'HOTEL-BIJAPUR-09',
+    slug: 'bijapur-lodge-jawai',
+    name: 'Bijapur Lodge — Boutique Nature Retreat',
+    category: 'boutique-lodge',
+    categoryLabel: 'Boutique Wilderness Lodge',
+    location: 'Bijapur / Jawai Foothills',
+    tag: 'Private Stone Villas',
+    rating: '4.8 ★',
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80',
+    overview:
+      'A serene boutique stone lodge situated at the tranquil foothills between Ranakpur and Jawai. Offers spacious suites with hand-carved stone architecture, lush landscaped groves, an organic farm, and personalized wildlife game drives.',
+    keyFeatures: [
+      'Expansive stone suites with deep bathtubs and private patio gardens',
+      'Serene swimming pool shaded by mature indigenous trees',
+      'Organic farm-to-table vegetarian & non-vegetarian culinary delicacies',
+      'Convenient hub for exploring both Jawai leopard safaris and Ranakpur Jain Temple',
+    ],
+    amenities: ['Swimming Pool', 'Private Garden Suites', 'Organic Restaurant', 'Bicycle Trails', 'Safari Concierge', 'Spa Services'],
+    idealFor: 'Slow travelers, couples seeking tranquil seclusion, combined Jawai-Ranakpur itineraries',
+    pricingTier: 'Price on Request (Boutique Tier)',
+    distanceFromStation: '25 km from Jawai Bandh Station (JWB)',
+  },
+];
