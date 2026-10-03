@@ -155,7 +155,7 @@ export const SIGNATURE_EXPERIENCES: ExperienceItem[] = [
       'An adventure-led drive across permitted rugged granite terrain with trained local 4x4 off-road operators.',
     longDesc:
       'Feel the adrenaline of custom 4x4 Gypsies crawling up sheer 45-degree smooth granite rock faces. Reaching the summit of these monolithic million-year-old boulders rewards you with stunning 360-degree views of the Aravalli horizon.',
-    heroImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1400&q=80',
     scheduling: 'Late Afternoon / Golden Hour (04:30 PM - 06:30 PM)',
     criticalNote: 'Conducted only by verified drivers on structurally safe and permitted rocky routes.',
     whatToExpect: [

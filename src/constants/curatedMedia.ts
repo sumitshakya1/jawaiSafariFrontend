@@ -63,7 +63,7 @@ export const CURATED_MEDIA: Record<string, CuratedTopicMedia> = {
         tag: 'Reptile Basking',
       },
       {
-        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        url: 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=800&q=80',
         caption: 'Safe elevated vantage points over the reservoir basking banks',
         tag: 'Safe Viewing',
       },
@@ -88,7 +88,7 @@ export const CURATED_MEDIA: Record<string, CuratedTopicMedia> = {
         tag: 'Lake Panorama',
       },
       {
-        url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        url: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80',
         caption: 'Sunset reflections across the historic 1957 Maharaja Umaid Singh dam',
         tag: 'Sunset Horizon',
       },
@@ -105,7 +105,7 @@ export const CURATED_MEDIA: Record<string, CuratedTopicMedia> = {
     ],
   },
   offroad: {
-    hero: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85',
+    hero: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1800&q=85',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',

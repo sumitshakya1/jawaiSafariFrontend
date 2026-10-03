@@ -115,7 +115,7 @@ export default function HowToReachPage() {
         <div className="relative rounded-3xl overflow-hidden border border-[#DDE7E5] p-8 md:p-16 bg-[#003F40]">
           <div className="absolute inset-0 -z-10">
             <Image
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85"
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=85"
               alt="How to Reach Jawai"
               fill
               className="object-cover opacity-25"

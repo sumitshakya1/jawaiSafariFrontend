@@ -50,7 +50,7 @@ export const JAWAI_HOTELS: HotelItem[] = [
     location: 'Bera Corridor, Jawai',
     tag: 'Private Pool Suites',
     rating: '4.9 ★',
-    image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1200&q=80',
     overview:
       'Immersive luxury tented suites engineered for refined seclusion. Each expansive suite boasts a private plunge pool, panoramic glass façades framing wild leopard hills, dedicated butler hospitality, and bespoke wilderness dining.',
     keyFeatures: [

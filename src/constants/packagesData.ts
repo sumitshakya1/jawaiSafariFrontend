@@ -241,7 +241,7 @@ export const FLAGSHIP_PACKAGES: PackageItem[] = [
     bestFor: 'Adventure travellers',
     coreExperience: 'Safari + verified hill/off-road experience + sunset landscape',
     tag: 'Thrill & Terrain',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
     overview:
       'Combine wildlife tracking with technical 4x4 steep rock climbs on ancient monolithic granite formations, off-road river sand tracks, and scenic hilltop vantage points.',
     whyChoose: [
