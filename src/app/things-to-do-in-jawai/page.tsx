@@ -85,7 +85,7 @@ export default function ThingsToDoPage() {
   return (
     <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pb-32">
       {/* 1. Hero */}
-      <section className="relative w-full pt-36 pb-20 px-6 md:px-12 border-b border-white/10 bg-gradient-to-b from-black/90 via-[#07090e] to-[#07090e] overflow-hidden">
+      <section className="relative w-full pt-36 pb-20 px-6 md:px-12 bg-[#003F40] overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
             src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85"
@@ -94,11 +94,11 @@ export default function ThingsToDoPage() {
             className="object-cover opacity-25"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#003F40] via-transparent to-[#003F40]/80" />
         </div>
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="flex items-center justify-center gap-2 text-xs font-mono text-white/50 mb-4">
+          <div className="flex items-center justify-center gap-2 text-xs font-mono text-white/70 mb-4">
             <Link href="/" className="hover:text-white">Home</Link>
             <span>/</span>
             <Link href="/jawai" className="hover:text-white">Jawai</Link>
@@ -106,15 +106,15 @@ export default function ThingsToDoPage() {
             <span className="text-[#FDBA21]">Activities</span>
           </div>
 
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/20 border border-[#FDBA21]/40 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4 font-semibold">
             Curated Expedition Ideas
           </span>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display-brand font-bold text-white tracking-tight leading-tight mb-6">
             Top 6 Things to Do in Jawai Beyond the Leopard Safari
           </h1>
 
-          <p className="text-base sm:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed font-light mb-8">
+          <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed font-light mb-8">
             From sunrise wetland birding and prehistoric crocodile banks to steep granite rock ascents and Rabari pastoral walks, discover the full diversity of Jawai.
           </p>
 
@@ -123,7 +123,7 @@ export default function ThingsToDoPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.3)] transition-all hover:scale-105"
+              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2 shadow-sm transition-all"
             >
               <span className="material-symbols-outlined text-base">chat</span>
               <span>Customize Activities on WhatsApp</span>
@@ -135,36 +135,36 @@ export default function ThingsToDoPage() {
       {/* 2. Visual 6-Activity Mosaic Grid */}
       <main className="max-w-7xl mx-auto px-6 md:px-12 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {ACTIVITIES.map((act, idx) => (
+          {ACTIVITIES.map((act) => (
             <div
               key={act.id}
-              className="rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-[#FDBA21]/50 transition-all group shadow-xl"
+              className="rounded-3xl bg-white border border-[#DDE7E5] shadow-sm overflow-hidden flex flex-col justify-between hover:border-[#0A7B75] hover:shadow-md transition-all group"
             >
               <div>
-                <div className="relative h-64 w-full overflow-hidden">
+                <div className="relative h-64 w-full overflow-hidden bg-[#EEF8F6]">
                   <Image
                     src={act.image}
                     alt={act.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e15] via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white backdrop-blur-md text-[11px] font-mono text-[#FDBA21] border border-[#FDBA21]/30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#003F40]/80 via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[11px] font-mono text-[#005B5C] font-bold shadow-sm">
                     {act.badge}
                   </span>
-                  <span className="absolute bottom-4 left-4 text-[11px] font-mono text-white/75 bg-white px-2.5 py-0.5 rounded-md backdrop-blur-md">
+                  <span className="absolute bottom-4 left-4 text-[11px] font-mono text-white bg-[#005B5C] px-2.5 py-0.5 rounded-md font-semibold">
                     {act.category}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <span className="text-[11px] font-mono text-[#FDBA21] block mb-2">
+                  <span className="text-[11px] font-mono text-[#005B5C] font-bold block mb-2">
                     Timing: {act.timing}
                   </span>
-                  <h2 className="text-xl font-bold text-white group-hover:text-[#FDBA21] transition-colors mb-3">
+                  <h2 className="text-xl font-bold text-[#005B5C] group-hover:text-[#0A7B75] transition-colors mb-3 leading-snug">
                     {act.title}
                   </h2>
-                  <p className="text-xs md:text-sm text-white/70 leading-relaxed font-light mb-4">
+                  <p className="text-xs md:text-sm text-[#263238] leading-relaxed font-light mb-4">
                     {act.desc}
                   </p>
                 </div>
@@ -173,7 +173,7 @@ export default function ThingsToDoPage() {
               <div className="p-6 pt-0">
                 <Link
                   href={act.link}
-                  className="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 border border-white/10 transition-all"
+                  className="w-full py-3 rounded-full bg-white hover:bg-[#EEF8F6] text-[#005B5C] font-semibold text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 border border-[#005B5C] transition-all"
                 >
                   <span>Explore Activity</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -184,43 +184,43 @@ export default function ThingsToDoPage() {
         </div>
 
         {/* 3. Recommended 2N/3D Timeline Roadmap */}
-        <div className="p-8 md:p-14 rounded-3xl bg-gradient-to-r from-black/90 to-black/60 border border-white/15">
+        <div className="p-8 md:p-14 rounded-3xl bg-[#EEF8F6] border border-[#DDE7E5] shadow-sm">
           <div className="max-w-2xl mb-8">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#FDBA21] block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
               Balanced Flow
             </span>
-            <h3 className="text-2xl md:text-4xl font-serif font-bold text-white">
+            <h3 className="text-2xl md:text-4xl font-display-brand font-bold text-[#005B5C]">
               Recommended 2N/3D Activity Timeline
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="px-3 py-1 rounded bg-[#FDBA21] text-black font-mono font-bold text-xs inline-block mb-3">
+            <div className="p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+              <span className="px-3 py-1 rounded-full bg-[#005B5C] text-white font-mono font-bold text-xs inline-block mb-3">
                 DAY 1
               </span>
-              <h4 className="text-base font-bold text-white mb-2">Arrival & Dusk Kopje Safari</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
+              <h4 className="text-base font-bold text-[#005B5C] mb-2">Arrival & Dusk Kopje Safari</h4>
+              <p className="text-xs text-[#263238] font-light leading-relaxed">
                 Check-in by 2:00 PM, depart for 4:30 PM sunset leopard tracking across northern granite kopjes, followed by fireside dinner.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="px-3 py-1 rounded bg-[#FDBA21] text-black font-mono font-bold text-xs inline-block mb-3">
+            <div className="p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+              <span className="px-3 py-1 rounded-full bg-[#005B5C] text-white font-mono font-bold text-xs inline-block mb-3">
                 DAY 2
               </span>
-              <h4 className="text-base font-bold text-white mb-2">Dawn Safari, Dam & Rock Drive</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
+              <h4 className="text-base font-bold text-[#005B5C] mb-2">Dawn Safari, Dam & Rock Drive</h4>
+              <p className="text-xs text-[#263238] font-light leading-relaxed">
                 05:45 AM dawn tracking, late morning Jawai Dam flamingo & crocodile expedition, and 4:30 PM steep technical rock climb.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="px-3 py-1 rounded bg-[#FDBA21] text-black font-mono font-bold text-xs inline-block mb-3">
+            <div className="p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+              <span className="px-3 py-1 rounded-full bg-[#005B5C] text-white font-mono font-bold text-xs inline-block mb-3">
                 DAY 3
               </span>
-              <h4 className="text-base font-bold text-white mb-2">Rabari Pastoral Walk & Departure</h4>
-              <p className="text-xs text-white/70 leading-relaxed">
+              <h4 className="text-base font-bold text-[#005B5C] mb-2">Rabari Pastoral Walk & Departure</h4>
+              <p className="text-xs text-[#263238] font-light leading-relaxed">
                 Morning cultural walk through Rabari shepherd settlements, traditional tea, and seamless transfer back to Udaipur/Jodhpur.
               </p>
             </div>
@@ -230,3 +230,4 @@ export default function ThingsToDoPage() {
     </div>
   );
 }
+

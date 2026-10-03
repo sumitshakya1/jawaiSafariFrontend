@@ -36,42 +36,42 @@ export default function SafariBookingEnquiryPage() {
     <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-24">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
-          <Link href="/" className="hover:text-white">Home</Link>
+        <div className="flex items-center gap-2 text-xs font-mono text-[#667085] mb-6">
+          <Link href="/" className="hover:text-[#005B5C] font-semibold">Home</Link>
           <span>/</span>
-          <Link href="/jawai" className="hover:text-white">Jawai</Link>
+          <Link href="/jawai" className="hover:text-[#005B5C] font-semibold">Jawai</Link>
           <span>/</span>
-          <span className="text-[#FDBA21]">Safari Enquiry</span>
+          <span className="text-[#005B5C] font-bold">Safari Enquiry</span>
         </div>
 
         {/* Title */}
         <div className="mb-10 text-center">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#EEF8F6] border border-[#DDE7E5] text-[#005B5C] text-xs font-mono uppercase tracking-widest mb-3 font-bold">
             Safari Slot Enquiry
           </span>
-          <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-display-brand font-bold text-[#005B5C] tracking-tight mb-4">
             Jawai Safari Enquiry & Availability
           </h1>
-          <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-base text-[#667085] max-w-2xl mx-auto leading-relaxed font-light">
             Share your preferred dates, slot preferences, and party size to check real-time tracker availability and receive a customized quotation.
           </p>
         </div>
 
         {submitted ? (
-          <div className="p-8 md:p-12 rounded-3xl bg-white/[0.03] border border-[#25D366]/40 text-center space-y-6">
-            <div className="w-16 h-16 rounded-full bg-[#25D366]/20 text-[#25D366] flex items-center justify-center mx-auto">
+          <div className="p-8 md:p-12 rounded-3xl bg-white border border-[#DDE7E5] shadow-md text-center space-y-6">
+            <div className="w-16 h-16 rounded-full bg-[#EEF8F6] text-[#005B5C] flex items-center justify-center mx-auto">
               <span className="material-symbols-outlined text-3xl">check_circle</span>
             </div>
-            <h2 className="text-2xl font-serif font-bold text-white">Enquiry Received!</h2>
-            <p className="text-sm text-white/80 max-w-lg mx-auto leading-relaxed">
-              Thank you, <strong className="text-white">{formData.name}</strong>. Our Jawai expedition team is reviewing your requested slot for <strong className="text-[#FDBA21]">{formData.travelDate}</strong>.
+            <h2 className="text-2xl font-bold font-display-brand text-[#005B5C]">Enquiry Received!</h2>
+            <p className="text-sm text-[#263238] max-w-lg mx-auto leading-relaxed font-light">
+              Thank you, <strong className="text-[#005B5C] font-bold">{formData.name}</strong>. Our Jawai expedition team is reviewing your requested slot for <strong className="text-[#005B5C] font-bold">{formData.travelDate}</strong>.
             </p>
             <div>
               <a
                 href={whatsappRedirectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)]"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest transition-all shadow-sm"
               >
                 <span className="material-symbols-outlined text-base">chat</span>
                 <span>Continue & Finalize on WhatsApp (+91 73000 03101)</span>
@@ -81,74 +81,74 @@ export default function SafariBookingEnquiryPage() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="p-6 md:p-10 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl space-y-8"
+            className="p-6 md:p-10 rounded-3xl bg-white border border-[#DDE7E5] shadow-md space-y-8"
           >
             {/* Contact Details */}
             <div>
-              <h2 className="text-sm font-mono uppercase tracking-wider text-[#FDBA21] mb-4 flex items-center gap-2">
-                <span className="material-symbols-outlined text-base">person</span>
+              <h2 className="text-sm font-mono uppercase tracking-wider text-[#005B5C] font-bold mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined text-base text-[#0A7B75]">person</span>
                 <span>1. Traveller Contact Details</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Full Name *</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Full Name *</label>
                   <input
                     required
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Vikramaditya Rathore"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">WhatsApp / Phone Number *</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">WhatsApp / Phone Number *</label>
                   <input
                     required
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="e.g. +91 98765 43210"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Email Address</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Email Address</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. traveller@domain.com"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   />
                 </div>
               </div>
             </div>
 
             {/* Safari Details */}
-            <div className="pt-6 border-t border-white/10">
-              <h2 className="text-sm font-mono uppercase tracking-wider text-[#FDBA21] mb-4 flex items-center gap-2">
-                <span className="material-symbols-outlined text-base">calendar_month</span>
+            <div className="pt-6 border-t border-[#DDE7E5]">
+              <h2 className="text-sm font-mono uppercase tracking-wider text-[#005B5C] font-bold mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined text-base text-[#0A7B75]">calendar_month</span>
                 <span>2. Safari Timing & Vehicle Preference</span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Travel Date *</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Travel Date *</label>
                   <input
                     required
                     type="date"
                     value={formData.travelDate}
                     onChange={(e) => setFormData({ ...formData, travelDate: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Slot Preference</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Slot Preference</label>
                   <select
                     value={formData.slotPreference}
                     onChange={(e) => setFormData({ ...formData, slotPreference: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   >
                     <option value="Dawn (05:45 AM - 08:45 AM)">Dawn (05:45 AM - 08:45 AM)</option>
                     <option value="Dusk (04:15 PM - 07:15 PM)">Dusk (04:15 PM - 07:15 PM)</option>
@@ -157,11 +157,11 @@ export default function SafariBookingEnquiryPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Adults</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Adults</label>
                   <select
                     value={formData.adults}
                     onChange={(e) => setFormData({ ...formData, adults: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   >
                     {[1, 2, 3, 4, 5, 6, '7+ Group'].map((num) => (
                       <option key={num} value={String(num)}>
@@ -172,11 +172,11 @@ export default function SafariBookingEnquiryPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Children (under 12)</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Children (under 12)</label>
                   <select
                     value={formData.children}
                     onChange={(e) => setFormData({ ...formData, children: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   >
                     {[0, 1, 2, 3, 4].map((num) => (
                       <option key={num} value={String(num)}>
@@ -189,11 +189,11 @@ export default function SafariBookingEnquiryPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Vehicle Type</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Vehicle Type</label>
                   <select
                     value={formData.vehiclePreference}
                     onChange={(e) => setFormData({ ...formData, vehiclePreference: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   >
                     <option value="Private 4x4 Gypsy (Recommended)">Private 4x4 Gypsy (Recommended)</option>
                     <option value="Shared Safari Slot">Shared Safari Slot</option>
@@ -202,35 +202,35 @@ export default function SafariBookingEnquiryPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-white/70 mb-1.5">Pickup Location in Jawai</label>
+                  <label className="block text-xs font-semibold text-[#263238] mb-1.5">Pickup Location in Jawai</label>
                   <input
                     type="text"
                     value={formData.pickupLocation}
                     onChange={(e) => setFormData({ ...formData, pickupLocation: e.target.value })}
                     placeholder="e.g. Resort Name or Falna Junction"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
                   />
                 </div>
               </div>
             </div>
 
             {/* Special Requests */}
-            <div className="pt-6 border-t border-white/10">
-              <label className="block text-xs text-white/70 mb-1.5">Special Requests or Notes</label>
+            <div className="pt-6 border-t border-[#DDE7E5]">
+              <label className="block text-xs font-semibold text-[#263238] mb-1.5">Special Requests or Notes</label>
               <textarea
                 rows={3}
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="e.g. Interested in flamingos at Jawai dam, elderly guest assistance, or photography setup."
-                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-[#263238] text-sm focus:border-[#0A7B75] focus:outline-none"
               />
             </div>
 
             {/* Consent & Submit */}
-            <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-xs text-white/50 leading-relaxed">
+            <div className="pt-6 border-t border-[#DDE7E5] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-xs text-[#667085] leading-relaxed">
                 By submitting, you agree to our{' '}
-                <Link href="/privacy-policy" className="text-[#FDBA21] underline">
+                <Link href="/privacy-policy" className="text-[#005B5C] underline font-semibold">
                   Privacy Policy
                 </Link>{' '}
                 and understand that wildlife sightings depend on natural animal movement.
@@ -238,7 +238,7 @@ export default function SafariBookingEnquiryPage() {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(37,211,102,0.25)] flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs uppercase tracking-widest transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Submit & Request Quote</span>
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -250,3 +250,4 @@ export default function SafariBookingEnquiryPage() {
     </div>
   );
 }
+

@@ -20,29 +20,31 @@ export default function GroupTourPage() {
   return (
     <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
-          <Link href="/" className="hover:text-white">Home</Link>
+        <div className="flex items-center gap-2 text-xs font-mono text-[#667085] mb-6">
+          <Link href="/" className="hover:text-[#005B5C]">Home</Link>
           <span>/</span>
-          <Link href="/jawai-tour-packages" className="hover:text-white">Packages</Link>
+          <Link href="/jawai-tour-packages" className="hover:text-[#005B5C]">Packages</Link>
           <span>/</span>
-          <span className="text-[#FDBA21]">Group Travel</span>
+          <span className="text-[#005B5C] font-semibold">Group Travel</span>
         </div>
 
         <div className="mb-10 text-center max-w-2xl mx-auto">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#EEF8F6] border border-[#005B5C]/20 text-[#005B5C] text-xs font-mono uppercase tracking-widest mb-3 font-semibold">
             Group Wilderness
           </span>
-          <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-display-brand font-bold text-[#005B5C] tracking-tight mb-4">
             Jawai Group Tour & Friends Expeditions
           </h1>
-          <p className="text-sm md:text-base text-white/70 leading-relaxed">
+          <p className="text-sm md:text-base text-[#263238] font-light leading-relaxed">
             Coordinated 4x4 convoy safaris, exclusive camp buyouts, campfire barbecue evenings, and personalized team activities across the Jawai wilderness.
           </p>
         </div>
 
-        <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 space-y-6 text-center">
-          <h2 className="text-2xl font-serif font-bold text-white">Custom Group Planning & Quotation</h2>
-          <p className="text-sm text-white/80 max-w-xl mx-auto leading-relaxed">
+        <div className="p-8 md:p-12 rounded-3xl bg-white border border-[#DDE7E5] shadow-sm space-y-6 text-center">
+          <h2 className="text-2xl font-display-brand font-bold text-[#005B5C]">
+            Custom Group Planning & Quotation
+          </h2>
+          <p className="text-sm text-[#263238] font-light max-w-xl mx-auto leading-relaxed">
             Tell us your group count, preferred dates, and room requirements for a streamlined multi-vehicle proposal.
           </p>
           <div>
@@ -50,7 +52,7 @@ export default function GroupTourPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#25D366] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#20ba59] transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#25D366] text-[#263238] font-bold text-xs font-mono uppercase tracking-widest hover:bg-[#20ba59] transition-all shadow-sm"
             >
               <span className="material-symbols-outlined text-base">chat</span>
               <span>Enquire for Group on WhatsApp</span>

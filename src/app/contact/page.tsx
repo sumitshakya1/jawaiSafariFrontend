@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/Input';
 import { Checkbox } from '@/components/ui/Checkbox';
-import { Button } from '@/components/ui/Button';
 import { ContactRepository } from '@/core/repositories/ContactRepository';
 import { ContactRequest } from '@/core/models/ContactRequest';
 
@@ -65,37 +64,36 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full min-h-[calc(100vh-6rem)] bg-surface text-[#263238] px-margin-mobile md:px-margin py-16">
+    <div className="w-full min-h-[calc(100vh-6rem)] bg-[#F8FAF8] text-[#263238] px-6 md:px-12 pt-32 pb-20">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-3">
-          <span className="w-8 h-[1px] bg-[#005B5C]" />
-          <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-[#005B5C] font-bold">
-            EXPEDITION ACCESS DESK
+          <span className="w-8 h-[2px] bg-[#005B5C]" />
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#005B5C] font-bold">
+            EXPEDITION CONCIERGE DESK
           </span>
         </div>
 
-        <h1 className="font-display-hero text-headline-lg md:text-[3.5rem] font-extrabold uppercase tracking-tight text-white mb-4">
-          Request Night Expedition Briefing
+        <h1 className="text-3xl sm:text-5xl font-display-brand font-bold text-[#005B5C] tracking-tight mb-4">
+          Contact Ghoomosa Expedition Planning
         </h1>
 
-        <p className="font-editorial-quote italic text-[#667085] text-lg md:text-xl max-w-2xl mb-12">
-          “Access to Jawai&apos;s nocturnal granite reserves is strictly curated to preserve the silent pact between indigenous trackers and apex leopards.”
+        <p className="italic text-[#667085] text-base md:text-lg max-w-2xl mb-12 font-light">
+          “Connect with our dedicated Jawai safari coordinators to curate tailor-made leopard safaris, verified luxury stays, and private transportation.”
         </p>
 
         {submitted ? (
-          <div className="bg-white border border-primary-container/40 p-8 md:p-12 text-center flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-full border border-primary-container flex items-center justify-center text-[#005B5C] mb-2">
+          <div className="bg-white border border-[#DDE7E5] rounded-3xl p-8 md:p-12 text-center flex flex-col items-center gap-4 shadow-sm">
+            <div className="w-16 h-16 rounded-full bg-[#EEF8F6] flex items-center justify-center text-[#005B5C] mb-2">
               <span className="material-symbols-outlined text-3xl">check</span>
             </div>
-            <h3 className="font-display-hero text-2xl uppercase tracking-wider text-white">
+            <h3 className="text-2xl font-display-brand font-bold text-[#005B5C]">
               Briefing Request Received
             </h3>
-            <p className="font-body-md text-[#667085] max-w-md">
-              Your dossier request has been registered. The chief expedition coordinator will
-              contact you via private communication channel with verified seasonal moon schedules.
+            <p className="text-sm text-[#667085] max-w-md font-light">
+              Your enquiry has been registered. Our chief expedition coordinator will
+              contact you shortly with verified seasonal schedules and customized quotations.
             </p>
-            <Button
-              variant="primary-editorial"
+            <button
               onClick={() => {
                 setSubmitted(false);
                 setFormData({
@@ -108,18 +106,18 @@ export default function ContactPage() {
                   consentCheck: false,
                 });
               }}
-              className="mt-6"
+              className="mt-6 px-6 py-3 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs font-mono uppercase tracking-widest transition-all"
             >
               SUBMIT ANOTHER REQUEST
-            </Button>
+            </button>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-white border border-white/10 p-8 md:p-12 flex flex-col gap-6 shadow-2xl"
+            className="bg-white border border-[#DDE7E5] rounded-3xl p-8 md:p-12 flex flex-col gap-6 shadow-sm"
           >
             {errorMessage && (
-              <div className="bg-error-container/40 border border-error/50 p-4 text-sm text-on-error-container font-body-sm">
+              <div className="bg-red-50 border border-red-200 p-4 rounded-xl text-sm text-red-700">
                 {errorMessage}
               </div>
             )}
@@ -130,7 +128,7 @@ export default function ContactPage() {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                placeholder="Lord / Lady / Dr. / First Last"
+                placeholder="First & Last Name"
                 required
               />
               <Input
@@ -153,42 +151,42 @@ export default function ContactPage() {
                 placeholder="+91 98765 43210"
               />
               <div className="flex flex-col gap-1.5 w-full">
-                <label className="font-label-nav text-[11px] uppercase tracking-[0.2em] text-[#667085] font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#667085] font-semibold">
                   Expedition Program *
                 </label>
                 <select
                   name="expeditionInterest"
                   value={formData.expeditionInterest}
                   onChange={handleChange}
-                  className="w-full bg-[#F8FAF8] text-white border border-white/20 px-4 py-3.5 rounded-none font-body-md text-sm outline-none focus:border-primary-container"
+                  className="w-full bg-[#F8FAF8] text-[#263238] border border-[#DDE7E5] px-4 py-3 rounded-xl text-sm outline-none focus:border-[#005B5C]"
                 >
-                  <option value="01_JAWAI">01 — Granite Kopjes Day &amp; Dusk</option>
-                  <option value="02_SAFARI">02 — Apex Encounter 4x4 Tracking</option>
-                  <option value="03_SANCTUARY">03 — Nocturnal Sanctuary Pass &amp; Caves</option>
-                  <option value="04_CELESTIAL">04 — Bortle 2 Astrophotography Recon</option>
+                  <option value="01_JAWAI">01 — Jawai Leopard Safari &amp; Granite Kopjes</option>
+                  <option value="02_SAFARI">02 — Flagship Tour Package (2N/3D)</option>
+                  <option value="03_SANCTUARY">03 — Luxury Wilderness Resort &amp; Tents</option>
+                  <option value="04_CELESTIAL">04 — Corporate Offsite &amp; Team Retreat</option>
                 </select>
               </div>
             </div>
 
             <Input
-              label="Anticipated Dates / Moon Phase Window"
+              label="Anticipated Travel Dates / Month"
               name="preferredDates"
               value={formData.preferredDates}
               onChange={handleChange}
-              placeholder="e.g. November New Moon / Autumn Solstice"
+              placeholder="e.g. November 15-18 / Next Month"
             />
 
             <div className="flex flex-col gap-1.5">
-              <label className="font-label-nav text-[11px] uppercase tracking-[0.2em] text-[#667085] font-semibold">
-                Specialized Optics, Rig or Dietary Specifications
+              <label className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#667085] font-semibold">
+                Specialized Requests, Group Size or Dietary Preferences
               </label>
               <textarea
                 name="notes"
                 value={formData.notes}
                 onChange={handleChange}
                 rows={3}
-                className="w-full bg-[#F8FAF8] text-white placeholder-white/40 border border-white/20 p-4 rounded-none font-body-md text-sm outline-none focus:border-primary-container"
-                placeholder="Detail optical requirements (infrared telephoto, night goggles) or camp preferences..."
+                className="w-full bg-[#F8FAF8] text-[#263238] placeholder-[#667085]/60 border border-[#DDE7E5] p-4 rounded-xl text-sm outline-none focus:border-[#005B5C]"
+                placeholder="Detail group size, photography preferences, or customized stay requirements..."
               />
             </div>
 
@@ -196,18 +194,18 @@ export default function ContactPage() {
               name="consentCheck"
               checked={formData.consentCheck}
               onChange={handleChange}
-              label="I acknowledge that all Jawai expeditions operate in strict adherence to nocturnal wildlife sanctuary protocols, non-invasive optical practices, and indigenous Rabari territorial pacts."
+              label="I acknowledge that all Jawai expeditions operate in strict adherence to responsible wildlife protocols, non-invasive optical practices, and local community respect."
             />
 
             <div className="pt-4">
-              <Button
+              <button
                 type="submit"
-                variant="primary-editorial"
-                icon="arrow_forward"
                 disabled={loading}
+                className="px-8 py-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2 shadow-sm transition-all cursor-pointer disabled:opacity-60"
               >
-                {loading ? 'TRANSMITTING DOSSIER...' : 'REQUEST NIGHT EXPEDITION BRIEFING'}
-              </Button>
+                <span>{loading ? 'TRANSMITTING REQUEST...' : 'REQUEST EXPEDITION BRIEFING'}</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
             </div>
           </form>
         )}

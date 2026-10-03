@@ -97,7 +97,7 @@ export const SIGNATURE_EXPERIENCES: ExperienceItem[] = [
       'Observe the Jawai water landscape responsibly with a local operator. Marsh crocodiles (Mugger) can often be seen basking on sandbanks and rocky shores.',
     longDesc:
       'Jawai Dam is home to one of the largest healthy populations of Marsh Crocodiles (Crocodylus palustris) in Rajasthan. Basking along the shallow granite shoals and sunny banks, these prehistoric reptiles offer incredible wildlife observation.',
-    heroImage: 'https://images.unsplash.com/photo-1520637736862-4d1921f9a0c0?auto=format&fit=crop&w=1400&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1400&q=80',
     scheduling: 'Mid-morning (10:00 AM - 01:00 PM) when sun basking is at peak',
     criticalNote: 'No close approach to water edge; strict safety perimeters are enforced.',
     whatToExpect: [

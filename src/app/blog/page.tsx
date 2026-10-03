@@ -66,21 +66,21 @@ export default function BlogHubPage() {
     <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
-          <Link href="/" className="hover:text-white">Home</Link>
+        <div className="flex items-center gap-2 text-xs font-mono text-[#667085] mb-6">
+          <Link href="/" className="hover:text-[#005B5C]">Home</Link>
           <span>/</span>
-          <span className="text-[#FDBA21]">Travel Blog</span>
+          <span className="text-[#005B5C] font-semibold">Travel Blog</span>
         </div>
 
         {/* Header */}
         <div className="mb-14">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#EEF8F6] border border-[#005B5C]/20 text-[#005B5C] text-xs font-mono uppercase tracking-widest mb-3 font-semibold">
             Editorial & Guides
           </span>
-          <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-display-brand font-bold text-[#005B5C] tracking-tight mb-4">
             Jawai Safari Blog & Expedition Guides
           </h1>
-          <p className="text-base text-white/70 max-w-2xl leading-relaxed">
+          <p className="text-base text-[#667085] max-w-2xl leading-relaxed font-light">
             Reviewed, experience-led and fact-checked travel guides designed to help you plan an unforgettable wilderness and cultural expedition in Jawai.
           </p>
         </div>
@@ -91,19 +91,19 @@ export default function BlogHubPage() {
             <Link
               key={idx}
               href={art.targetLink}
-              className="block p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#FDBA21]/50 transition-all group"
+              className="block p-8 rounded-2xl bg-white border border-[#DDE7E5] hover:border-[#0A7B75] hover:shadow-md transition-all group"
             >
-              <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/50 mb-3">
-                <span className="text-[#FDBA21] font-bold uppercase">{art.category}</span>
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#667085] mb-3">
+                <span className="text-[#005B5C] font-bold uppercase">{art.category}</span>
                 <span>
                   {art.date} • {art.readTime} • By {art.author}
                 </span>
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#FDBA21] transition-colors mb-3">
+              <h2 className="text-xl md:text-2xl font-bold text-[#005B5C] group-hover:text-[#0A7B75] transition-colors mb-3">
                 {art.title}
               </h2>
-              <p className="text-sm text-white/70 leading-relaxed mb-4">{art.desc}</p>
-              <span className="text-xs font-mono uppercase text-white/80 group-hover:text-white flex items-center gap-1">
+              <p className="text-sm text-[#263238] font-light leading-relaxed mb-4">{art.desc}</p>
+              <span className="text-xs font-mono uppercase text-[#005B5C] font-semibold flex items-center gap-1">
                 <span>Read Full Guide</span>
                 <span className="material-symbols-outlined text-xs">arrow_forward</span>
               </span>

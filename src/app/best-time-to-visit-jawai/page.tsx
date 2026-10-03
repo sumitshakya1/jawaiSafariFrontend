@@ -111,57 +111,58 @@ export default function BestTimeToVisitPage() {
   });
 
   return (
-    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       {/* 1. Custom Hero Banner */}
-      <section className="relative w-full pt-36 pb-20 px-6 md:px-12 border-b border-white/10 bg-gradient-to-b from-black/90 via-[#07090e] to-[#07090e] overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=2000&q=85"
-            alt="Best Time to Visit Jawai"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-black/80" />
-        </div>
-
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="flex items-center justify-center gap-2 text-xs font-mono text-white/50 mb-4">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <span>/</span>
-            <Link href="/jawai" className="hover:text-white">Jawai</Link>
-            <span>/</span>
-            <span className="text-[#FDBA21]">Seasonal Planning</span>
+      <section className="relative px-6 md:px-12 max-w-7xl mx-auto mb-16">
+        <div className="relative rounded-3xl overflow-hidden border border-[#DDE7E5] p-8 md:p-16 bg-[#003F40]">
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=2000&q=85"
+              alt="Best Time to Visit Jawai"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
           </div>
 
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4">
-            Climate & Wildlife Calendar
-          </span>
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-2 text-xs font-mono text-white/70 mb-4">
+              <Link href="/" className="hover:text-white">Home</Link>
+              <span>/</span>
+              <Link href="/jawai" className="hover:text-white">Jawai</Link>
+              <span>/</span>
+              <span className="text-[#FDBA21]">Seasonal Planning</span>
+            </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-tight mb-6">
-            Best Time to Visit Jawai: Season-by-Season Guide
-          </h1>
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/20 border border-[#FDBA21]/40 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4 font-semibold">
+              Climate & Wildlife Calendar
+            </span>
 
-          <p className="text-base sm:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed font-light mb-8">
-            Compare weather patterns, animal behavior, and migratory bird arrival dates across the year to choose the perfect season for your expedition.
-          </p>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display-brand font-bold text-white tracking-tight leading-tight mb-6">
+              Best Time to Visit Jawai: Season-by-Season Guide
+            </h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={seasonalWhatsApp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2 shadow-[0_0_20px_rgba(37,211,102,0.3)] transition-all hover:scale-105"
-            >
-              <span className="material-symbols-outlined text-base">chat</span>
-              <span>Check Seasonal Dates on WhatsApp</span>
-            </a>
+            <p className="text-base sm:text-lg text-white/90 max-w-3xl leading-relaxed font-light mb-8">
+              Compare weather patterns, animal behavior, and migratory bird arrival dates across the year to choose the perfect season for your expedition.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href={seasonalWhatsApp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-[#263238] font-bold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2 shadow-sm transition-all"
+              >
+                <span className="material-symbols-outlined text-base">chat</span>
+                <span>Check Seasonal Dates on WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* 2. Interactive Season Matrix */}
-      <main className="max-w-6xl mx-auto px-6 md:px-12 pt-16">
+      <main className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Season Selector Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
           {SEASONS.map((season) => (
@@ -170,8 +171,8 @@ export default function BestTimeToVisitPage() {
               onClick={() => setActiveSeason(season.id)}
               className={`px-6 py-3.5 rounded-2xl text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeSeason === season.id
-                  ? 'bg-gradient-to-r from-[#FDBA21] to-[#FDBA21] text-black font-bold shadow-[0_0_20px_rgba(232,164,85,0.4)] scale-105'
-                  : 'bg-white/[0.04] text-white/70 hover:text-white border border-white/10'
+                  ? 'bg-[#005B5C] text-white font-bold border border-[#005B5C] shadow-sm'
+                  : 'bg-white text-[#263238] hover:text-[#005B5C] border border-[#DDE7E5] hover:border-[#0A7B75]'
               }`}
             >
               <span className="material-symbols-outlined text-sm">
@@ -184,24 +185,24 @@ export default function BestTimeToVisitPage() {
         </div>
 
         {/* Selected Season Card */}
-        <div className="rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/15 overflow-hidden shadow-2xl mb-16">
-          <div className="relative h-72 md:h-96 w-full">
+        <div className="rounded-3xl bg-white border border-[#DDE7E5] overflow-hidden shadow-sm mb-16">
+          <div className="relative h-72 md:h-96 w-full bg-[#EEF8F6]">
             <Image
               src={currentSeason.image}
               alt={currentSeason.name}
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e15] via-black/40 to-transparent" />
-            <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-white backdrop-blur-md border border-[#FDBA21]/40 text-xs font-mono text-[#FDBA21] uppercase tracking-wider">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#003F40]/80 via-black/30 to-transparent" />
+            <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-white/95 text-[#005B5C] font-bold text-xs font-mono uppercase tracking-wider shadow-sm">
               {currentSeason.badge} • {currentSeason.months}
             </div>
             <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <h2 className="text-2xl md:text-4xl font-serif font-bold text-white">
+                <h2 className="text-2xl md:text-4xl font-display-brand font-bold text-white">
                   {currentSeason.name}
                 </h2>
-                <p className="text-xs md:text-sm text-white/80 max-w-2xl mt-1">
+                <p className="text-xs md:text-sm text-white/90 max-w-2xl mt-1 font-light">
                   {currentSeason.summary}
                 </p>
               </div>
@@ -210,36 +211,36 @@ export default function BestTimeToVisitPage() {
 
           <div className="p-6 md:p-12">
             {/* Climate & Telemetry Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 pb-8 border-b border-white/10">
-              <div className="p-4 rounded-xl bg-black/50 border border-white/5">
-                <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Daytime Temp</span>
-                <span className="text-sm font-bold text-white">{currentSeason.dayTemp}</span>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 pb-8 border-b border-[#DDE7E5]">
+              <div className="p-4 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5]">
+                <span className="text-[10px] font-mono text-[#667085] uppercase block mb-1">Daytime Temp</span>
+                <span className="text-sm font-bold text-[#263238]">{currentSeason.dayTemp}</span>
               </div>
-              <div className="p-4 rounded-xl bg-black/50 border border-white/5">
-                <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Night Temp</span>
-                <span className="text-sm font-bold text-[#FDBA21]">{currentSeason.nightTemp}</span>
+              <div className="p-4 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5]">
+                <span className="text-[10px] font-mono text-[#667085] uppercase block mb-1">Night Temp</span>
+                <span className="text-sm font-bold text-[#005B5C]">{currentSeason.nightTemp}</span>
               </div>
-              <div className="p-4 rounded-xl bg-black/50 border border-white/5">
-                <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Leopard Sighting</span>
-                <span className="text-xs font-bold text-[#25D366]">{currentSeason.sightingRating.split(' (')[0]}</span>
+              <div className="p-4 rounded-xl bg-[#EEF8F6] border border-[#005B5C]/20">
+                <span className="text-[10px] font-mono text-[#005B5C] uppercase block mb-1 font-semibold">Leopard Sighting</span>
+                <span className="text-xs font-bold text-[#005B5C]">{currentSeason.sightingRating.split(' (')[0]}</span>
               </div>
-              <div className="p-4 rounded-xl bg-black/50 border border-white/5">
-                <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Birding Density</span>
-                <span className="text-xs font-bold text-[#FDBA21]">{currentSeason.birdingRating.split(' (')[0]}</span>
+              <div className="p-4 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5]">
+                <span className="text-[10px] font-mono text-[#667085] uppercase block mb-1">Birding Density</span>
+                <span className="text-xs font-bold text-[#263238]">{currentSeason.birdingRating.split(' (')[0]}</span>
               </div>
             </div>
 
             {/* Highlights & Clothing Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#FDBA21]">verified</span>
+                <h3 className="text-lg font-bold text-[#005B5C] mb-4 flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[#005B5C]">verified</span>
                   <span>Why Visit in {currentSeason.months}?</span>
                 </h3>
-                <ul className="space-y-3 text-xs md:text-sm text-white/80 font-light">
+                <ul className="space-y-3 text-xs md:text-sm text-[#263238] font-light">
                   {currentSeason.highlights.map((hl, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="text-[#FDBA21]">•</span>
+                      <span className="text-[#005B5C] font-bold">•</span>
                       <span>{hl}</span>
                     </li>
                   ))}
@@ -247,14 +248,14 @@ export default function BestTimeToVisitPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#FDBA21]">checkroom</span>
+                <h3 className="text-lg font-bold text-[#005B5C] mb-4 flex items-center gap-2">
+                  <span className="material-symbols-outlined text-[#005B5C]">checkroom</span>
                   <span>Recommended Packing & Clothing</span>
                 </h3>
-                <ul className="space-y-3 text-xs md:text-sm text-white/80 font-light">
+                <ul className="space-y-3 text-xs md:text-sm text-[#263238] font-light">
                   {currentSeason.whatToWear.map((wear, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="text-[#FDBA21]">•</span>
+                      <span className="text-[#005B5C] font-bold">•</span>
                       <span>{wear}</span>
                     </li>
                   ))}

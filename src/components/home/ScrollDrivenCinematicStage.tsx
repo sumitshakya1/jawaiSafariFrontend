@@ -84,17 +84,29 @@ function sceneOpacity(idx: number, p: number): number {
 
 export function ScrollDrivenCinematicStage() {
   const [activeIdx, setActiveIdx]       = useState(0);
+  const [isInsideStage, setIsInsideStage] = useState(true);
   const [isModalOpen, setIsModalOpen]   = useState(false);
-  const cardRefs = useRef<(HTMLElement | null)[]>([]);
+  const containerRef                    = useRef<HTMLDivElement | null>(null);
+  const cardRefs                        = useRef<(HTMLElement | null)[]>([]);
 
   const handleScroll = useCallback(() => {
     const vh = window.innerHeight;
+
+    // Check if user has scrolled past the cinematic stage container
+    if (containerRef.current) {
+      const stageRect = containerRef.current.getBoundingClientRect();
+      if (stageRect.bottom <= vh * 0.3) {
+        setIsInsideStage(false);
+      } else {
+        setIsInsideStage(true);
+      }
+    }
+
     // Determine which card is currently taking center stage in the viewport
     let current = 0;
     cardRefs.current.forEach((ref, idx) => {
       if (!ref) return;
       const rect = ref.getBoundingClientRect();
-      // If card top is at or above viewport top, it's pinned/active
       if (rect.top <= vh * 0.4) {
         current = idx;
       }
@@ -118,11 +130,15 @@ export function ScrollDrivenCinematicStage() {
   };
 
   return (
-    <div className="relative w-full bg-[#F8FAF8]">
+    <div ref={containerRef} className="relative w-full bg-[#F8FAF8]">
       {/* ── Fixed Floating HUD Overlay Across All Stacking Cards ─────────────── */}
 
       {/* 1. Counter Top-Left (e.g. 01 / 04) */}
-      <div className="fixed top-20 md:top-24 left-6 md:left-12 z-50 pointer-events-none flex items-baseline">
+      <div
+        className={`fixed top-20 md:top-24 left-6 md:left-12 z-50 pointer-events-none flex items-baseline transition-opacity duration-300 ${
+          isInsideStage ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         <span className="font-mono text-2xl md:text-3xl font-black text-white tracking-wider">
           0{activeIdx + 1}
         </span>
@@ -132,7 +148,11 @@ export function ScrollDrivenCinematicStage() {
       </div>
 
       {/* 2. Left Rail: Interactive Scene Dots & Quick Scroll */}
-      <div className="fixed left-6 md:left-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-4 pointer-events-auto">
+      <div
+        className={`fixed left-6 md:left-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-4 transition-opacity duration-300 ${
+          isInsideStage ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="w-[1px] h-20 bg-white/20 relative overflow-hidden">
           <div
             className="absolute left-0 w-full bg-[#FDBA21] will-change-transform"
@@ -185,7 +205,11 @@ export function ScrollDrivenCinematicStage() {
       </div>
 
       {/* 3. Bottom Status Bar & Mouse Wheel Indicator */}
-      <div className="fixed bottom-6 md:bottom-8 left-0 w-full z-50 pointer-events-none px-6 md:px-12 flex items-end justify-between">
+      <div
+        className={`fixed bottom-6 md:bottom-8 left-0 w-full z-50 pointer-events-none px-6 md:px-12 flex items-end justify-between transition-opacity duration-300 ${
+          isInsideStage ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         <div className="pointer-events-auto">
           <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
             Discover nature

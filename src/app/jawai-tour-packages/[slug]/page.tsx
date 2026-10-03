@@ -41,47 +41,47 @@ export default function PackageDetailPage({ params }: Props) {
     <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
-          <Link href="/" className="hover:text-white">Home</Link>
+        <div className="flex items-center gap-2 text-xs font-mono text-[#667085] mb-6">
+          <Link href="/" className="hover:text-[#005B5C]">Home</Link>
           <span>/</span>
-          <Link href="/jawai-tour-packages" className="hover:text-white">Packages</Link>
+          <Link href="/jawai-tour-packages" className="hover:text-[#005B5C]">Packages</Link>
           <span>/</span>
-          <span className="text-[#FDBA21]">{pkg.name}</span>
+          <span className="text-[#005B5C] font-semibold">{pkg.name}</span>
         </div>
 
         {/* Hero Section */}
-        <div className="relative rounded-3xl overflow-hidden border border-white/10 p-6 md:p-12 bg-gradient-to-r from-black/90 via-black/70 to-transparent mb-12">
+        <div className="relative rounded-3xl overflow-hidden border border-[#DDE7E5] p-6 md:p-12 bg-[#003F40] mb-12 shadow-sm">
           <div className="absolute inset-0 -z-10">
             <Image
               src={pkg.image}
               alt={pkg.name}
               fill
-              className="object-cover opacity-40"
+              className="object-cover opacity-35"
               priority
             />
           </div>
 
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-wider">
+              <span className="px-3.5 py-1 rounded-full bg-[#FDBA21]/20 border border-[#FDBA21]/40 text-[#FDBA21] text-xs font-mono uppercase tracking-wider font-semibold">
                 {pkg.tag}
               </span>
-              <span className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-mono">
+              <span className="px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-mono font-medium backdrop-blur-sm">
                 {pkg.duration}
               </span>
-              <span className="text-xs font-mono text-white/50">ID: {pkg.id}</span>
+              <span className="text-xs font-mono text-white/80 font-medium">ID: {pkg.id}</span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight leading-tight mb-4">
+            <h1 className="text-3xl md:text-5xl font-display-brand font-bold text-white tracking-tight leading-tight mb-4">
               {pkg.name}
             </h1>
 
-            <p className="text-sm md:text-base text-white/80 leading-relaxed mb-6">
+            <p className="text-sm md:text-base text-white/90 leading-relaxed font-light mb-6">
               {pkg.overview}
             </p>
 
-            <div className="p-4 rounded-xl bg-white border border-white/10 inline-block mb-6">
-              <span className="text-xs font-mono text-white/60 block mb-0.5">Indicative Pricing:</span>
+            <div className="p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15 inline-block mb-6">
+              <span className="text-xs font-mono text-white/80 block mb-0.5">Indicative Pricing:</span>
               <span className="text-sm font-mono text-[#FDBA21] font-bold uppercase">
                 Price on Request — Customized to your travel dates and stay tier
               </span>
@@ -92,7 +92,7 @@ export default function PackageDetailPage({ params }: Props) {
                 href={pkgWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-[#263238] font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-sm"
               >
                 <span className="material-symbols-outlined text-base">chat</span>
                 <span>Get Quote on WhatsApp (+91 73000 03101)</span>
@@ -106,12 +106,12 @@ export default function PackageDetailPage({ params }: Props) {
           {/* Main Column */}
           <div className="lg:col-span-2 space-y-12">
             {/* Why Choose This Trip */}
-            <section className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10">
-              <h2 className="text-xl font-bold text-white mb-4">Why Choose This Trip?</h2>
-              <ul className="space-y-3 text-sm text-white/80">
+            <section className="p-6 md:p-8 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+              <h2 className="text-xl font-display-brand font-bold text-[#005B5C] mb-4">Why Choose This Trip?</h2>
+              <ul className="space-y-3 text-sm text-[#263238] font-light">
                 {pkg.whyChoose.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-base text-[#FDBA21] mt-0.5">check_circle</span>
+                    <span className="material-symbols-outlined text-base text-[#005B5C] mt-0.5 shrink-0">check_circle</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -120,26 +120,26 @@ export default function PackageDetailPage({ params }: Props) {
 
             {/* Day-Wise Itinerary */}
             <section>
-              <h2 className="text-2xl font-serif font-bold text-white mb-6">Day-by-Day Itinerary</h2>
+              <h2 className="text-2xl font-display-brand font-bold text-[#005B5C] mb-6">Day-by-Day Itinerary</h2>
               <div className="space-y-6">
                 {pkg.itinerary.map((day) => (
                   <div
                     key={day.day}
-                    className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 relative"
+                    className="p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm relative"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-md bg-[#FDBA21] text-black text-xs font-mono font-bold">
+                      <span className="px-3 py-1 rounded-md bg-[#EEF8F6] text-[#005B5C] border border-[#005B5C]/20 text-xs font-mono font-bold">
                         Day {day.day}
                       </span>
-                      <h3 className="text-lg font-bold text-white">{day.title}</h3>
+                      <h3 className="text-lg font-bold text-[#005B5C]">{day.title}</h3>
                     </div>
-                    <p className="text-sm text-white/70 leading-relaxed mb-4">{day.desc}</p>
+                    <p className="text-sm text-[#263238] font-light leading-relaxed mb-4">{day.desc}</p>
                     {day.highlights && day.highlights.length > 0 && (
                       <div className="flex flex-wrap gap-2">
                         {day.highlights.map((hl, i) => (
                           <span
                             key={i}
-                            className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-mono text-white/70"
+                            className="px-2.5 py-1 rounded-md bg-[#F8FAF8] border border-[#DDE7E5] text-[11px] font-mono text-[#667085]"
                           >
                             • {hl}
                           </span>
@@ -153,30 +153,30 @@ export default function PackageDetailPage({ params }: Props) {
 
             {/* Inclusions & Exclusions */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-                <h3 className="text-base font-bold text-[#25D366] flex items-center gap-2 mb-4">
-                  <span className="material-symbols-outlined">check</span>
+              <div className="p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+                <h3 className="text-base font-bold text-[#005B5C] flex items-center gap-2 mb-4">
+                  <span className="material-symbols-outlined text-[#25D366]">check</span>
                   <span>Inclusions</span>
                 </h3>
-                <ul className="space-y-2 text-xs text-white/80">
+                <ul className="space-y-2 text-xs text-[#263238] font-light">
                   {pkg.inclusions.map((inc, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#25D366]">•</span>
+                      <span className="text-[#005B5C] font-bold">•</span>
                       <span>{inc}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-                <h3 className="text-base font-bold text-red-400 flex items-center gap-2 mb-4">
+              <div className="p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+                <h3 className="text-base font-bold text-red-600 flex items-center gap-2 mb-4">
                   <span className="material-symbols-outlined">close</span>
                   <span>Exclusions</span>
                 </h3>
-                <ul className="space-y-2 text-xs text-white/80">
+                <ul className="space-y-2 text-xs text-[#263238] font-light">
                   {pkg.exclusions.map((exc, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-red-400">•</span>
+                      <span className="text-red-500 font-bold">•</span>
                       <span>{exc}</span>
                     </li>
                   ))}
@@ -185,41 +185,41 @@ export default function PackageDetailPage({ params }: Props) {
             </section>
 
             {/* Stay Categories */}
-            <section className="p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10">
-              <h3 className="text-lg font-bold text-white mb-2">Available Stay Categories</h3>
-              <p className="text-xs text-white/60 mb-4">
+            <section className="p-6 md:p-8 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm">
+              <h3 className="text-lg font-display-brand font-bold text-[#005B5C] mb-2">Available Stay Categories</h3>
+              <p className="text-xs text-[#667085] mb-4 font-light">
                 Specific boutique resorts or luxury camps are allocated upon mutual preference and real-time confirmation.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {pkg.stayCategories.map((stay, i) => (
-                  <div key={i} className="p-4 rounded-xl bg-black/40 border border-white/10 text-center">
-                    <span className="material-symbols-outlined text-2xl text-[#FDBA21] mb-2">hotel</span>
-                    <span className="block text-xs font-bold text-white">{stay}</span>
+                  <div key={i} className="p-4 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] text-center">
+                    <span className="material-symbols-outlined text-2xl text-[#005B5C] mb-2">hotel</span>
+                    <span className="block text-xs font-bold text-[#263238]">{stay}</span>
                   </div>
                 ))}
               </div>
             </section>
 
             {/* Operational Notes & Wildlife Reminder */}
-            <section className="p-6 rounded-2xl bg-[#005B5C]/15 border border-[#0A7B75]/30">
-              <h3 className="text-base font-bold text-white flex items-center gap-2 mb-3">
-                <span className="material-symbols-outlined text-[#FDBA21]">info</span>
+            <section className="p-6 rounded-2xl bg-[#EEF8F6] border border-[#DDE7E5] shadow-sm">
+              <h3 className="text-base font-bold text-[#005B5C] flex items-center gap-2 mb-3">
+                <span className="material-symbols-outlined text-[#005B5C]">info</span>
                 <span>Important Operational Notes</span>
               </h3>
-              <ul className="space-y-2 text-xs text-white/70">
+              <ul className="space-y-2 text-xs text-[#263238] font-light">
                 {pkg.operationalNotes.map((note, i) => (
                   <li key={i}>• {note}</li>
                 ))}
                 <li>
                   • Cancellations are governed by our partner lodge schedules. View our full{' '}
-                  <Link href="/cancellation-refund-policy" className="text-[#FDBA21] underline">
+                  <Link href="/cancellation-refund-policy" className="text-[#005B5C] font-semibold underline">
                     Cancellation & Refund Policy
                   </Link>
                   .
                 </li>
                 <li>
                   • Please review our 12 golden principles on{' '}
-                  <Link href="/responsible-travel" className="text-[#FDBA21] underline">
+                  <Link href="/responsible-travel" className="text-[#005B5C] font-semibold underline">
                     Responsible Wildlife Travel
                   </Link>
                   .
@@ -230,12 +230,12 @@ export default function PackageDetailPage({ params }: Props) {
             {/* FAQs */}
             {pkg.faq && pkg.faq.length > 0 && (
               <section>
-                <h3 className="text-xl font-serif font-bold text-white mb-4">Frequently Asked Questions</h3>
+                <h3 className="text-xl font-display-brand font-bold text-[#005B5C] mb-4">Frequently Asked Questions</h3>
                 <div className="space-y-4">
                   {pkg.faq.map((item, i) => (
-                    <div key={i} className="p-5 rounded-xl bg-white/[0.03] border border-white/10">
-                      <h4 className="text-sm font-bold text-white mb-1.5">{item.q}</h4>
-                      <p className="text-xs text-white/70 leading-relaxed">{item.a}</p>
+                    <div key={i} className="p-5 rounded-xl bg-white border border-[#DDE7E5] shadow-sm">
+                      <h4 className="text-sm font-bold text-[#005B5C] mb-1.5">{item.q}</h4>
+                      <p className="text-xs text-[#263238] font-light leading-relaxed">{item.a}</p>
                     </div>
                   ))}
                 </div>
@@ -245,27 +245,27 @@ export default function PackageDetailPage({ params }: Props) {
 
           {/* Sticky Sidebar Booking RFP */}
           <div className="lg:col-span-1">
-            <div className="sticky top-28 p-6 rounded-2xl bg-white border border-white/15 backdrop-blur-xl space-y-6">
+            <div className="sticky top-28 p-6 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm space-y-6">
               <div>
-                <span className="text-xs font-mono text-[#FDBA21] uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono text-[#005B5C] font-bold uppercase tracking-wider block mb-1">
                   Enquiry & Quote
                 </span>
-                <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
-                <span className="text-xs text-white/50 block mt-1">Package ID: {pkg.id}</span>
+                <h3 className="text-xl font-display-brand font-bold text-[#005B5C]">{pkg.name}</h3>
+                <span className="text-xs text-[#667085] block mt-1 font-mono">Package ID: {pkg.id}</span>
               </div>
 
-              <div className="pt-4 border-t border-white/10 space-y-3">
+              <div className="pt-4 border-t border-[#DDE7E5] space-y-3">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-white/60">Duration</span>
-                  <span className="font-mono text-white">{pkg.duration}</span>
+                  <span className="text-[#667085]">Duration</span>
+                  <span className="font-mono text-[#263238] font-semibold">{pkg.duration}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-white/60">Best For</span>
-                  <span className="font-mono text-white">{pkg.bestFor}</span>
+                  <span className="text-[#667085]">Best For</span>
+                  <span className="font-mono text-[#263238] font-semibold">{pkg.bestFor}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-white/60">Pricing</span>
-                  <span className="font-mono text-[#FDBA21] font-bold">Price on Request</span>
+                  <span className="text-[#667085]">Pricing</span>
+                  <span className="font-mono text-[#005B5C] font-bold">Price on Request</span>
                 </div>
               </div>
 
@@ -273,7 +273,7 @@ export default function PackageDetailPage({ params }: Props) {
                 href={pkgWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-black font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_0_15px_rgba(37,211,102,0.25)]"
+                className="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-[#263238] font-bold text-xs font-mono uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-sm"
               >
                 <span className="material-symbols-outlined text-base">chat</span>
                 <span>Get Instant Quote</span>
@@ -281,15 +281,15 @@ export default function PackageDetailPage({ params }: Props) {
 
               <Link
                 href="/jawai-safari-booking"
-                className="w-full py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-xs uppercase tracking-widest flex items-center justify-center gap-2 border border-white/15 transition-all"
+                className="w-full py-3.5 rounded-xl bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs font-mono uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-sm"
               >
                 <span>Submit Detailed Form</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </Link>
 
-              <p className="text-[11px] text-white/40 text-center leading-relaxed">
+              <p className="text-[11px] text-[#667085] text-center leading-relaxed font-light">
                 By submitting an enquiry, you agree to our{' '}
-                <Link href="/privacy-policy" className="underline hover:text-white">
+                <Link href="/privacy-policy" className="underline text-[#005B5C]">
                   Privacy Policy
                 </Link>
                 .
@@ -299,17 +299,17 @@ export default function PackageDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Sticky Mobile CTA Bar (Section 8 requirement) */}
-      <div className="lg:hidden fixed bottom-0 left-0 w-full z-50 p-4 bg-black/95 border-t border-white/15 backdrop-blur-xl flex items-center justify-between gap-4">
+      {/* Sticky Mobile CTA Bar */}
+      <div className="lg:hidden fixed bottom-0 left-0 w-full z-50 p-4 bg-white/95 border-t border-[#DDE7E5] backdrop-blur-xl flex items-center justify-between gap-4 shadow-lg">
         <div>
-          <span className="text-[10px] font-mono text-[#FDBA21] uppercase block">Price on Request</span>
-          <span className="text-xs font-bold text-white truncate max-w-[160px] block">{pkg.name}</span>
+          <span className="text-[10px] font-mono text-[#005B5C] font-bold uppercase block">Price on Request</span>
+          <span className="text-xs font-bold text-[#263238] truncate max-w-[160px] block">{pkg.name}</span>
         </div>
         <a
           href={pkgWhatsApp}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2.5 rounded-full bg-[#25D366] text-black text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5"
+          className="px-5 py-2.5 rounded-full bg-[#25D366] text-[#263238] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-sm"
         >
           <span className="material-symbols-outlined text-sm">chat</span>
           <span>Get Quote</span>

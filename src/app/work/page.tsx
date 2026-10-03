@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 
 export default function WorkPage() {
   const expeditions = [
@@ -14,7 +13,7 @@ export default function WorkPage() {
         'Granite monoliths rising sharply above prehistoric riverbanks, hosting high-density solitary leopard clans.',
       imageUrl:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpsLVyq-O-k06M9ro5BZ2twuDnq8V01cc6KE2OY2-pl3vJssFkEWFJ6ZjFkW1Ea3hpZNbwIrNp1LqrZMcP6k9gwSo1pTAGggUY85ZDKzlZTbclelVdRIwn6yi_TR62ZNDYW3mMSFynlU_4Aid8jThqgYNHZmQz4UBi8IXPIMy5TAw4QqKXb_HxHcGhfquWS26F4FKI8mRfMjCEz0cUl-u16mmgpFakVIyEZWbVJ4svF85hdDO7A-2',
-      href: '/',
+      href: '/jawai',
     },
     {
       id: '02',
@@ -52,27 +51,27 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className="w-full min-h-[calc(100vh-6rem)] bg-surface text-[#263238] px-margin-mobile md:px-margin py-16">
-      <div className="max-w-[1720px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-white/10">
+    <div className="w-full min-h-[calc(100vh-6rem)] bg-[#F8FAF8] text-[#263238] px-6 md:px-12 pt-32 pb-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-[#DDE7E5]">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="w-8 h-px bg-[#005B5C]" />
-              <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-[#005B5C] font-bold">
+              <span className="w-8 h-[2px] bg-[#005B5C]" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#005B5C] font-bold">
                 EXPEDITION PORTFOLIO
               </span>
             </div>
-            <h1 className="font-display-hero text-headline-lg md:text-[3.5rem] font-extrabold uppercase tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-display-brand font-bold text-[#005B5C] tracking-tight">
               Field Chapters &amp; Archives
             </h1>
           </div>
-          <p className="font-body-md text-[#667085] max-w-md">
+          <p className="text-sm text-[#667085] max-w-md font-light">
             Every expedition document is categorized by terrain, lighting condition, and focal
             predator behavior recorded by our indigenous tracking guild.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {expeditions.map((exp) => (
             <div key={exp.id} className="flex flex-col gap-4">
               <Card
@@ -84,14 +83,14 @@ export default function WorkPage() {
                 description={exp.description}
               />
               <div className="flex items-center justify-between pt-2">
-                <span className="font-label-counter text-xs text-[#005B5C] tracking-widest uppercase">
+                <span className="font-mono text-xs text-[#005B5C] tracking-widest uppercase font-bold">
                   {exp.kicker}
                 </span>
                 <Link
                   href={exp.href}
-                  className="font-label-nav text-xs uppercase tracking-widest text-white hover:text-primary transition-colors flex items-center gap-1.5"
+                  className="text-xs uppercase tracking-widest text-[#005B5C] hover:text-[#0A7B75] font-semibold flex items-center gap-1.5 transition-colors"
                 >
-                  Enter Chapter
+                  <span>Enter Chapter</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </Link>
               </div>
@@ -99,19 +98,23 @@ export default function WorkPage() {
           ))}
         </div>
 
-        <div className="mt-20 p-12 bg-white border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-20 p-8 md:p-12 rounded-3xl bg-[#EEF8F6] border border-[#DDE7E5] flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <h3 className="font-headline-sm text-xl uppercase font-bold text-white mb-2">
+            <h3 className="text-2xl font-display-brand font-bold text-[#005B5C] mb-2">
               Commission Private Wildlife Reconnaissance
             </h3>
-            <p className="font-body-sm text-[#667085] max-w-xl">
+            <p className="text-sm text-[#263238] font-light max-w-xl">
               Tailored game drives, dedicated naturalist escorts, and private astronomical setups
               are arranged with minimum 3-week lead time.
             </p>
           </div>
-          <Button href="/contact" variant="primary-editorial" icon="arrow_forward">
-            REQUEST EXPEDITION BRIEFING
-          </Button>
+          <Link
+            href="/contact"
+            className="px-8 py-3.5 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs font-mono uppercase tracking-widest inline-flex items-center gap-2 shadow-sm transition-all shrink-0"
+          >
+            <span>Request Expedition Briefing</span>
+            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          </Link>
         </div>
       </div>
     </div>

@@ -25,26 +25,26 @@ export default function PackagesHubPage() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header Breadcrumbs & Title */}
         <div className="mb-10">
-          <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-3">
-            <Link href="/" className="hover:text-white">Home</Link>
+          <div className="flex items-center gap-2 text-xs font-mono text-[#667085] mb-3">
+            <Link href="/" className="hover:text-[#005B5C] font-semibold">Home</Link>
             <span>/</span>
-            <Link href="/jawai" className="hover:text-white">Jawai</Link>
+            <Link href="/jawai" className="hover:text-[#005B5C] font-semibold">Jawai</Link>
             <span>/</span>
-            <span className="text-[#FDBA21]">Tour Packages</span>
+            <span className="text-[#005B5C] font-bold">Tour Packages</span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-display-brand font-bold text-[#005B5C] tracking-tight leading-tight mb-4">
             Jawai Tour Packages — Customized Wildlife & Experience Trips
           </h1>
-          <p className="text-base text-white/70 max-w-3xl leading-relaxed">
+          <p className="text-base text-[#667085] max-w-3xl leading-relaxed font-light">
             Explore Ghoomosa’s curated Jawai trip ideas for couples, families, groups, wildlife lovers, and corporate teams. Package prices are shared on request because stay category, safari availability, travel date, and inclusions can change the final quotation.
           </p>
         </div>
 
-        {/* Filter Controls (Client-side interactive filters without duplicate URLs) */}
-        <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 mb-12">
+        {/* Filter Controls */}
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-[#DDE7E5] shadow-sm mb-12">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-mono uppercase text-white/50 mr-2">Duration:</span>
+            <span className="text-xs font-mono uppercase text-[#667085] mr-2 font-semibold">Duration:</span>
             {[
               { label: 'All Durations', val: 'all' },
               { label: '1 Night / 2 Days', val: '1n' },
@@ -54,10 +54,10 @@ export default function PackagesHubPage() {
               <button
                 key={tab.val}
                 onClick={() => setSelectedDuration(tab.val)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase transition-all ${
                   selectedDuration === tab.val
-                    ? 'bg-[#FDBA21] text-black font-bold'
-                    : 'bg-white/5 text-white/70 hover:text-white'
+                    ? 'bg-[#005B5C] text-white font-bold shadow-sm'
+                    : 'bg-[#EEF8F6] text-[#005B5C] hover:bg-[#DDE7E5]'
                 }`}
               >
                 {tab.label}
@@ -66,7 +66,7 @@ export default function PackagesHubPage() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-mono uppercase text-white/50 mr-2">Traveller Type:</span>
+            <span className="text-xs font-mono uppercase text-[#667085] mr-2 font-semibold">Traveller Type:</span>
             {[
               { label: 'All', val: 'all' },
               { label: 'Families', val: 'families' },
@@ -77,10 +77,10 @@ export default function PackagesHubPage() {
               <button
                 key={tab.val}
                 onClick={() => setSelectedCategory(tab.val)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase transition-all ${
                   selectedCategory === tab.val
-                    ? 'bg-[#FDBA21] text-black font-bold shadow-[0_0_12px_rgba(232,164,85,0.3)]'
-                    : 'bg-white/5 text-white/70 hover:text-white'
+                    ? 'bg-[#005B5C] text-white font-bold shadow-sm'
+                    : 'bg-[#EEF8F6] text-[#005B5C] hover:bg-[#DDE7E5]'
                 }`}
               >
                 {tab.label}
@@ -102,56 +102,56 @@ export default function PackagesHubPage() {
             return (
               <div
                 key={pkg.id}
-                className="rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-white/25 transition-all group"
+                className="rounded-2xl bg-white border border-[#DDE7E5] shadow-sm overflow-hidden flex flex-col justify-between hover:border-[#0A7B75] hover:shadow-md transition-all group"
               >
                 <div>
-                  <div className="relative h-56 w-full overflow-hidden">
+                  <div className="relative h-56 w-full overflow-hidden bg-[#EEF8F6]">
                     <Image
                       src={pkg.image}
                       alt={pkg.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#FDBA21] border border-[#FDBA21]/30">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#003F40]/70 via-transparent to-transparent pointer-events-none" />
+                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 text-xs font-mono uppercase tracking-wider text-[#005B5C] font-bold shadow-sm">
                       {pkg.tag}
                     </span>
-                    <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-white backdrop-blur-md text-xs font-mono text-white">
+                    <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#005B5C] text-xs font-mono text-white font-semibold shadow-sm">
                       {pkg.durationShort}
                     </span>
-                    <span className="absolute bottom-3 left-3 text-[11px] font-mono text-white/60">
+                    <span className="absolute bottom-3 left-3 text-[11px] font-mono text-white/90">
                       ID: {pkg.id}
                     </span>
                   </div>
 
-                  <div className="p-6">
-                    <div className="text-xs font-mono text-[#FDBA21] uppercase tracking-wider mb-2">
+                  <div className="p-6 space-y-4">
+                    <div className="text-xs font-mono text-[#005B5C] uppercase tracking-wider font-bold">
                       Best For: {pkg.bestFor}
                     </div>
-                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#FDBA21] transition-colors">
+                    <h2 className="text-xl font-bold text-[#005B5C] group-hover:text-[#0A7B75] transition-colors leading-snug">
                       {pkg.name}
                     </h2>
-                    <p className="text-xs text-white/70 leading-relaxed mb-6">
+                    <p className="text-xs text-[#263238] font-light leading-relaxed">
                       {pkg.overview}
                     </p>
 
-                    <div className="space-y-2 mb-6 text-xs text-white/80">
+                    <div className="space-y-2 pt-3 border-t border-[#DDE7E5] text-xs text-[#263238]">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#FDBA21]">verified</span>
+                        <span className="material-symbols-outlined text-sm text-[#0A7B75]">verified</span>
                         <span>{pkg.coreExperience}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#FDBA21]">hotel</span>
-                        <span>{pkg.stayCategories.join(' • ')}</span>
+                        <span className="material-symbols-outlined text-sm text-[#0A7B75]">hotel</span>
+                        <span className="text-[#667085]">{pkg.stayCategories.join(' • ')}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="p-6 pt-0">
-                  <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 mb-4 flex items-center justify-between">
-                    <span className="text-xs font-mono text-white/60">Pricing</span>
-                    <span className="text-xs font-mono text-[#FDBA21] font-bold uppercase">
+                  <div className="p-3.5 rounded-xl bg-[#F8FAF8] border border-[#DDE7E5] mb-4 flex items-center justify-between">
+                    <span className="text-xs font-mono text-[#667085]">Pricing</span>
+                    <span className="text-xs font-mono text-[#005B5C] font-bold uppercase">
                       Price on Request
                     </span>
                   </div>
@@ -159,7 +159,7 @@ export default function PackagesHubPage() {
                   <div className="flex items-center gap-3">
                     <Link
                       href={`/jawai-tour-packages/${pkg.slug}`}
-                      className="flex-1 text-center py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-mono uppercase tracking-wider transition-all border border-white/10"
+                      className="flex-1 text-center py-2.5 rounded-full bg-white hover:bg-[#EEF8F6] text-[#005B5C] text-xs font-mono uppercase font-semibold tracking-wider transition-all border border-[#005B5C]"
                     >
                       View Itinerary
                     </Link>
@@ -167,7 +167,7 @@ export default function PackagesHubPage() {
                       href={pkgWhatsApp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-black text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
+                      className="flex-1 text-center py-2.5 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-sm"
                     >
                       <span className="material-symbols-outlined text-sm">chat</span>
                       <span>Get Quote</span>
@@ -180,9 +180,9 @@ export default function PackagesHubPage() {
         </div>
 
         {/* Bottom Trust & Quotation Notice */}
-        <div className="p-8 rounded-2xl bg-gradient-to-r from-black/80 to-black/40 border border-white/10 text-center">
-          <h3 className="text-lg font-bold text-white mb-2">Need a Customized Jawai Itinerary?</h3>
-          <p className="text-xs text-white/70 max-w-xl mx-auto mb-6">
+        <div className="p-8 md:p-12 rounded-3xl bg-[#EEF8F6] border border-[#DDE7E5] text-center shadow-sm">
+          <h3 className="text-xl font-bold font-display-brand text-[#005B5C] mb-2">Need a Customized Jawai Itinerary?</h3>
+          <p className="text-xs md:text-sm text-[#263238] font-light max-w-xl mx-auto mb-6 leading-relaxed">
             Every traveler has different preferences for safaris, birding, and resort categories. Tell our team your dates and group size for an accurate quotation.
           </p>
           <a
@@ -192,7 +192,7 @@ export default function PackagesHubPage() {
             })}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#25D366] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#20ba59] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#005B5C] text-white font-semibold text-xs uppercase tracking-widest hover:bg-[#0A7B75] transition-all shadow-sm"
           >
             <span className="material-symbols-outlined text-base">chat</span>
             <span>Talk to a Travel Expert (+91 73000 03101)</span>
@@ -202,3 +202,4 @@ export default function PackagesHubPage() {
     </div>
   );
 }
+

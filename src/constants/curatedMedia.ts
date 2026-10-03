@@ -55,7 +55,7 @@ export const CURATED_MEDIA: Record<string, CuratedTopicMedia> = {
     ],
   },
   crocodile: {
-    hero: 'https://images.unsplash.com/photo-1520637736862-4d1921f9a0c0?auto=format&fit=crop&w=1800&q=85',
+    hero: 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1800&q=85',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=800&q=80',
@@ -73,7 +73,7 @@ export const CURATED_MEDIA: Record<string, CuratedTopicMedia> = {
         tag: 'Water Habitat',
       },
       {
-        url: 'https://images.unsplash.com/photo-1520637736862-4d1921f9a0c0?auto=format&fit=crop&w=800&q=80',
+        url: 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=800&q=80',
         caption: 'Close-up armored scale texture under afternoon desert sun',
         tag: 'Wildlife Macro',
       },
