@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/global/config/site.config';
 import { buildWhatsAppUrl } from '@/utils/whatsapp';
 
@@ -26,9 +27,11 @@ export function GlobalFooter() {
             <Link href="/" className="inline-block" title="Ghoomosa – Trips That Become Stories">
               {/* TODO: Replace with transparent/white SVG logo when supplied by client */}
               <div className="bg-white p-2.5 sm:p-3 rounded-xl inline-block shadow-sm">
-                <img
+                <Image
                   src="/images/ghoomosa-logo.png"
                   alt="Ghoomosa – Trips That Become Stories"
+                  width={144}
+                  height={48}
                   className="h-10 sm:h-12 w-auto object-contain"
                 />
               </div>

@@ -18,7 +18,7 @@ export function TravelResponsibly() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
             Travel Responsibly in Jawai
           </h2>
-          <p className="mt-3 text-sm md:text-base text-[#667085] font-light">
+          <p className="mt-3 text-sm md:text-base text-[#475467] font-light">
             Explore freely. Travel responsibly. Leave only stories behind. Our 12 golden rules for wildlife preservation and community respect.
           </p>
         </div>

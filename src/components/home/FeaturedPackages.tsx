@@ -24,7 +24,7 @@ export function FeaturedPackages() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
               Curated Jawai Packages
             </h2>
-            <p className="mt-3 text-sm md:text-base text-[#667085] max-w-2xl font-light">
+            <p className="mt-3 text-sm md:text-base text-[#475467] max-w-2xl font-light">
               Each journey is tailor-crafted by local naturalists and safari masters. Fixed public pricing is omitted in Phase 1 to support customized inclusions.
             </p>
           </div>
@@ -88,7 +88,7 @@ export function FeaturedPackages() {
 
                   {/* Highlights */}
                   <div className="space-y-1.5 pt-2 border-t border-[#DDE7E5]">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#667085] font-semibold block">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#475467] font-semibold block">
                       Expedition Inclusions
                     </span>
                     <ul className="space-y-1">
@@ -105,7 +105,7 @@ export function FeaturedPackages() {
                 {/* Footer Pricing & CTA */}
                 <div className="pt-4 border-t border-[#DDE7E5] flex items-center justify-between gap-2">
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#667085] block">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#475467] block">
                       Quotation
                     </span>
                     <span className="text-xs font-semibold text-[#005B5C]">

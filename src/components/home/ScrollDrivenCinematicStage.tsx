@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { GHOOMOSA_PACKAGES } from '@/global/constants/packages';
 import { WhatsAppButton } from '@/global/components/cta/WhatsAppButton';
 import { SITE_CONFIG } from '@/global/config/site.config';
@@ -168,7 +169,8 @@ export function ScrollDrivenCinematicStage() {
             <button
               key={s.id}
               onClick={() => scrollToCard(i)}
-              title={`Go to ${s.title}`}
+              title={`Go to slide ${i + 1}: ${s.title}`}
+              aria-label={`Go to slide ${i + 1}: ${s.title} - ${s.kicker}`}
               style={{
                 width: 7,
                 height: 7,
@@ -193,6 +195,7 @@ export function ScrollDrivenCinematicStage() {
               scrollToCard(activeIdx + 1);
             }
           }}
+          aria-label="Scroll to next slide"
           className="group flex flex-col items-center gap-2 cursor-pointer pt-2"
         >
           <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40 group-hover:text-white transition-colors [writing-mode:vertical-rl] rotate-180">
@@ -231,7 +234,7 @@ export function ScrollDrivenCinematicStage() {
               }
             }}
             className="w-5 h-9 rounded-full border border-white/30 flex items-start justify-center pt-1.5 cursor-pointer hover:border-[#FDBA21] transition-colors"
-            aria-label="Scroll down"
+            aria-label="Scroll down to next card"
           >
             <div
               className="w-1 h-2 rounded-full bg-[#FDBA21]"
@@ -261,13 +264,18 @@ export function ScrollDrivenCinematicStage() {
               zIndex: i + 10,
             }}
           >
-            {/* 1. Full-bleed Background 4K Image */}
-            <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center"
-              style={{
-                backgroundImage: `url('${scene.imageUrl}')`,
-              }}
-            />
+            {/* 1. Full-bleed Background 4K Image - Next.js optimized */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
+              <Image
+                src={scene.imageUrl}
+                alt={`${scene.title} - ${scene.kicker}`}
+                fill
+                priority={i === 0}
+                sizes="100vw"
+                quality={75}
+                className="object-cover object-center"
+              />
+            </div>
 
             {/* 2. Atmospheric Ambient Scrims */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/75 pointer-events-none" />
@@ -287,18 +295,32 @@ export function ScrollDrivenCinematicStage() {
                 <span className="w-6 md:w-10 h-[1px] bg-[#FDBA21]" />
               </div>
 
-              {/* Monumental Hero Title with Atmospheric Theme Gradient & Bottom Blur/Fade */}
-              <h1
-                className={`pointer-events-auto font-display-hero ${scene.fontSizeClass} leading-none font-black tracking-tight uppercase select-none bg-gradient-to-b from-white via-white/90 to-white/20 bg-clip-text text-transparent drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]`}
-                style={{
-                  WebkitMaskImage:
-                    'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.05) 100%)',
-                  maskImage:
-                    'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.05) 100%)',
-                }}
-              >
-                {scene.title}
-              </h1>
+              {/* Monumental Hero Title with Single H1 on Scene 0 and H2 on subsequent scenes */}
+              {i === 0 ? (
+                <h1
+                  className={`pointer-events-auto font-display-hero ${scene.fontSizeClass} leading-none font-black tracking-tight uppercase select-none bg-gradient-to-b from-white via-white/90 to-white/20 bg-clip-text text-transparent drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]`}
+                  style={{
+                    WebkitMaskImage:
+                      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.05) 100%)',
+                    maskImage:
+                      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.05) 100%)',
+                  }}
+                >
+                  {scene.title}
+                </h1>
+              ) : (
+                <h2
+                  className={`pointer-events-auto font-display-hero ${scene.fontSizeClass} leading-none font-black tracking-tight uppercase select-none bg-gradient-to-b from-white via-white/90 to-white/20 bg-clip-text text-transparent drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]`}
+                  style={{
+                    WebkitMaskImage:
+                      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.05) 100%)',
+                    maskImage:
+                      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.45) 85%, rgba(0,0,0,0.05) 100%)',
+                  }}
+                >
+                  {scene.title}
+                </h2>
+              )}
 
               {/* Poetic Subtitle */}
               {scene.subtitle && (

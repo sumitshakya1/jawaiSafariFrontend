@@ -43,7 +43,7 @@ export function StayInJawai() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
               Curated Stays & Luxury Camps
             </h2>
-            <p className="mt-3 text-sm md:text-base text-[#667085] max-w-2xl font-light">
+            <p className="mt-3 text-sm md:text-base text-[#475467] max-w-2xl font-light">
               From Relais & Châteaux luxury tented camps to boutique heritage retreats tucked against private granite kopjes.
             </p>
           </div>
@@ -98,7 +98,7 @@ export function StayInJawai() {
                     <p className="text-xs text-[#263238] font-light leading-relaxed line-clamp-3">
                       {h.overview}
                     </p>
-                    <div className="flex items-center gap-1.5 text-xs text-[#667085]">
+                    <div className="flex items-center gap-1.5 text-xs text-[#475467]">
                       <span className="material-symbols-outlined text-sm text-[#005B5C]">location_on</span>
                       <span>{h.location}</span>
                     </div>

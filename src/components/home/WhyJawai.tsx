@@ -36,7 +36,7 @@ export function WhyJawai() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
             Why Jawai is Unlike Any Other Safari
           </h2>
-          <p className="mt-3 text-sm md:text-base text-[#667085] font-light">
+          <p className="mt-3 text-sm md:text-base text-[#475467] font-light">
             Rajasthan’s wild granite kopjes, migratory wetlands, and the world’s highest density of cave-dwelling leopards living peacefully alongside human settlements.
           </p>
         </div>

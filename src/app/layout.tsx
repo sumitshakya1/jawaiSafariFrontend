@@ -6,6 +6,7 @@ import { FloatingWhatsApp } from '@/global/components/cta/FloatingWhatsApp';
 import { SITE_CONFIG } from '@/global/config/site.config';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jawai-safari-frontend.vercel.app'),
   title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline} | Jawai Safari & Expeditions`,
   description:
     'Plan a complete Jawai trip with wildlife safaris, bird watching, stays, transfers and customized packages. Get your customized Jawai quotation on WhatsApp.',
@@ -17,8 +18,13 @@ export const metadata: Metadata = {
     'Rabari Coexistence',
     'Granite Hills Jawai',
     'Luxury Wildlife Expedition',
+    'Jawai Bandh',
+    'Bera Safari',
   ],
   authors: [{ name: 'Ghoomosa Editorial' }],
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.ico',
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
     description: 'Plan a complete Jawai trip with wildlife safaris, bird watching, stays, transfers and customized packages.',
-    url: SITE_CONFIG.domain,
+    url: 'https://jawai-safari-frontend.vercel.app',
     siteName: 'Ghoomosa',
     images: [
       {
@@ -40,12 +46,57 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
+    description: 'Plan a complete Jawai trip with wildlife safaris, bird watching, stays, transfers and customized packages.',
+    images: ['/images/ghoomosa-logo.png'],
+  },
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#005B5C',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://jawai-safari-frontend.vercel.app/#website',
+      url: 'https://jawai-safari-frontend.vercel.app',
+      name: 'Ghoomosa',
+      description: 'Trips That Become Stories — Curated Jawai Expeditions & Wildlife Safaris',
+      inLanguage: 'en-IN',
+    },
+    {
+      '@type': 'TravelAgency',
+      '@id': 'https://jawai-safari-frontend.vercel.app/#organization',
+      name: 'Ghoomosa',
+      url: 'https://jawai-safari-frontend.vercel.app',
+      logo: 'https://jawai-safari-frontend.vercel.app/images/ghoomosa-logo.png',
+      telephone: '+91-73000-03101',
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Jawai Bandh, Pali',
+        addressRegion: 'Rajasthan',
+        addressCountry: 'IN',
+      },
+      sameAs: [
+        'https://instagram.com/ghoomosa',
+      ],
+    },
+    {
+      '@type': 'TouristDestination',
+      '@id': 'https://jawai-safari-frontend.vercel.app/#destination',
+      name: 'Jawai, Rajasthan',
+      description: 'Ancient granite kopje landscape home to wild leopards, migratory wetlands, and indigenous Rabari pastoralists.',
+      touristType: ['Wildlife Tourism', 'Eco Tourism', 'Cultural Tourism'],
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -55,6 +106,33 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+          as="style"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+          media="print"
+          // @ts-expect-error onLoad string in JSX
+          onLoad="this.media='all'"
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+          />
+        </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-[#F8FAF8] font-body-md text-[#263238] min-h-screen selection:bg-[#FDBA21] selection:text-[#263238] antialiased">
         <Header />
         <main className="w-full relative">

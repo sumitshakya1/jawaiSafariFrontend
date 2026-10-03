@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { SITE_CONFIG } from '@/global/config/site.config';
 import { buildWhatsAppUrl } from '@/utils/whatsapp';
@@ -185,9 +186,12 @@ export function Header() {
             href="/"
             title="Ghoomosa – Trips That Become Stories"
           >
-            <img
+            <Image
               src="/images/ghoomosa-logo.png"
               alt="Ghoomosa – Trips That Become Stories"
+              width={168}
+              height={56}
+              priority
               className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
@@ -225,6 +229,7 @@ export function Header() {
             }`}
             type="button"
             title={soundActive ? 'Mute Ambient Audio' : 'Play Ambient Jawai Safari Audio'}
+            aria-label={soundActive ? 'Mute Ambient Audio' : 'Play Ambient Jawai Safari Audio'}
           >
             {soundActive ? (
               <div className="flex items-center gap-[2px] h-3.5">

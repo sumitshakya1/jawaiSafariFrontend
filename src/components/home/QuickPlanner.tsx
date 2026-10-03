@@ -37,7 +37,7 @@ Please share customized quotation and availability.`;
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display-brand text-[#005B5C]">
               Request a Custom Itinerary
             </h2>
-            <p className="mt-2 text-xs md:text-sm text-[#667085] font-light">
+            <p className="mt-2 text-xs md:text-sm text-[#475467] font-light">
               Select your travel window and stay style. Our local team prepares a verified itinerary without obligation.
             </p>
           </div>
@@ -46,10 +46,11 @@ Please share customized quotation and availability.`;
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Travel Month */}
               <div>
-                <label className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
+                <label htmlFor="travelMonth" className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
                   When Are You Planning?
                 </label>
                 <select
+                  id="travelMonth"
                   value={travelMonth}
                   onChange={(e) => setTravelMonth(e.target.value)}
                   className="w-full bg-[#FFFFFF] border border-[#DDE7E5] rounded-xl px-4 py-3 text-xs text-[#263238] focus:outline-none focus:ring-2 focus:ring-[#0A7B75]/20 focus:border-[#0A7B75]"
@@ -66,10 +67,11 @@ Please share customized quotation and availability.`;
 
               {/* Travellers */}
               <div>
-                <label className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
+                <label htmlFor="travellers" className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
                   Number of Travellers
                 </label>
                 <select
+                  id="travellers"
                   value={travellers}
                   onChange={(e) => setTravellers(e.target.value)}
                   className="w-full bg-[#FFFFFF] border border-[#DDE7E5] rounded-xl px-4 py-3 text-xs text-[#263238] focus:outline-none focus:ring-2 focus:ring-[#0A7B75]/20 focus:border-[#0A7B75]"
@@ -84,10 +86,11 @@ Please share customized quotation and availability.`;
 
               {/* Stay Preference */}
               <div>
-                <label className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
+                <label htmlFor="stayCategory" className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
                   Stay Style & Category
                 </label>
                 <select
+                  id="stayCategory"
                   value={stayCategory}
                   onChange={(e) => setStayCategory(e.target.value)}
                   className="w-full bg-[#FFFFFF] border border-[#DDE7E5] rounded-xl px-4 py-3 text-xs text-[#263238] focus:outline-none focus:ring-2 focus:ring-[#0A7B75]/20 focus:border-[#0A7B75]"
@@ -101,10 +104,11 @@ Please share customized quotation and availability.`;
 
               {/* Primary Interests */}
               <div>
-                <label className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
+                <label htmlFor="interest" className="block text-xs font-mono uppercase tracking-wider text-[#263238] font-semibold mb-2">
                   Key Experiences
                 </label>
                 <select
+                  id="interest"
                   value={interest}
                   onChange={(e) => setInterest(e.target.value)}
                   className="w-full bg-[#FFFFFF] border border-[#DDE7E5] rounded-xl px-4 py-3 text-xs text-[#263238] focus:outline-none focus:ring-2 focus:ring-[#0A7B75]/20 focus:border-[#0A7B75]"

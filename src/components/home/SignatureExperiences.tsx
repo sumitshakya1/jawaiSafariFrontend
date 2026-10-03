@@ -22,7 +22,7 @@ export function SignatureExperiences() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
               Signature Jawai Experiences
             </h2>
-            <p className="mt-3 text-sm md:text-base text-[#667085] max-w-2xl font-light">
+            <p className="mt-3 text-sm md:text-base text-[#475467] max-w-2xl font-light">
               From open-top leopard tracking across steep granite kopjes to serene wetland birding and authentic Rabari pastoral walks.
             </p>
           </div>

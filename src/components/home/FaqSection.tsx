@@ -24,7 +24,7 @@ export function FaqSection() {
           <h2 className="text-3xl md:text-4xl font-bold font-display-brand text-[#005B5C] tracking-tight">
             Planning Your Jawai Visit
           </h2>
-          <p className="mt-3 text-xs md:text-sm text-[#667085] font-light">
+          <p className="mt-3 text-xs md:text-sm text-[#475467] font-light">
             Answers to common questions regarding safari booking, seasonality, sighting etiquette, and transfers.
           </p>
         </div>
