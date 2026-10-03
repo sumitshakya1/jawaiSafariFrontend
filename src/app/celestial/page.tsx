@@ -24,7 +24,7 @@ export default async function CelestialPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Fullscreen Immersive Stage */}
-      <section className="relative w-full min-h-[100svh] h-screen -mt-24 overflow-hidden select-none bg-surface-container-lowest">
+      <section className="relative w-full min-h-[100svh] h-screen -mt-24 overflow-hidden select-none bg-[#F8FAF8]">
         {/* Full-bleed nocturnal backdrop with dynamic atmospheric gradation */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out scale-105"
@@ -44,14 +44,14 @@ export default async function CelestialPage() {
 
         {/* Coordinate & Expedition Pass Badge (Desktop Top Right) */}
         <div className="absolute right-6 md:right-16 top-28 z-30 flex items-center gap-3">
-          <div className="flex items-center gap-2.5 px-4 py-2 bg-surface-container-lowest/70 backdrop-blur-md border border-on-surface/10 rounded-none shadow-xl">
+          <div className="flex items-center gap-2.5 px-4 py-2 bg-[#F8FAF8]/70 backdrop-blur-md border border-on-surface/10 rounded-none shadow-xl">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
             <span className="w-1.5 h-1.5 -ml-4 rounded-full bg-primary" />
-            <span className="font-label-nav text-[10px] tracking-[0.25em] uppercase text-on-surface font-semibold">
+            <span className="font-label-nav text-[10px] tracking-[0.25em] uppercase text-[#263238] font-semibold">
               ASTRONOMICAL EXPEDITION PASS
             </span>
           </div>
-          <div className="hidden lg:flex items-center px-3 py-2 bg-surface-container/50 backdrop-blur-sm border border-on-surface/10 text-on-surface-variant font-label-counter text-[10px] tracking-widest">
+          <div className="hidden lg:flex items-center px-3 py-2 bg-white/50 backdrop-blur-sm border border-on-surface/10 text-[#667085] font-label-counter text-[10px] tracking-widest">
             25.15° N, 73.22° E
           </div>
         </div>
@@ -79,12 +79,12 @@ export default async function CelestialPage() {
             </div>
 
             {/* Grand Monolithic Display Headline */}
-            <h1 className="font-display-hero text-[3.75rem] sm:text-[5.5rem] md:text-[7.5rem] lg:text-[8.5rem] leading-[0.88] font-extrabold tracking-[-0.03em] uppercase text-on-surface drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
+            <h1 className="font-display-hero text-[3.75rem] sm:text-[5.5rem] md:text-[7.5rem] lg:text-[8.5rem] leading-[0.88] font-extrabold tracking-[-0.03em] uppercase text-[#263238] drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
               NOCTURNAL
             </h1>
 
             {/* Poetic Literary Caption */}
-            <p className="font-editorial-quote italic text-headline-sm md:text-editorial-quote text-on-surface/85 max-w-xl text-center mx-auto mt-4 md:mt-5 drop-shadow-md font-normal leading-relaxed">
+            <p className="font-editorial-quote italic text-headline-sm md:text-editorial-quote text-[#263238]/85 max-w-xl text-center mx-auto mt-4 md:mt-5 drop-shadow-md font-normal leading-relaxed">
               “Where prehistoric granite cradles the quiet monarch beneath a billion burning suns.”
             </p>
 
@@ -101,18 +101,18 @@ export default async function CelestialPage() {
           </div>
 
           {/* Bottom Habitat Specs Ribbon */}
-          <div className="w-full max-w-3xl flex items-center justify-between border-t border-on-surface/10 pt-4 text-on-surface-variant font-label-counter text-[11px] tracking-widest uppercase">
+          <div className="w-full max-w-3xl flex items-center justify-between border-t border-on-surface/10 pt-4 text-[#667085] font-label-counter text-[11px] tracking-widest uppercase">
             <div className="hidden sm:flex flex-col text-left">
-              <span className="text-on-surface/40 text-[9px]">LIGHT POLLUTION</span>
-              <span className="text-on-surface font-semibold">CLASS 2 BORTLE</span>
+              <span className="text-[#263238]/40 text-[9px]">LIGHT POLLUTION</span>
+              <span className="text-[#263238] font-semibold">CLASS 2 BORTLE</span>
             </div>
             <div className="flex flex-col text-center sm:text-left">
-              <span className="text-on-surface/40 text-[9px]">APEX WATCH</span>
+              <span className="text-[#263238]/40 text-[9px]">APEX WATCH</span>
               <span className="text-primary font-semibold">MIDNIGHT PROWL</span>
             </div>
             <div className="hidden sm:flex flex-col text-right">
-              <span className="text-on-surface/40 text-[9px]">TERRAIN</span>
-              <span className="text-on-surface font-semibold">MAGMA GRANITE RIFT</span>
+              <span className="text-[#263238]/40 text-[9px]">TERRAIN</span>
+              <span className="text-[#263238] font-semibold">MAGMA GRANITE RIFT</span>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default async function CelestialPage() {
 
       {/* Interactive Astronomical Chapter Deep-Dive */}
       <section
-        className="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-28 relative z-20"
+        className="w-full bg-[#F8FAF8] px-margin-mobile md:px-margin py-28 relative z-20"
         id="celestial-manifest"
       >
         <div className="max-w-7xl mx-auto flex flex-col gap-24">
@@ -130,11 +130,11 @@ export default async function CelestialPage() {
               <span className="font-label-nav text-label-nav text-primary tracking-[0.25em] uppercase">
                 Phase 04 — Midnight Transit
               </span>
-              <h2 className="font-display-hero text-headline-lg md:text-[3.25rem] text-on-surface font-extrabold tracking-tight mt-2">
+              <h2 className="font-display-hero text-headline-lg md:text-[3.25rem] text-[#263238] font-extrabold tracking-tight mt-2">
                 ASTRONOMICAL EXPEDITION
               </h2>
             </div>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
+            <p className="font-body-md text-body-md text-[#667085] max-w-md">
               Free from artificial urban illumination, Jawai&apos;s isolated plutonic plateau
               stands as one of India&apos;s premier dark-sky corridors for deep astrophotography
               paired with nocturnal predator observation.
@@ -156,7 +156,7 @@ export default async function CelestialPage() {
               />
             </div>
 
-            <div className="lg:col-span-5 flex flex-col justify-between gap-8 bg-surface-container-low border border-on-surface/5 p-8">
+            <div className="lg:col-span-5 flex flex-col justify-between gap-8 bg-white border border-on-surface/5 p-8">
               <div className="space-y-4">
                 <span className="font-label-nav text-label-nav text-primary tracking-widest uppercase">
                   OBSERVATORY METRICS

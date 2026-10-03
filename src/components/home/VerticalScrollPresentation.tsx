@@ -190,7 +190,7 @@ export function VerticalScrollPresentation() {
   const currentSlide = SLIDES[activeIdx];
 
   return (
-    <div className="relative w-full h-screen min-h-[100svh] overflow-hidden select-none bg-surface-container-lowest">
+    <div className="relative w-full h-screen min-h-[100svh] overflow-hidden select-none bg-[#F8FAF8]">
       {/* 1. FIXED PINNED TOP LEFT SLIDE COUNTER (Flips smoothly on scroll) */}
       <div className="fixed top-24 md:top-28 left-6 md:left-margin z-40 pointer-events-auto flex items-center gap-3">
         <div className="flex items-baseline overflow-hidden h-9">
@@ -214,9 +214,9 @@ export function VerticalScrollPresentation() {
       </div>
 
       {/* 2. FIXED PINNED TOP RIGHT COORDINATES TAG */}
-      <div className="fixed top-24 md:top-28 right-6 md:right-margin z-40 pointer-events-none hidden sm:flex items-center gap-2.5 px-4 py-2 bg-surface-container-lowest/70 backdrop-blur-md border border-white/10 shadow-2xl">
-        <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#e8a455]" />
-        <span className="font-label-nav text-label-nav text-on-surface-variant uppercase tracking-[0.22em]">
+      <div className="fixed top-24 md:top-28 right-6 md:right-margin z-40 pointer-events-none hidden sm:flex items-center gap-2.5 px-4 py-2 bg-[#F8FAF8]/70 backdrop-blur-md border border-white/10 shadow-2xl">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#005B5C] animate-pulse shadow-[0_0_8px_#FDBA21]" />
+        <span className="font-label-nav text-label-nav text-[#667085] uppercase tracking-[0.22em]">
           {currentSlide.coordinates}
         </span>
       </div>
@@ -226,7 +226,7 @@ export function VerticalScrollPresentation() {
         {/* Track Line with moving segment */}
         <div className="w-[1px] h-24 bg-white/20 relative overflow-hidden">
           <div
-            className="absolute top-0 left-0 w-full bg-primary-container transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
+            className="absolute top-0 left-0 w-full bg-[#005B5C] transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
             style={{
               height: '33%',
               top: `${(activeIdx / (SLIDES.length - 1)) * 67}%`,
@@ -282,11 +282,11 @@ export function VerticalScrollPresentation() {
             <div className="relative z-10 px-margin-mobile md:px-margin max-w-5xl mx-auto flex flex-col items-center justify-center text-center my-auto pointer-events-none">
               {/* Kicker */}
               <div className="pointer-events-auto inline-flex items-center gap-3 mb-2 md:mb-3">
-                <span className="w-6 h-[1px] bg-primary-container" />
+                <span className="w-6 h-[1px] bg-[#005B5C]" />
                 <span className="font-label-counter text-[11px] font-semibold text-primary tracking-[0.35em] uppercase">
                   {slide.kicker}
                 </span>
-                <span className="w-6 h-[1px] bg-primary-container" />
+                <span className="w-6 h-[1px] bg-[#005B5C]" />
               </div>
 
               {/* Massive Monolith Title */}
@@ -305,7 +305,7 @@ export function VerticalScrollPresentation() {
                   {slide.chips.map((chip, cIdx) => (
                     <span
                       key={cIdx}
-                      className="px-4 py-1.5 bg-surface-container-lowest/60 border border-white/10 text-white/80 text-xs font-mono tracking-wider backdrop-blur-sm"
+                      className="px-4 py-1.5 bg-[#F8FAF8]/60 border border-white/10 text-white/80 text-xs font-mono tracking-wider backdrop-blur-sm"
                     >
                       {chip.label}
                     </span>
@@ -315,7 +315,7 @@ export function VerticalScrollPresentation() {
 
               {/* Micro-specs Ribbon */}
               {slide.specs && (
-                <div className="pointer-events-auto hidden lg:flex items-center gap-8 mt-7 px-6 py-2.5 bg-surface-container-lowest/50 backdrop-blur-md border border-white/10 shadow-2xl">
+                <div className="pointer-events-auto hidden lg:flex items-center gap-8 mt-7 px-6 py-2.5 bg-[#F8FAF8]/50 backdrop-blur-md border border-white/10 shadow-2xl">
                   {slide.specs.map((spec, spIdx) => (
                     <React.Fragment key={spIdx}>
                       {spIdx > 0 && <div className="w-1 h-1 bg-white/20 rounded-full" />}
@@ -356,7 +356,7 @@ export function VerticalScrollPresentation() {
               <div className="pointer-events-auto ml-auto">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-primary-container text-on-primary font-bold text-xs md:text-sm uppercase tracking-widest px-6 md:px-8 py-3.5 md:py-4 flex items-center gap-2 shadow-[0_4px_25px_rgba(232,164,85,0.3)] hover:bg-white hover:text-black transition-all duration-200 active:scale-95 cursor-pointer"
+                  className="bg-[#005B5C] text-on-primary font-bold text-xs md:text-sm uppercase tracking-widest px-6 md:px-8 py-3.5 md:py-4 flex items-center gap-2 shadow-[0_4px_25px_rgba(232,164,85,0.3)] hover:bg-white hover:text-black transition-all duration-200 active:scale-95 cursor-pointer"
                 >
                   <span>{slide.actionLabel}</span>
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -370,7 +370,7 @@ export function VerticalScrollPresentation() {
       {/* 5. FIXED PINNED BOTTOM BAR (Discover nature, Mouse icon, Social links) */}
       <div className="fixed bottom-6 md:bottom-8 left-0 w-full z-40 pointer-events-none px-margin-mobile md:px-margin flex items-end justify-between">
         <div className="pointer-events-auto">
-          <span className="font-label-nav text-label-nav uppercase tracking-[0.2em] text-on-surface-variant/70">
+          <span className="font-label-nav text-label-nav uppercase tracking-[0.2em] text-[#667085]/70">
             Discover nature
           </span>
         </div>
@@ -393,7 +393,7 @@ export function VerticalScrollPresentation() {
       {/* 6. EXPEDITION PACKAGES & BRIEFING MODAL (Opens upon clicking EXPLORE MORE +) */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
-          <div className="bg-surface-container-lowest border border-primary/30 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-10 shadow-2xl relative">
+          <div className="bg-[#F8FAF8] border border-primary/30 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-10 shadow-2xl relative">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors cursor-pointer"
@@ -413,7 +413,7 @@ export function VerticalScrollPresentation() {
               <h2 className="font-display-hero text-2xl md:text-4xl text-white uppercase">
                 Curated Jawai Expeditions
               </h2>
-              <p className="text-body-sm text-on-surface-variant mt-1">
+              <p className="text-body-sm text-[#667085] mt-1">
                 Select an expedition to inspect the day-by-day itinerary or request a customized written quotation on WhatsApp (+91 73000 03101).
               </p>
             </div>
@@ -423,7 +423,7 @@ export function VerticalScrollPresentation() {
               {GHOOMOSA_PACKAGES.slice(0, 4).map((pkg) => (
                 <div
                   key={pkg.id}
-                  className="bg-surface-container-low/70 border border-white/10 p-5 flex flex-col justify-between hover:border-primary/40 transition-colors"
+                  className="bg-white/70 border border-white/10 p-5 flex flex-col justify-between hover:border-primary/40 transition-colors"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
@@ -437,7 +437,7 @@ export function VerticalScrollPresentation() {
                     <h3 className="font-display-hero text-lg text-white uppercase mb-2">
                       {pkg.name}
                     </h3>
-                    <p className="text-xs text-on-surface-variant line-clamp-2 mb-4">
+                    <p className="text-xs text-[#667085] line-clamp-2 mb-4">
                       {pkg.overview}
                     </p>
                     <div className="text-[11px] font-mono text-white/50 mb-4">

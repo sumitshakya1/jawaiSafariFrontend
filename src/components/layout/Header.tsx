@@ -10,6 +10,7 @@ export function Header() {
   const pathname = usePathname();
   const [soundActive, setSoundActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const audioCtxRef = useRef<AudioContext | null>(null);
   const masterGainRef = useRef<GainNode | null>(null);
@@ -37,7 +38,7 @@ export function Header() {
           masterGain.connect(ctx.destination);
           masterGainRef.current = masterGain;
 
-          // 1. Ambient Savanna Night Wind (Filtered Pink Noise with Slow Breeze Modulation)
+          // 1. Ambient Savanna Night Wind
           const bufferSize = ctx.sampleRate * 2;
           const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
           const output = noiseBuffer.getChannelData(0);
@@ -59,77 +60,41 @@ export function Header() {
           windNoise.buffer = noiseBuffer;
           windNoise.loop = true;
 
-          const windFilter = ctx.createBiquadFilter();
-          windFilter.type = 'lowpass';
-          windFilter.frequency.setValueAtTime(450, ctx.currentTime);
-          windFilter.Q.setValueAtTime(1.5, ctx.currentTime);
+          const filter = ctx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(320, ctx.currentTime);
 
-          // Slow breeze modulation
-          const breezeLfo = ctx.createOscillator();
-          breezeLfo.frequency.setValueAtTime(0.15, ctx.currentTime);
-          const breezeLfoGain = ctx.createGain();
-          breezeLfoGain.gain.setValueAtTime(180, ctx.currentTime);
-          breezeLfo.connect(breezeLfoGain);
-          breezeLfoGain.connect(windFilter.frequency);
+          const lfo = ctx.createOscillator();
+          lfo.frequency.setValueAtTime(0.18, ctx.currentTime);
+          const lfoGain = ctx.createGain();
+          lfoGain.gain.setValueAtTime(140, ctx.currentTime);
+          lfo.connect(lfoGain);
+          lfoGain.connect(filter.frequency);
+          lfo.start();
 
-          const windGain = ctx.createGain();
-          windGain.gain.setValueAtTime(0.25, ctx.currentTime);
-
-          windNoise.connect(windFilter);
-          windFilter.connect(windGain);
-          windGain.connect(masterGain);
-
+          windNoise.connect(filter);
+          filter.connect(masterGain);
           windNoise.start();
-          breezeLfo.start();
 
-          // 2. High-Frequency Aravalli Crickets Atmosphere
-          const cricketGain = ctx.createGain();
-          cricketGain.gain.setValueAtTime(0.04, ctx.currentTime);
-
+          // 2. Midnight Field Crickets (High pitch subtle pulse)
           const cricketOsc = ctx.createOscillator();
           cricketOsc.type = 'sine';
-          cricketOsc.frequency.setValueAtTime(4800, ctx.currentTime);
+          cricketOsc.frequency.setValueAtTime(4600, ctx.currentTime);
 
-          // Fast cricket pulse modulation
-          const cricketLfo = ctx.createOscillator();
-          cricketLfo.type = 'sawtooth';
-          cricketLfo.frequency.setValueAtTime(14, ctx.currentTime);
+          const cricketGain = ctx.createGain();
+          cricketGain.gain.setValueAtTime(0.015, ctx.currentTime);
 
-          const cricketLfoGain = ctx.createGain();
-          cricketLfoGain.gain.setValueAtTime(0.03, ctx.currentTime);
-
-          cricketLfo.connect(cricketLfoGain);
-          cricketLfoGain.connect(cricketGain.gain);
+          const tremolo = ctx.createOscillator();
+          tremolo.frequency.setValueAtTime(14, ctx.currentTime);
+          const tremoloGain = ctx.createGain();
+          tremoloGain.gain.setValueAtTime(0.012, ctx.currentTime);
+          tremolo.connect(tremoloGain);
+          tremoloGain.connect(cricketGain.gain);
+          tremolo.start();
 
           cricketOsc.connect(cricketGain);
           cricketGain.connect(masterGain);
-
           cricketOsc.start();
-          cricketLfo.start();
-
-          // 3. Warm Cinematic Luxury Ambient Drone (Deep Night Resonance)
-          const droneGain = ctx.createGain();
-          droneGain.gain.setValueAtTime(0.08, ctx.currentTime);
-
-          const droneOsc1 = ctx.createOscillator();
-          droneOsc1.type = 'sine';
-          droneOsc1.frequency.setValueAtTime(110, ctx.currentTime); // A2
-
-          const droneOsc2 = ctx.createOscillator();
-          droneOsc2.type = 'triangle';
-          droneOsc2.frequency.setValueAtTime(164.81, ctx.currentTime); // E3 fifth
-
-          const droneFilter = ctx.createBiquadFilter();
-          droneFilter.type = 'lowpass';
-          droneFilter.frequency.setValueAtTime(220, ctx.currentTime);
-
-          droneOsc1.connect(droneFilter);
-          droneOsc2.connect(droneFilter);
-          droneFilter.connect(droneGain);
-          droneGain.connect(masterGain);
-
-          droneOsc1.start();
-          droneOsc2.start();
         } else {
           if (audioCtxRef.current.state === 'suspended') {
             await audioCtxRef.current.resume();
@@ -137,33 +102,36 @@ export function Header() {
           if (masterGainRef.current) {
             masterGainRef.current.gain.cancelScheduledValues(audioCtxRef.current.currentTime);
             masterGainRef.current.gain.setValueAtTime(
-              Math.max(masterGainRef.current.gain.value, 0.001),
+              masterGainRef.current.gain.value,
               audioCtxRef.current.currentTime
             );
             masterGainRef.current.gain.exponentialRampToValueAtTime(
               0.35,
-              audioCtxRef.current.currentTime + 0.6
+              audioCtxRef.current.currentTime + 0.5
             );
           }
         }
         setSoundActive(true);
       } catch (err) {
-        console.warn('Audio Context initialization error:', err);
-        setSoundActive(true);
+        console.warn('Audio Context interaction error:', err);
       }
     } else {
       if (audioCtxRef.current && masterGainRef.current) {
         masterGainRef.current.gain.cancelScheduledValues(audioCtxRef.current.currentTime);
         masterGainRef.current.gain.setValueAtTime(
-          Math.max(masterGainRef.current.gain.value, 0.001),
+          masterGainRef.current.gain.value,
           audioCtxRef.current.currentTime
         );
         masterGainRef.current.gain.exponentialRampToValueAtTime(
           0.0001,
-          audioCtxRef.current.currentTime + 0.5
+          audioCtxRef.current.currentTime + 0.4
         );
+        setTimeout(() => {
+          setSoundActive(false);
+        }, 400);
+      } else {
+        setSoundActive(false);
       }
-      setSoundActive(false);
     }
   };
 
@@ -174,8 +142,6 @@ export function Header() {
       }
     };
   }, []);
-
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -205,26 +171,29 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-[60] bg-gradient-to-b from-black/80 via-black/25 to-transparent py-5 pointer-events-auto border-none transition-opacity duration-300"
+      className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#DDE7E5] py-3'
+          : 'bg-white border-b border-[#DDE7E5]/80 py-3.5 sm:py-4'
+      }`}
     >
-      <div className="w-full px-6 md:px-10 lg:px-12 flex items-center justify-between">
-        {/* Brand Logo */}
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between">
+        {/* Brand Logo - Height ~40-48px mobile, ~56-64px desktop on pure white */}
         <div className="flex items-center shrink-0">
           <Link
-            className="flex flex-col group"
+            className="flex items-center group"
             href="/"
-            title="Ghoomosa — Trips That Become Stories"
+            title="Ghoomosa – Trips That Become Stories"
           >
-            <span className="font-serif font-black text-lg md:text-xl lg:text-2xl tracking-[0.25em] text-white uppercase group-hover:text-[#e8a455] transition-colors leading-tight">
-              GHOOMOSA
-            </span>
-            <span className="text-[9px] font-mono tracking-[0.22em] text-[#e8a455] uppercase block font-semibold">
-              Trips That Become Stories
-            </span>
+            <img
+              src="/images/ghoomosa-logo.png"
+              alt="Ghoomosa – Trips That Become Stories"
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            />
           </Link>
         </div>
 
-        {/* Center Nav */}
+        {/* Center Nav - Charcoal text #263238, active/hover Deep Teal #005B5C */}
         <nav className="hidden xl:flex items-center gap-5 lg:gap-7">
           {navLinks.map((link) => {
             const isActive = link.match(pathname);
@@ -232,10 +201,10 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-[11px] font-mono uppercase tracking-[0.18em] transition-all duration-200 py-1 ${
+                className={`text-[12px] font-mono uppercase tracking-[0.16em] transition-colors duration-200 py-1 ${
                   isActive
-                    ? 'text-[#e8a455] font-bold'
-                    : 'text-white/75 hover:text-white'
+                    ? 'text-[#005B5C] font-bold border-b-2 border-[#005B5C]'
+                    : 'text-[#263238] hover:text-[#005B5C] font-medium'
                 }`}
               >
                 {link.label}
@@ -244,43 +213,43 @@ export function Header() {
           })}
         </nav>
 
-        {/* Right Actions: Sound + Get Quote (Primary CTA on far right) */}
-        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+        {/* Right Actions: Sound + Get Quote (Deep Teal CTA) */}
+        <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
           {/* Ambient Sound Toggle Button */}
           <button
             onClick={toggleSound}
-            className={`flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.15em] transition-all duration-200 cursor-pointer px-3.5 py-2 rounded-full border select-none ${
+            className={`flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border select-none ${
               soundActive
-                ? 'text-[#e8a455] bg-[#e8a455]/15 border-[#e8a455]/40 shadow-[0_0_20px_rgba(232,164,85,0.25)]'
-                : 'text-white/70 hover:text-white bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/25'
+                ? 'text-[#005B5C] bg-[#EEF8F6] border-[#0A7B75] shadow-sm font-semibold'
+                : 'text-[#263238] hover:text-[#005B5C] bg-[#F8FAF8] hover:bg-[#EEF8F6] border-[#DDE7E5]'
             }`}
             type="button"
             title={soundActive ? 'Mute Ambient Audio' : 'Play Ambient Jawai Safari Audio'}
           >
             {soundActive ? (
               <div className="flex items-center gap-[2px] h-3.5">
-                <span className="w-[2px] h-3 bg-[#e8a455] animate-pulse" />
-                <span className="w-[2px] h-2 bg-[#e8a455] animate-pulse [animation-delay:0.2s]" />
-                <span className="w-[2px] h-3.5 bg-[#e8a455] animate-pulse [animation-delay:0.4s]" />
-                <span className="w-[2px] h-1.5 bg-[#e8a455] animate-pulse [animation-delay:0.1s]" />
+                <span className="w-[2px] h-3 bg-[#005B5C] animate-pulse" />
+                <span className="w-[2px] h-2 bg-[#005B5C] animate-pulse [animation-delay:0.2s]" />
+                <span className="w-[2px] h-3.5 bg-[#005B5C] animate-pulse [animation-delay:0.4s]" />
+                <span className="w-[2px] h-1.5 bg-[#005B5C] animate-pulse [animation-delay:0.1s]" />
               </div>
             ) : (
-              <span className="material-symbols-outlined text-sm text-[#e8a455]">
+              <span className="material-symbols-outlined text-sm text-[#005B5C]">
                 graphic_eq
               </span>
             )}
             <span className="font-semibold">{soundActive ? '38 dB' : 'Sound'}</span>
           </button>
 
-          {/* Primary CTA: Get Quote (Matching Sound button size & design) */}
+          {/* Primary CTA: Get Quote (Deep Teal #005B5C, hover Secondary Teal #0A7B75) */}
           <a
             href={getQuoteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.15em] font-semibold transition-all duration-200 cursor-pointer px-3.5 py-2 rounded-full border select-none text-white/90 hover:text-white bg-white/5 hover:bg-[#e8a455]/15 border-white/10 hover:border-[#e8a455]/40 hover:shadow-[0_0_20px_rgba(232,164,85,0.25)]"
+            className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono uppercase tracking-[0.14em] font-semibold transition-all duration-200 cursor-pointer px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-white bg-[#005B5C] hover:bg-[#0A7B75] shadow-sm hover:shadow"
           >
             <span>Get Quote</span>
-            <span className="material-symbols-outlined text-sm text-[#e8a455]">
+            <span className="material-symbols-outlined text-sm">
               arrow_outward
             </span>
           </a>
@@ -288,7 +257,7 @@ export function Header() {
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 text-white/80 hover:text-white focus:outline-none"
+            className="xl:hidden p-2 text-[#263238] hover:text-[#005B5C] focus:outline-none"
             aria-label="Toggle menu"
           >
             <span className="material-symbols-outlined text-2xl">
@@ -300,13 +269,13 @@ export function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden w-full bg-black/95 border-b border-white/10 px-6 py-6 flex flex-col gap-4 backdrop-blur-2xl max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden w-full bg-white border-b border-[#DDE7E5] px-6 py-6 flex flex-col gap-3 shadow-lg max-h-[80vh] overflow-y-auto">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-mono uppercase tracking-widest text-white/80 hover:text-[#e8a455] py-2 border-b border-white/5"
+              className="text-sm font-mono uppercase tracking-wider text-[#263238] hover:text-[#005B5C] py-2 border-b border-[#DDE7E5]/50 font-medium"
             >
               {link.label}
             </Link>
@@ -314,30 +283,30 @@ export function Header() {
           <Link
             href="/jawai-safari-booking"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-sm font-mono uppercase tracking-widest text-white/80 hover:text-[#e8a455] py-2 border-b border-white/5"
+            className="text-sm font-mono uppercase tracking-wider text-[#263238] hover:text-[#005B5C] py-2 border-b border-[#DDE7E5]/50 font-medium"
           >
             Safari Booking Enquiry
           </Link>
           <Link
             href="/responsible-travel"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-sm font-mono uppercase tracking-widest text-white/80 hover:text-[#e8a455] py-2 border-b border-white/5"
+            className="text-sm font-mono uppercase tracking-wider text-[#263238] hover:text-[#005B5C] py-2 border-b border-[#DDE7E5]/50 font-medium"
           >
             Responsible Travel
           </Link>
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-sm font-mono uppercase tracking-widest text-white/80 hover:text-white py-2"
+            className="text-sm font-mono uppercase tracking-wider text-[#263238] hover:text-[#005B5C] py-2"
           >
-            Contact
+            Contact Concierge
           </Link>
           <a
             href={getQuoteUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-center gap-2 py-3 mt-2 rounded-xl bg-[#25D366] text-black font-semibold text-xs uppercase tracking-widest"
+            className="flex items-center justify-center gap-2 py-3 mt-2 rounded-xl bg-[#25D366] text-black font-semibold text-xs uppercase tracking-widest shadow-sm"
           >
             <span className="material-symbols-outlined text-base">chat</span>
             <span>Get Quote on WhatsApp</span>

@@ -16,56 +16,53 @@ export function WhyJawai() {
     },
     {
       num: '03',
-      title: 'Unfenced, Wild Wilderness',
-      desc: 'No cement enclosures, no government permit lotteries, and no artificial boundaries. Jawai is pure open territory where leopards, crocodiles, and migratory birds thrive in organic freedom.',
-      tag: 'APEX SANCTUARY',
+      title: 'Unfenced Wilderness Freedom',
+      desc: 'Unlike national parks with rigid safari tracks, Jawai is an open landscape. Experienced local operators navigate permitted boulders, riverbeds, and sand flats with natural precision.',
+      tag: 'AUTHENTIC SAFARI',
     },
   ];
 
   return (
-    <section className="relative w-full py-20 md:py-28 bg-surface-container-lowest text-white">
-      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
-        {/* Section Header */}
+    <section className="relative w-full py-20 md:py-28 bg-white border-b border-[#DDE7E5]">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-3 mb-3">
-            <span className="w-6 h-[1px] bg-primary" />
-            <span className="font-label-counter text-[11px] font-semibold text-primary tracking-[0.35em] uppercase">
-              THE JAWAI PHENOMENON
+          <div className="inline-flex items-center gap-3 mb-2">
+            <span className="w-6 h-[2px] bg-[#005B5C]" />
+            <span className="font-mono text-[11px] font-bold text-[#005B5C] tracking-[0.25em] uppercase">
+              DESTINATION ANATOMY
             </span>
-            <span className="w-6 h-[1px] bg-primary" />
+            <span className="w-6 h-[2px] bg-[#005B5C]" />
           </div>
-          <h2 className="font-display-hero text-3xl md:text-5xl uppercase tracking-tight text-white mb-4">
-            Discover Jawai Beyond the Ordinary
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
+            Why Jawai is Unlike Any Other Safari
           </h2>
-          <p className="font-editorial-quote italic text-lg text-white/70 max-w-xl">
-            “Where granite hills, open countryside, migratory wetlands, and an ancient pastoralist culture converge into one unforgettable story.”
+          <p className="mt-3 text-sm md:text-base text-[#667085] font-light">
+            Rajasthan’s wild granite kopjes, migratory wetlands, and the world’s highest density of cave-dwelling leopards living peacefully alongside human settlements.
           </p>
         </div>
 
-        {/* 3 Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((p) => (
             <div
               key={p.num}
-              className="bg-surface-container-low/50 border border-white/10 p-8 flex flex-col justify-between hover:border-primary/40 transition-colors duration-300 relative group"
+              className="p-8 rounded-2xl bg-[#F8FAF8] border border-[#DDE7E5] flex flex-col justify-between hover:border-[#0A7B75] transition-colors"
             >
               <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="font-display-hero text-4xl text-primary/40 group-hover:text-primary transition-colors">
-                    {p.num}
-                  </span>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] px-2.5 py-1 bg-white/5 border border-white/10 text-white/60">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#F7941D] font-bold">
                     {p.tag}
                   </span>
+                  <span className="text-3xl font-display-brand font-bold text-[#DDE7E5]">
+                    {p.num}
+                  </span>
                 </div>
-                <h3 className="font-display-hero text-xl text-white uppercase tracking-tight mb-3">
+                <h3 className="text-xl font-bold text-[#005B5C] mb-3">
                   {p.title}
                 </h3>
-                <p className="text-body-sm text-on-surface-variant leading-relaxed">
+                <p className="text-xs md:text-sm text-[#263238] font-light leading-relaxed">
                   {p.desc}
                 </p>
               </div>
-              <div className="w-full h-[1px] bg-white/10 mt-8 group-hover:bg-primary/50 transition-colors" />
             </div>
           ))}
         </div>

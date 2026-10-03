@@ -11,21 +11,21 @@ export abstract class BaseChip {
 }
 
 export class PrimaryChipStyle extends BaseChip {
-  protected readonly containerClass = 'bg-surface-container-low/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm';
-  protected readonly textClass = 'text-label-nav font-label-nav text-primary-container uppercase tracking-[0.18em]';
+  protected readonly containerClass = 'bg-white/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm';
+  protected readonly textClass = 'text-label-nav font-label-nav text-[#005B5C] uppercase tracking-[0.18em]';
 }
 
 export class TertiaryChipStyle extends BaseChip {
-  protected readonly containerClass = 'bg-surface-container-low/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm';
+  protected readonly containerClass = 'bg-white/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm';
   protected readonly textClass = 'text-label-nav font-label-nav text-tertiary uppercase tracking-[0.18em]';
 }
 
 export class VariantChipStyle extends BaseChip {
-  protected readonly containerClass = 'bg-surface-container-low/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm';
-  protected readonly textClass = 'text-label-nav font-label-nav text-on-surface-variant/80 uppercase tracking-[0.18em]';
+  protected readonly containerClass = 'bg-white/80 backdrop-blur-sm px-3.5 py-1.5 shadow-sm';
+  protected readonly textClass = 'text-label-nav font-label-nav text-[#667085]/80 uppercase tracking-[0.18em]';
 }
 
 export class CoordinateBadgeStyle extends BaseChip {
-  protected readonly containerClass = 'flex items-center gap-2.5 px-4 py-2 bg-surface-container-lowest/60 backdrop-blur-md shadow-xl border border-on-surface/10 rounded-none';
-  protected readonly textClass = 'font-label-nav text-label-nav text-on-surface-variant uppercase tracking-[0.25em]';
+  protected readonly containerClass = 'flex items-center gap-2.5 px-4 py-2 bg-[#F8FAF8]/60 backdrop-blur-md shadow-xl border border-on-surface/10 rounded-none';
+  protected readonly textClass = 'font-label-nav text-label-nav text-[#667085] uppercase tracking-[0.25em]';
 }

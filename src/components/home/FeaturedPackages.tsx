@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { GHOOMOSA_PACKAGES, GhoomosaPackage } from '@/global/constants/packages';
 import { WhatsAppButton } from '@/global/components/cta/WhatsAppButton';
 
@@ -9,180 +10,132 @@ export function FeaturedPackages() {
   const [selectedPkg, setSelectedPkg] = useState<GhoomosaPackage | null>(null);
 
   return (
-    <section id="packages" className="relative w-full py-20 md:py-28 bg-surface-container-lowest scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+    <section id="packages" className="relative w-full py-20 md:py-28 bg-[#F8FAF8] scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="inline-flex items-center gap-3 mb-2">
-              <span className="w-6 h-[1px] bg-primary" />
-              <span className="font-label-counter text-[11px] font-semibold text-primary tracking-[0.35em] uppercase">
-                TAILORED EXPEDITION PLANS
+              <span className="w-6 h-[2px] bg-[#005B5C]" />
+              <span className="font-mono text-[11px] font-bold text-[#005B5C] tracking-[0.25em] uppercase">
+                FLAGSHIP EXPEDITIONS
               </span>
             </div>
-            <h2 className="font-display-hero text-3xl md:text-5xl uppercase tracking-tight text-white">
-              Flagship Jawai Packages
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
+              Curated Jawai Packages
             </h2>
+            <p className="mt-3 text-sm md:text-base text-[#667085] max-w-2xl font-light">
+              Each journey is tailor-crafted by local naturalists and safari masters. Fixed public pricing is omitted in Phase 1 to support customized inclusions.
+            </p>
           </div>
-          <div className="text-left md:text-right">
-            <span className="text-body-sm text-primary font-mono block">
-              PRICE ON REQUEST • ALL-INCLUSIVE ITINERARIES
-            </span>
-            <span className="text-[12px] text-white/50">
-              Quotation prepared dynamically based on dates, group size, and stay class
-            </span>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="/jawai-tour-packages"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#005B5C] text-[#005B5C] hover:bg-[#EEF8F6] text-xs font-mono font-semibold uppercase tracking-wider transition-colors"
+            >
+              <span>View All 10 Packages</span>
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
           </div>
         </div>
 
-        {/* 6 Flagship Packages Grid */}
+        {/* Packages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {GHOOMOSA_PACKAGES.map((pkg) => (
-            <div
+          {GHOOMOSA_PACKAGES.slice(0, 6).map((pkg) => (
+            <article
               key={pkg.id}
-              className="bg-surface-container-low/60 border border-white/10 flex flex-col justify-between group hover:border-primary/50 transition-all duration-300"
+              className="group bg-white rounded-2xl overflow-hidden border border-[#DDE7E5] shadow-sm hover:shadow-md hover:border-[#0A7B75] transition-all duration-300 flex flex-col"
             >
-              {/* Image & Header */}
-              <div>
-                <div className="relative w-full h-60 overflow-hidden bg-surface-container-lowest">
-                  <Image
-                    src={pkg.imageUrl}
-                    alt={pkg.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent" />
-                  
-                  {/* Top tags */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 bg-primary/20 border border-primary/30 text-primary backdrop-blur-sm">
-                      {pkg.id}
-                    </span>
-                    <span className="text-[11px] font-mono px-3 py-1 bg-surface-container-lowest/80 text-white border border-white/15 backdrop-blur-sm">
-                      {pkg.duration}
-                    </span>
-                  </div>
+              {/* Image & Badges */}
+              <div className="relative h-64 w-full overflow-hidden bg-[#EEF8F6]">
+                <Image
+                  src={pkg.imageUrl}
+                  alt={pkg.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#003F40]/70 via-transparent to-transparent pointer-events-none" />
 
-                  <div className="absolute bottom-3 left-4">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/60">
-                      BEST FOR: {pkg.bestFor}
-                    </span>
-                  </div>
+                {/* Top Badges */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[11px] font-mono font-bold text-[#005B5C] shadow-sm">
+                    {pkg.duration}
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-[#005B5C]/90 backdrop-blur-sm text-[10px] font-mono uppercase tracking-wider text-white">
+                    {pkg.id}
+                  </span>
                 </div>
 
-                {/* Body */}
-                <div className="p-6">
-                  <h3 className="font-display-hero text-2xl text-white uppercase tracking-tight mb-2 group-hover:text-primary transition-colors">
+                {/* Bottom Overlay Title */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#FDBA21] font-semibold block">
+                    {pkg.bestFor}
+                  </span>
+                  <h3 className="text-xl font-bold text-white leading-snug">
                     {pkg.name}
                   </h3>
-                  <p className="text-body-sm text-on-surface-variant line-clamp-2 mb-5">
+                </div>
+              </div>
+
+              {/* Card Body */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-6">
+                <div className="space-y-4">
+                  <p className="text-xs md:text-sm text-[#263238] font-light leading-relaxed">
                     {pkg.overview}
                   </p>
 
                   {/* Highlights */}
-                  <div className="space-y-2 mb-6">
-                    {pkg.highlights.map((h, hIdx) => (
-                      <div key={hIdx} className="flex items-center gap-2 text-xs text-white/80">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span>{h}</span>
-                      </div>
-                    ))}
+                  <div className="space-y-1.5 pt-2 border-t border-[#DDE7E5]">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#667085] font-semibold block">
+                      Expedition Inclusions
+                    </span>
+                    <ul className="space-y-1">
+                      {pkg.highlights.slice(0, 3).map((hl, i) => (
+                        <li key={i} className="text-xs text-[#263238] flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0A7B75] shrink-0" />
+                          <span className="line-clamp-1">{hl}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Footer Pricing & CTA */}
+                <div className="pt-4 border-t border-[#DDE7E5] flex items-center justify-between gap-2">
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#667085] block">
+                      Quotation
+                    </span>
+                    <span className="text-xs font-semibold text-[#005B5C]">
+                      Price on Request
+                    </span>
                   </div>
 
-                  {/* Day-wise snippet button */}
-                  <button
-                    onClick={() => setSelectedPkg(pkg)}
-                    className="text-xs font-mono uppercase tracking-wider text-primary hover:underline flex items-center gap-1 mb-4"
-                  >
-                    <span>View Day-by-Day Itinerary</span>
-                    <span className="material-symbols-outlined text-sm">visibility</span>
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href={`/jawai-tour-packages/${pkg.slug}`}
+                      className="px-3.5 py-2 rounded-full border border-[#DDE7E5] hover:border-[#005B5C] text-[#263238] hover:text-[#005B5C] text-xs font-semibold transition-colors"
+                    >
+                      Details
+                    </Link>
+                    <WhatsAppButton
+                      packageOrExperienceName={pkg.name}
+                      packageId={pkg.id}
+                      canonicalPath={`/jawai-tour-packages/${pkg.slug}`}
+                      variant="editorial"
+                      size="sm"
+                    >
+                      Get Quote
+                    </WhatsAppButton>
+                  </div>
                 </div>
               </div>
-
-              {/* Pricing & CTA Footer */}
-              <div className="p-6 pt-4 border-t border-white/10 bg-surface-container-lowest/50 flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-white/50 uppercase">RATES</span>
-                  <span className="text-xs font-mono text-primary font-bold tracking-wider">
-                    PRICE ON REQUEST
-                  </span>
-                </div>
-                <WhatsAppButton
-                  packageId={pkg.id}
-                  packageName={pkg.name}
-                  duration={pkg.duration}
-                  size="md"
-                  variant="editorial"
-                  className="w-full"
-                >
-                  Get Quote on WhatsApp
-                </WhatsAppButton>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-
-      {/* Modal for Day-wise Itinerary preview */}
-      {selectedPkg && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="bg-surface-container-lowest border border-primary/40 max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
-            <button
-              onClick={() => setSelectedPkg(null)}
-              className="absolute top-6 right-6 text-white/50 hover:text-white"
-              aria-label="Close modal"
-            >
-              <span className="material-symbols-outlined text-2xl">close</span>
-            </button>
-
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-mono text-primary">{selectedPkg.id}</span>
-              <span className="text-xs font-mono text-white/40">•</span>
-              <span className="text-xs font-mono text-white/60">{selectedPkg.duration}</span>
-            </div>
-
-            <h3 className="font-display-hero text-2xl md:text-3xl text-white uppercase mb-4">
-              {selectedPkg.name}
-            </h3>
-
-            <p className="text-body-sm text-white/80 leading-relaxed mb-6">
-              {selectedPkg.overview}
-            </p>
-
-            <h4 className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
-              Day-by-Day Expedition Timeline
-            </h4>
-
-            <div className="space-y-4 border-l border-primary/30 pl-4 mb-8">
-              {selectedPkg.itinerary.map((item) => (
-                <div key={item.day} className="relative">
-                  <div className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-primary" />
-                  <h5 className="font-display-hero text-sm text-white uppercase">
-                    Day {item.day}: {item.title}
-                  </h5>
-                  <p className="text-xs text-white/70 mt-1 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
-              <span className="text-xs font-mono text-white/50">
-                Transparent quotation shared based on confirmed dates
-              </span>
-              <WhatsAppButton
-                packageId={selectedPkg.id}
-                packageName={selectedPkg.name}
-                duration={selectedPkg.duration}
-                size="md"
-                variant="editorial"
-              >
-                Request Quotation
-              </WhatsAppButton>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

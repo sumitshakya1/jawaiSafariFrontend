@@ -176,9 +176,9 @@ export function ScrollableHeroStage() {
         </div>
 
         {/* Dynamic Coordinate Tag */}
-        <div className="pointer-events-auto hidden sm:flex items-center gap-2.5 px-4 py-2 bg-surface-container-lowest/70 backdrop-blur-md shadow-2xl border border-white/5 transition-all duration-500">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#e8a455]" />
-          <span className="font-label-nav text-label-nav text-on-surface-variant uppercase tracking-[0.22em]">
+        <div className="pointer-events-auto hidden sm:flex items-center gap-2.5 px-4 py-2 bg-[#F8FAF8]/70 backdrop-blur-md shadow-2xl border border-white/5 transition-all duration-500">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#005B5C] animate-pulse shadow-[0_0_8px_#FDBA21]" />
+          <span className="font-label-nav text-label-nav text-[#667085] uppercase tracking-[0.22em]">
             {currentSlide.coordinates}
           </span>
         </div>
@@ -216,7 +216,7 @@ export function ScrollableHeroStage() {
               aria-label={`Jump to slide ${s.slideNumber}`}
               className={`w-1.5 transition-all duration-300 rounded-full ${
                 activeIdx === idx
-                  ? 'h-6 bg-primary-container shadow-[0_0_8px_#e8a455]'
+                  ? 'h-6 bg-[#005B5C] shadow-[0_0_8px_#FDBA21]'
                   : 'h-1.5 bg-white/30 hover:bg-white/60'
               }`}
             />
@@ -254,11 +254,11 @@ export function ScrollableHeroStage() {
             <div className="relative z-10 px-margin-mobile md:px-margin max-w-5xl mx-auto flex flex-col items-center justify-center text-center my-auto pointer-events-none">
               {/* Kicker */}
               <div className="pointer-events-auto inline-flex items-center gap-3 mb-3">
-                <span className="w-6 h-[1px] bg-primary-container" />
+                <span className="w-6 h-[1px] bg-[#005B5C]" />
                 <span className="font-label-counter text-[11px] font-semibold text-primary tracking-[0.35em] uppercase">
                   {slide.kicker}
                 </span>
-                <span className="w-6 h-[1px] bg-primary-container" />
+                <span className="w-6 h-[1px] bg-[#005B5C]" />
               </div>
 
               {/* Main Headline */}
@@ -284,7 +284,7 @@ export function ScrollableHeroStage() {
 
               {/* Optional Specs Ribbon for Slide 01, 03 & 04 */}
               {slide.specsRibbon && slide.specsRibbon.length > 0 && (
-                <div className="pointer-events-auto hidden md:flex items-center gap-8 mt-7 px-6 py-2.5 bg-surface-container-lowest/50 backdrop-blur-md border border-white/5 shadow-2xl">
+                <div className="pointer-events-auto hidden md:flex items-center gap-8 mt-7 px-6 py-2.5 bg-[#F8FAF8]/50 backdrop-blur-md border border-white/5 shadow-2xl">
                   {slide.specsRibbon.map((spec, sIdx) => (
                     <React.Fragment key={sIdx}>
                       {sIdx > 0 && <div className="w-1 h-1 bg-white/20 rounded-full" />}

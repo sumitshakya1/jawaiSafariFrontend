@@ -6,28 +6,22 @@ export abstract class BaseButton {
   protected abstract readonly hoverClass: string;
   protected abstract readonly textClass: string;
 
-  /**
-   * Generates the compiled CSS class string for this button variant.
-   */
   public getClasses(extraClasses = ''): string {
     return `${this.baseClass} ${this.hoverClass} ${this.textClass} ${extraClasses}`.trim();
   }
 
-  /**
-   * Generates the icon classes for companion symbols/arrows.
-   */
   public abstract getIconClasses(): string;
 }
 
 /**
- * Primary White Editorial CTA Block (Slide 1, Slide 3, etc.)
+ * Primary Editorial CTA (Deep Teal #005B5C, hover Secondary Teal #0A7B75, white text)
  */
 export class PrimaryEditorialButton extends BaseButton {
   protected readonly baseClass =
-    'group inline-flex items-center justify-between gap-5 bg-white text-surface-container-lowest px-8 py-5 rounded-none shadow-[0_16px_36px_rgba(0,0,0,0.55)] transition-all duration-200 active:scale-[0.98]';
-  protected readonly hoverClass = 'hover:bg-primary-container hover:text-on-primary';
+    'group inline-flex items-center justify-between gap-4 bg-[#005B5C] text-white px-7 py-4 rounded-full shadow-md transition-all duration-200 active:scale-[0.98]';
+  protected readonly hoverClass = 'hover:bg-[#0A7B75] hover:shadow-lg';
   protected readonly textClass =
-    'font-body-sm text-[12px] md:text-[13px] font-bold uppercase tracking-[0.18em]';
+    'font-mono text-xs font-bold uppercase tracking-[0.16em]';
 
   public getIconClasses(): string {
     return 'material-symbols-outlined text-base font-bold transform transition-transform duration-200 group-hover:translate-x-1';
@@ -35,31 +29,31 @@ export class PrimaryEditorialButton extends BaseButton {
 }
 
 /**
- * High-Impact Dark/On-Surface Editorial Button (Slide 2, Slide 3 alternate)
+ * High-Impact Surface Button (White bg with Deep Teal text/border)
  */
 export class HighImpactSurfaceButton extends BaseButton {
   protected readonly baseClass =
-    'group relative inline-flex items-center gap-4 bg-on-surface text-on-primary-fixed px-8 md:px-10 py-4.5 rounded-none transition-all duration-200 shadow-2xl active:scale-[0.98]';
-  protected readonly hoverClass = 'hover:bg-primary-container hover:shadow-primary/20';
+    'group relative inline-flex items-center gap-3 bg-white text-[#005B5C] border border-[#005B5C] px-7 py-4 rounded-full transition-all duration-200 shadow-sm active:scale-[0.98]';
+  protected readonly hoverClass = 'hover:bg-[#EEF8F6] hover:border-[#0A7B75]';
   protected readonly textClass =
-    'font-headline-sm text-body-sm uppercase tracking-[0.16em] font-bold text-surface-container-lowest group-hover:text-surface-container-lowest';
+    'font-mono text-xs uppercase tracking-[0.16em] font-bold';
 
   public getIconClasses(): string {
-    return 'material-symbols-outlined text-surface-container-lowest text-lg transition-transform duration-200 group-hover:translate-x-1';
+    return 'material-symbols-outlined text-[#005B5C] text-base transition-transform duration-200 group-hover:translate-x-1';
   }
 }
 
 /**
- * Secondary Ghost / Hairline Border Button (Expedition Briefing Request)
+ * Ghost / Hairline Border Button
  */
 export class GhostButton extends BaseButton {
   protected readonly baseClass =
-    'w-full py-4 text-center border border-on-surface/20 text-on-surface rounded-none font-body-sm font-semibold uppercase tracking-widest transition-colors duration-150 text-[11px]';
-  protected readonly hoverClass = 'hover:border-primary hover:text-primary';
-  protected readonly textClass = 'uppercase tracking-widest';
+    'w-full py-3.5 text-center border border-[#DDE7E5] text-[#005B5C] rounded-full font-mono font-semibold uppercase tracking-wider transition-colors duration-150 text-xs bg-white';
+  protected readonly hoverClass = 'hover:bg-[#EEF8F6] hover:border-[#005B5C]';
+  protected readonly textClass = 'uppercase tracking-wider';
 
   public getIconClasses(): string {
-    return 'material-symbols-outlined text-sm ml-2';
+    return 'material-symbols-outlined text-sm ml-2 text-[#005B5C]';
   }
 }
 
@@ -68,9 +62,9 @@ export class GhostButton extends BaseButton {
  */
 export class TextActionLink extends BaseButton {
   protected readonly baseClass =
-    'inline-flex items-center gap-2 text-white font-body-sm transition-colors duration-150 relative after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-primary-container after:transition-all after:duration-200';
-  protected readonly hoverClass = 'hover:text-primary-container';
-  protected readonly textClass = 'uppercase tracking-[0.15em]';
+    'inline-flex items-center gap-2 text-[#005B5C] font-mono text-xs font-semibold transition-colors duration-150 relative after:content-[""] after:absolute after:bottom-[-2px] after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-[#005B5C] after:transition-all after:duration-200';
+  protected readonly hoverClass = 'hover:text-[#0A7B75]';
+  protected readonly textClass = 'uppercase tracking-[0.14em]';
 
   public getIconClasses(): string {
     return 'material-symbols-outlined text-sm transition-transform duration-200 group-hover:translate-x-1';

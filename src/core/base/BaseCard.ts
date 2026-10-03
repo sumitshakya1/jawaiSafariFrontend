@@ -1,8 +1,8 @@
 /**
- * Abstract BaseCard providing container, image wrapper, and typography classes for editorial cards.
+ * Abstract BaseCard declaring polymorphic container and card styling rules.
  */
 export abstract class BaseCard {
-  public abstract getContainerClasses(extra?: string): string;
+  public abstract getContainerClasses(extraClasses?: string): string;
   public abstract getImageContainerClasses(): string;
   public abstract getImageClasses(): string;
   public abstract getBadgeClasses(): string;
@@ -11,15 +11,15 @@ export abstract class BaseCard {
 }
 
 /**
- * Journal Visual Log Card (Slide 2)
+ * Visual Log Card (White card, clean light borders, Deep Teal headings)
  */
-export class VisualLogCardStyle extends BaseCard {
-  public getContainerClasses(extra = ''): string {
-    return `group bg-surface-container-low flex flex-col overflow-hidden shadow-xl transition-all duration-300 hover:bg-surface-container ${extra}`.trim();
+export class VisualLogCard extends BaseCard {
+  public getContainerClasses(extraClasses = ''): string {
+    return `group bg-white rounded-2xl overflow-hidden border border-[#DDE7E5] hover:border-[#0A7B75] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col ${extraClasses}`.trim();
   }
 
   public getImageContainerClasses(): string {
-    return 'relative w-full h-72 overflow-hidden';
+    return 'relative h-56 w-full overflow-hidden bg-[#EEF8F6]';
   }
 
   public getImageClasses(): string {
@@ -27,43 +27,46 @@ export class VisualLogCardStyle extends BaseCard {
   }
 
   public getBadgeClasses(): string {
-    return 'absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 font-label-nav text-label-nav text-primary tracking-widest uppercase';
+    return 'absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[10px] font-mono font-bold text-[#005B5C] shadow-sm uppercase tracking-wider';
   }
 
   public getTitleClasses(): string {
-    return 'font-headline-sm text-headline-sm text-on-surface font-semibold';
+    return 'text-lg font-bold text-[#005B5C] group-hover:text-[#0A7B75] transition-colors leading-snug';
   }
 
   public getDescriptionClasses(): string {
-    return 'font-body-sm text-body-sm text-on-surface-variant';
+    return 'text-xs md:text-sm text-[#263238] font-light leading-relaxed';
   }
 }
 
 /**
- * Technical Observation Feature Card (Slide 3)
+ * Geological Feature Card
  */
-export class GeologicalFeatureCardStyle extends BaseCard {
-  public getContainerClasses(extra = ''): string {
-    return `bg-surface-container-low border border-on-surface/5 p-8 flex flex-col gap-6 group hover:border-primary/30 transition-all duration-300 ${extra}`.trim();
+export class GeologicalFeatureCard extends BaseCard {
+  public getContainerClasses(extraClasses = ''): string {
+    return `p-6 rounded-2xl bg-[#F8FAF8] border border-[#DDE7E5] hover:border-[#0A7B75] transition-all duration-200 ${extraClasses}`.trim();
   }
 
   public getImageContainerClasses(): string {
-    return 'relative w-full h-[400px] overflow-hidden bg-surface-container';
+    return 'relative h-48 w-full rounded-xl overflow-hidden mb-4 bg-[#EEF8F6]';
   }
 
   public getImageClasses(): string {
-    return 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out';
+    return 'w-full h-full object-cover';
   }
 
   public getBadgeClasses(): string {
-    return 'absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1.5 font-label-counter text-[10px] text-primary tracking-widest uppercase';
+    return 'absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-[#005B5C] text-white text-[10px] font-mono uppercase tracking-wider';
   }
 
   public getTitleClasses(): string {
-    return 'font-headline-md text-headline-sm text-on-surface font-bold';
+    return 'text-base font-bold text-[#005B5C]';
   }
 
   public getDescriptionClasses(): string {
-    return 'font-body-md text-body-sm text-on-surface-variant leading-relaxed';
+    return 'text-xs text-[#263238] font-light leading-relaxed';
   }
 }
+
+export { VisualLogCard as VisualLogCardStyle, GeologicalFeatureCard as GeologicalFeatureCardStyle };
+

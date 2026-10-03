@@ -15,12 +15,12 @@ export function FloatingWhatsApp() {
       className="fixed bottom-6 right-6 z-50 flex items-center group pointer-events-auto"
     >
       {/* Floating tooltip */}
-      <div className="hidden md:flex items-center gap-2 mr-3 px-3.5 py-1.5 rounded-full bg-surface-container-lowest/90 border border-primary/30 backdrop-blur-md shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-        <span className="text-[12px] font-medium text-white tracking-wide">
+      <div className="hidden md:flex items-center gap-2 mr-3 px-3.5 py-1.5 rounded-full bg-white text-[#263238] border border-[#DDE7E5] shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        <span className="w-2 h-2 rounded-full bg-[#25D366] animate-ping" />
+        <span className="text-[12px] font-medium tracking-wide">
           Chat with Jawai Specialist
         </span>
-        <span className="text-[11px] text-primary font-mono">{SITE_CONFIG.phone}</span>
+        <span className="text-[11px] text-[#005B5C] font-mono font-semibold">{SITE_CONFIG.phone}</span>
       </div>
 
       {/* Main button */}

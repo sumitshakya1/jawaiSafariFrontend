@@ -2,78 +2,72 @@ import React from 'react';
 import Link from 'next/link';
 import { PolicyPageData } from '@/constants/policyData';
 
-interface Props {
+interface PolicyPageProps {
   policy: PolicyPageData;
 }
 
-export function PolicyPageTemplate({ policy }: Props) {
+export function PolicyPageTemplate({ policy }: PolicyPageProps) {
+  if (!policy) {
+    return null;
+  }
+
   return (
-    <div className="w-full bg-[#07090e] text-[#e1e2ec] min-h-screen pb-32">
-      {/* Policy Hero Header */}
-      <section className="relative w-full pt-36 pb-16 px-6 md:px-12 border-b border-white/10 bg-gradient-to-b from-black/80 via-[#07090e] to-[#07090e]">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 text-xs font-mono text-white/50 mb-4">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <span>/</span>
-            <span className="text-white/40">Policies</span>
-            <span>/</span>
-            <span className="text-[#e8a455]">{policy.title}</span>
+    <article className="w-full min-h-screen bg-[#F8FAF8] text-[#263238] pt-28 pb-20">
+      <div className="max-w-4xl mx-auto px-6 md:px-10">
+        {/* Header */}
+        <header className="mb-10 pb-6 border-b border-[#DDE7E5]">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#005B5C] font-bold">
+              LEGAL & OPERATIONAL FRAMEWORK
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#EEF8F6] text-[#005B5C] text-xs font-mono font-semibold">
+              Updated {policy.lastUpdated}
+            </span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
             {policy.title}
           </h1>
-          <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-6 font-light">
-            {policy.subtitle}
-          </p>
+          {policy.subtitle && (
+            <p className="mt-2 text-[#667085] text-sm md:text-base font-light">
+              {policy.subtitle}
+            </p>
+          )}
+        </header>
 
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-[#e8a455]">
-            Last Reviewed & Effective Date: {policy.lastUpdated}
-          </div>
-        </div>
-      </section>
-
-      {/* Policy Content Sections */}
-      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-14">
-        <div className="space-y-8">
-          {policy.sections.map((sec, idx) => (
-            <article
-              key={idx}
-              className="p-6 md:p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 shadow-xl"
-            >
-              <h2 className="text-lg md:text-xl font-serif font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455]">
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
-                <span>{sec.heading}</span>
+        {/* Paper Content Card */}
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#DDE7E5] shadow-sm space-y-8 text-sm md:text-base text-[#263238] font-light leading-relaxed">
+          {policy.sections.map((section, idx) => (
+            <section key={idx} className="space-y-3">
+              <h2 className="text-xl font-bold text-[#005B5C] tracking-tight">
+                {section.heading}
               </h2>
-              <div className="space-y-3.5 text-sm md:text-base text-white/80 leading-relaxed font-light">
-                {sec.content.map((p, pIdx) => (
-                  <p key={pIdx}>{p}</p>
+              <div className="space-y-3 text-[#263238]">
+                {section.content.map((p, pIdx) => (
+                  <p key={pIdx} className="leading-relaxed">
+                    {p}
+                  </p>
                 ))}
               </div>
-            </article>
+            </section>
           ))}
         </div>
 
-        {/* Contact Footer */}
-        <div className="mt-14 p-8 rounded-3xl bg-gradient-to-r from-black/80 to-black/40 border border-white/10 text-xs text-white/60 text-center space-y-2">
+        {/* Footer Navigation */}
+        <footer className="mt-12 pt-6 border-t border-[#DDE7E5] flex flex-col sm:flex-row items-center justify-between text-xs text-[#667085] gap-4">
+          <Link href="/" className="text-[#005B5C] hover:underline flex items-center gap-1 font-semibold">
+            <span className="material-symbols-outlined text-sm">arrow_back</span>
+            <span>Return to Ghoomosa Home</span>
+          </Link>
           <p>
-            For any clarifications regarding our {policy.title.toLowerCase()}, please email{' '}
-            <a href="mailto:support@ghoomosa.in" className="text-[#e8a455] underline">
-              support@ghoomosa.in
-            </a>{' '}
-            or contact our team on WhatsApp at{' '}
-            <a href="https://wa.me/917300003101" className="text-[#25D366] underline">
-              +91 73000 03101
+            For compliance inquiries:{' '}
+            <a href="mailto:grievance@ghoomosa.in" className="text-[#005B5C] underline font-semibold">
+              grievance@ghoomosa.in
             </a>
-            .
           </p>
-          <p className="text-[11px] text-white/40">
-            Ghoomosa Developer Master Specification • Phase 1 Operations
-          </p>
-        </div>
-      </main>
-    </div>
+        </footer>
+      </div>
+    </article>
   );
 }
+

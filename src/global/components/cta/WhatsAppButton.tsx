@@ -27,11 +27,11 @@ export function WhatsAppButton({
 
   const variantClasses = {
     editorial:
-      'bg-primary-container text-on-primary font-bold uppercase tracking-widest hover:bg-primary-container/90 shadow-[0_4px_20px_rgba(232,164,85,0.25)]',
+      'bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold shadow-sm transition-colors',
     accent:
-      'bg-gradient-to-r from-[#FDBA21] to-[#F7941D] text-slate-950 font-bold uppercase tracking-widest hover:opacity-95 shadow-lg',
+      'bg-[#FDBA21] hover:bg-[#F7941D] text-[#263238] font-bold shadow-sm transition-colors',
     whatsapp:
-      'bg-[#25D366] text-white font-semibold hover:bg-[#20ba59] shadow-[0_4px_15px_rgba(37,211,102,0.3)]',
+      'bg-[#25D366] hover:bg-[#20BA59] text-black font-semibold shadow-md transition-colors',
   }[variant];
 
   return (
@@ -39,7 +39,7 @@ export function WhatsAppButton({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2.5 rounded-none transition-all duration-200 active:scale-95 ${sizeClasses} ${variantClasses} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full transition-all duration-200 active:scale-95 ${sizeClasses} ${variantClasses} ${className}`}
     >
       <span className="material-symbols-outlined text-[18px]">chat</span>
       <span>{children}</span>

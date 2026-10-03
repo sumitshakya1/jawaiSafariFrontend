@@ -83,7 +83,7 @@ export default function ThingsToDoPage() {
   });
 
   return (
-    <div className="w-full bg-[#07090e] text-[#e1e2ec] min-h-screen pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pb-32">
       {/* 1. Hero */}
       <section className="relative w-full pt-36 pb-20 px-6 md:px-12 border-b border-white/10 bg-gradient-to-b from-black/90 via-[#07090e] to-[#07090e] overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -103,10 +103,10 @@ export default function ThingsToDoPage() {
             <span>/</span>
             <Link href="/jawai" className="hover:text-white">Jawai</Link>
             <span>/</span>
-            <span className="text-[#e8a455]">Activities</span>
+            <span className="text-[#FDBA21]">Activities</span>
           </div>
 
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-4">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4">
             Curated Expedition Ideas
           </span>
 
@@ -138,7 +138,7 @@ export default function ThingsToDoPage() {
           {ACTIVITIES.map((act, idx) => (
             <div
               key={act.id}
-              className="rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-[#e8a455]/50 transition-all group shadow-xl"
+              className="rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-[#FDBA21]/50 transition-all group shadow-xl"
             >
               <div>
                 <div className="relative h-64 w-full overflow-hidden">
@@ -149,19 +149,19 @@ export default function ThingsToDoPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e15] via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[11px] font-mono text-[#e8a455] border border-[#e8a455]/30">
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white backdrop-blur-md text-[11px] font-mono text-[#FDBA21] border border-[#FDBA21]/30">
                     {act.badge}
                   </span>
-                  <span className="absolute bottom-4 left-4 text-[11px] font-mono text-white/75 bg-black/60 px-2.5 py-0.5 rounded-md backdrop-blur-md">
+                  <span className="absolute bottom-4 left-4 text-[11px] font-mono text-white/75 bg-white px-2.5 py-0.5 rounded-md backdrop-blur-md">
                     {act.category}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <span className="text-[11px] font-mono text-[#e8a455] block mb-2">
+                  <span className="text-[11px] font-mono text-[#FDBA21] block mb-2">
                     Timing: {act.timing}
                   </span>
-                  <h2 className="text-xl font-bold text-white group-hover:text-[#e8a455] transition-colors mb-3">
+                  <h2 className="text-xl font-bold text-white group-hover:text-[#FDBA21] transition-colors mb-3">
                     {act.title}
                   </h2>
                   <p className="text-xs md:text-sm text-white/70 leading-relaxed font-light mb-4">
@@ -186,7 +186,7 @@ export default function ThingsToDoPage() {
         {/* 3. Recommended 2N/3D Timeline Roadmap */}
         <div className="p-8 md:p-14 rounded-3xl bg-gradient-to-r from-black/90 to-black/60 border border-white/15">
           <div className="max-w-2xl mb-8">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#e8a455] block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#FDBA21] block mb-1">
               Balanced Flow
             </span>
             <h3 className="text-2xl md:text-4xl font-serif font-bold text-white">
@@ -196,7 +196,7 @@ export default function ThingsToDoPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="px-3 py-1 rounded bg-[#e8a455] text-black font-mono font-bold text-xs inline-block mb-3">
+              <span className="px-3 py-1 rounded bg-[#FDBA21] text-black font-mono font-bold text-xs inline-block mb-3">
                 DAY 1
               </span>
               <h4 className="text-base font-bold text-white mb-2">Arrival & Dusk Kopje Safari</h4>
@@ -206,7 +206,7 @@ export default function ThingsToDoPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="px-3 py-1 rounded bg-[#e8a455] text-black font-mono font-bold text-xs inline-block mb-3">
+              <span className="px-3 py-1 rounded bg-[#FDBA21] text-black font-mono font-bold text-xs inline-block mb-3">
                 DAY 2
               </span>
               <h4 className="text-base font-bold text-white mb-2">Dawn Safari, Dam & Rock Drive</h4>
@@ -216,7 +216,7 @@ export default function ThingsToDoPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="px-3 py-1 rounded bg-[#e8a455] text-black font-mono font-bold text-xs inline-block mb-3">
+              <span className="px-3 py-1 rounded bg-[#FDBA21] text-black font-mono font-bold text-xs inline-block mb-3">
                 DAY 3
               </span>
               <h4 className="text-base font-bold text-white mb-2">Rabari Pastoral Walk & Departure</h4>

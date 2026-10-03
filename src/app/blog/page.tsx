@@ -63,18 +63,18 @@ const BLOG_ARTICLES = [
 
 export default function BlogHubPage() {
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
           <Link href="/" className="hover:text-white">Home</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">Travel Blog</span>
+          <span className="text-[#FDBA21]">Travel Blog</span>
         </div>
 
         {/* Header */}
         <div className="mb-14">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
             Editorial & Guides
           </span>
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
@@ -91,15 +91,15 @@ export default function BlogHubPage() {
             <Link
               key={idx}
               href={art.targetLink}
-              className="block p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#e8a455]/50 transition-all group"
+              className="block p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#FDBA21]/50 transition-all group"
             >
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/50 mb-3">
-                <span className="text-[#e8a455] font-bold uppercase">{art.category}</span>
+                <span className="text-[#FDBA21] font-bold uppercase">{art.category}</span>
                 <span>
                   {art.date} • {art.readTime} • By {art.author}
                 </span>
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#e8a455] transition-colors mb-3">
+              <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#FDBA21] transition-colors mb-3">
                 {art.title}
               </h2>
               <p className="text-sm text-white/70 leading-relaxed mb-4">{art.desc}</p>

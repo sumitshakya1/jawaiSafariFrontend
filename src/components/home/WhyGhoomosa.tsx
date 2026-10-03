@@ -13,61 +13,53 @@ export function WhyGhoomosa() {
       desc: 'A Jawai trip is more than one safari. We coordinate safaris, stays, private transfers from Udaipur/Jodhpur, and cultural experiences seamlessly.',
     },
     {
-      icon: 'receipt_long',
-      title: 'Transparent Quotation Desk',
-      desc: 'No hidden surcharges or forced package add-ons. You receive a clear, itemized proposal detailing vehicle permits, lodge categories, and meals.',
+      icon: 'chat',
+      title: 'Direct WhatsApp Quotations',
+      desc: 'Transparent custom quotes based on live availability, seasonal conditions, group size, and your travel style.',
     },
     {
-      icon: 'support_agent',
-      title: 'Dedicated Ground Concierge',
-      desc: 'From the moment your vehicle departs the airport until your return, a dedicated Ghoomosa coordinator ensures effortless operational execution.',
+      icon: 'shield',
+      title: 'Responsible Wildlife Standards',
+      desc: 'Strict adherence to silent tracking, safe observation distances, zero vehicle overcrowding, and community respect.',
     },
   ];
 
   return (
-    <section className="relative w-full py-20 md:py-28 bg-[#0d141b] text-white">
-      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column Text */}
-          <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-3 mb-3">
-              <span className="w-6 h-[1px] bg-primary" />
-              <span className="font-label-counter text-[11px] font-semibold text-primary tracking-[0.35em] uppercase">
-                THE GHOOMOSA PROMISE
-              </span>
-            </div>
-            <h2 className="font-display-hero text-3xl md:text-5xl uppercase tracking-tight text-white mb-6">
-              Why Travellers Choose Ghoomosa
-            </h2>
-            <p className="text-body-sm text-on-surface-variant leading-relaxed mb-6">
-              A Jawai trip is an intimate encounter with prehistoric geology and wild apex predators. We bring all the critical elements together—experiences, stay, local transport, and ethical field protocols—into one seamless journey.
-            </p>
-            <div className="p-4 bg-surface-container-lowest/80 border-l-2 border-primary font-editorial-quote italic text-sm text-white/80">
-              “Trips That Become Stories — crafted with reverence for Rajasthan’s wild granite soul.”
-            </div>
+    <section className="relative w-full py-20 md:py-28 bg-[#F8FAF8]">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-3 mb-2">
+            <span className="w-6 h-[2px] bg-[#005B5C]" />
+            <span className="font-mono text-[11px] font-bold text-[#005B5C] tracking-[0.25em] uppercase">
+              THE GHOOMOSA PROMISE
+            </span>
+            <span className="w-6 h-[2px] bg-[#005B5C]" />
           </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display-brand text-[#005B5C] tracking-tight">
+            Why Plan With Ghoomosa
+          </h2>
+          <p className="mt-3 text-sm md:text-base text-[#667085] font-light">
+            We bridge authentic local expertise with seamless, transparent trip orchestration.
+          </p>
+        </div>
 
-          {/* Right Column Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {points.map((p, idx) => (
-              <div
-                key={idx}
-                className="bg-surface-container-low/40 border border-white/10 p-6 flex flex-col justify-between hover:border-primary/40 transition-colors"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
-                    <span className="material-symbols-outlined text-xl">{p.icon}</span>
-                  </div>
-                  <h3 className="font-display-hero text-lg uppercase tracking-tight text-white mb-2">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs text-on-surface-variant leading-relaxed">
-                    {p.desc}
-                  </p>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {points.map((pt, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-2xl bg-white border border-[#DDE7E5] hover:border-[#0A7B75] transition-all shadow-sm flex flex-col"
+            >
+              <div className="w-12 h-12 rounded-xl bg-[#EEF8F6] text-[#005B5C] flex items-center justify-center mb-5">
+                <span className="material-symbols-outlined text-2xl">{pt.icon}</span>
               </div>
-            ))}
-          </div>
+              <h3 className="text-base font-bold text-[#005B5C] mb-2">
+                {pt.title}
+              </h3>
+              <p className="text-xs text-[#263238] font-light leading-relaxed">
+                {pt.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

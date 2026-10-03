@@ -23,11 +23,11 @@ export class StandardSlideCounterStyle extends BaseCounter {
 
 export class BarSlideCounterStyle extends BaseCounter {
   public getCurrentClasses(): string {
-    return 'font-display-hero text-headline-lg leading-none text-on-surface font-extrabold tracking-tight';
+    return 'font-display-hero text-headline-lg leading-none text-[#263238] font-extrabold tracking-tight';
   }
 
   public getTotalClasses(): string {
-    return 'font-label-counter text-body-sm text-on-surface-variant/60 font-semibold tracking-widest';
+    return 'font-label-counter text-body-sm text-[#667085]/60 font-semibold tracking-widest';
   }
 
   public getContainerClasses(): string {
@@ -37,11 +37,11 @@ export class BarSlideCounterStyle extends BaseCounter {
 
 export class HairlineSlideCounterStyle extends BaseCounter {
   public getCurrentClasses(): string {
-    return 'font-display-hero text-headline-lg md:text-[2.25rem] text-on-surface font-extrabold tracking-tight leading-none drop-shadow-md';
+    return 'font-display-hero text-headline-lg md:text-[2.25rem] text-[#263238] font-extrabold tracking-tight leading-none drop-shadow-md';
   }
 
   public getTotalClasses(): string {
-    return 'font-label-counter text-body-sm text-on-surface/50 font-medium tracking-[0.25em]';
+    return 'font-label-counter text-body-sm text-[#263238]/50 font-medium tracking-[0.25em]';
   }
 
   public getContainerClasses(): string {

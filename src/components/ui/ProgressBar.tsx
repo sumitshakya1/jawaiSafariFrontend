@@ -28,7 +28,7 @@ export function ProgressBar({
   return (
     <div className={`absolute bottom-0 left-0 w-full h-[2px] bg-white/10 z-20 ${className}`}>
       <div
-        className="h-full bg-primary-container transition-all duration-500 ease-out"
+        className="h-full bg-[#005B5C] transition-all duration-500 ease-out"
         style={{ width: `${progress}%` }}
       />
     </div>

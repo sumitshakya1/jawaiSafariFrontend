@@ -21,7 +21,7 @@ export default function JawaiDestinationPage() {
   });
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-20">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-20">
       {/* Hero Section */}
       <section className="relative px-6 md:px-12 max-w-7xl mx-auto mb-20">
         <div className="relative rounded-3xl overflow-hidden border border-white/10 p-8 md:p-16 bg-gradient-to-r from-black/90 via-black/60 to-transparent">
@@ -36,7 +36,7 @@ export default function JawaiDestinationPage() {
           </div>
 
           <div className="max-w-3xl">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-4">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4">
               Destination Flagship
             </span>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-black text-white tracking-tight leading-tight mb-6">
@@ -69,7 +69,7 @@ export default function JawaiDestinationPage() {
       {/* Why Visit Jawai Grid */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-24">
         <div className="mb-12">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e8a455] font-bold">
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FDBA21] font-bold">
             Landscape & Ecology
           </span>
           <h2 className="text-2xl md:text-4xl font-serif font-bold text-white mt-2">
@@ -79,7 +79,7 @@ export default function JawaiDestinationPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
-            <span className="material-symbols-outlined text-3xl text-[#e8a455] mb-4">pets</span>
+            <span className="material-symbols-outlined text-3xl text-[#FDBA21] mb-4">pets</span>
             <h3 className="text-lg font-bold text-white mb-2">Unfenced Leopard Sanctuary</h3>
             <p className="text-sm text-white/70 leading-relaxed">
               Leopards roam freely across natural granite boulder caves in complete peaceful co-existence with local shepherd communities.
@@ -87,7 +87,7 @@ export default function JawaiDestinationPage() {
           </div>
 
           <div className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
-            <span className="material-symbols-outlined text-3xl text-[#e8a455] mb-4">water</span>
+            <span className="material-symbols-outlined text-3xl text-[#FDBA21] mb-4">water</span>
             <h3 className="text-lg font-bold text-white mb-2">Jawai Dam & Wetlands</h3>
             <p className="text-sm text-white/70 leading-relaxed">
               The largest reservoir in Western Rajasthan, hosting thousands of migratory flamingos, cranes, pelicans, and large marsh crocodiles.
@@ -95,7 +95,7 @@ export default function JawaiDestinationPage() {
           </div>
 
           <div className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
-            <span className="material-symbols-outlined text-3xl text-[#e8a455] mb-4">terrain</span>
+            <span className="material-symbols-outlined text-3xl text-[#FDBA21] mb-4">terrain</span>
             <h3 className="text-lg font-bold text-white mb-2">Monolithic Granite Hills</h3>
             <p className="text-sm text-white/70 leading-relaxed">
               Million-year-old smooth granite domes providing steep technical 4x4 climbs, panoramic sunset views, and deep starry skies.
@@ -108,7 +108,7 @@ export default function JawaiDestinationPage() {
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e8a455] font-bold">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FDBA21] font-bold">
               Field Activities
             </span>
             <h2 className="text-2xl md:text-4xl font-serif font-bold text-white mt-2">
@@ -117,7 +117,7 @@ export default function JawaiDestinationPage() {
           </div>
           <Link
             href="/jawai-safari-booking"
-            className="text-xs font-mono uppercase tracking-widest text-[#e8a455] hover:underline inline-flex items-center gap-1"
+            className="text-xs font-mono uppercase tracking-widest text-[#FDBA21] hover:underline inline-flex items-center gap-1"
           >
             <span>Book Safari Enquiry</span>
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -129,7 +129,7 @@ export default function JawaiDestinationPage() {
             <Link
               key={exp.id}
               href={`/${exp.slug}`}
-              className="group rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden hover:border-[#e8a455]/50 transition-all flex flex-col justify-between"
+              className="group rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden hover:border-[#FDBA21]/50 transition-all flex flex-col justify-between"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -144,14 +144,14 @@ export default function JawaiDestinationPage() {
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-white text-base group-hover:text-[#e8a455] transition-colors mb-2">
+                  <h3 className="font-bold text-white text-base group-hover:text-[#FDBA21] transition-colors mb-2">
                     {exp.name}
                   </h3>
                   <p className="text-xs text-white/60 line-clamp-3 leading-relaxed mb-4">
                     {exp.shortDesc}
                   </p>
                 </div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#e8a455] flex items-center gap-1">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[#FDBA21] flex items-center gap-1">
                   <span>Explore Guide</span>
                   <span className="material-symbols-outlined text-xs">arrow_forward</span>
                 </span>
@@ -165,7 +165,7 @@ export default function JawaiDestinationPage() {
       <section className="px-6 md:px-12 max-w-7xl mx-auto mb-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e8a455] font-bold">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FDBA21] font-bold">
               Curated Itineraries
             </span>
             <h2 className="text-2xl md:text-4xl font-serif font-bold text-white mt-2">
@@ -177,7 +177,7 @@ export default function JawaiDestinationPage() {
           </div>
           <Link
             href="/jawai-tour-packages"
-            className="text-xs font-mono uppercase tracking-widest text-[#e8a455] hover:underline inline-flex items-center gap-1"
+            className="text-xs font-mono uppercase tracking-widest text-[#FDBA21] hover:underline inline-flex items-center gap-1"
           >
             <span>View All 10 Packages</span>
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -200,7 +200,7 @@ export default function JawaiDestinationPage() {
               >
                 <div className="relative h-56 w-full">
                   <Image src={pkg.image} alt={pkg.name} fill className="object-cover" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#e8a455]">
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#FDBA21]">
                     {pkg.tag}
                   </span>
                   <span className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-xs font-mono text-white">
@@ -220,7 +220,7 @@ export default function JawaiDestinationPage() {
                     <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                       <Link
                         href={`/jawai-tour-packages/${pkg.slug}`}
-                        className="text-xs font-mono uppercase tracking-wider text-white hover:text-[#e8a455] transition-colors"
+                        className="text-xs font-mono uppercase tracking-wider text-white hover:text-[#FDBA21] transition-colors"
                       >
                         Itinerary Details →
                       </Link>
@@ -249,33 +249,33 @@ export default function JawaiDestinationPage() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-sm text-white/80">
             <div className="p-4 rounded-xl bg-black/40 border border-white/10">
-              <strong className="text-[#e8a455] block mb-1">1 Night / 2 Days</strong>
+              <strong className="text-[#FDBA21] block mb-1">1 Night / 2 Days</strong>
               Ideal for a short safari escape from Udaipur or Jodhpur with 1-2 prime game tracking drives.
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/10">
-              <strong className="text-[#e8a455] block mb-1">2 Nights / 3 Days</strong>
+              <strong className="text-[#FDBA21] block mb-1">2 Nights / 3 Days</strong>
               Balanced first visit covering leopards, Jawai Dam birding, crocodiles, and granite climbs.
             </div>
             <div className="p-4 rounded-xl bg-black/40 border border-white/10">
-              <strong className="text-[#e8a455] block mb-1">3 Nights / 4 Days</strong>
+              <strong className="text-[#FDBA21] block mb-1">3 Nights / 4 Days</strong>
               Slow travel itinerary with pastoral Rabari culture, cave temples, and unhurried wildlife sessions.
             </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono uppercase tracking-wider">
-            <Link href="/best-time-to-visit-jawai" className="hover:text-[#e8a455] underline">
+            <Link href="/best-time-to-visit-jawai" className="hover:text-[#FDBA21] underline">
               Best Time to Visit
             </Link>
             <span>•</span>
-            <Link href="/how-to-reach-jawai" className="hover:text-[#e8a455] underline">
+            <Link href="/how-to-reach-jawai" className="hover:text-[#FDBA21] underline">
               How to Reach Jawai
             </Link>
             <span>•</span>
-            <Link href="/jawai-hotels-resorts" className="hover:text-[#e8a455] underline">
+            <Link href="/jawai-hotels-resorts" className="hover:text-[#FDBA21] underline">
               Stays & Resorts
             </Link>
             <span>•</span>
-            <Link href="/responsible-travel" className="hover:text-[#e8a455] underline">
+            <Link href="/responsible-travel" className="hover:text-[#FDBA21] underline">
               Responsible Wildlife Code
             </Link>
           </div>

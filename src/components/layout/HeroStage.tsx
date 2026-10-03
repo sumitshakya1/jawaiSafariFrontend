@@ -17,7 +17,7 @@ export function HeroStage({
   className = '',
 }: HeroStageProps) {
   return (
-    <section className={`relative w-full min-h-[100svh] h-screen -mt-24 overflow-hidden select-none bg-surface-container-lowest ${className}`.trim()}>
+    <section className={`relative w-full min-h-[100svh] h-screen -mt-24 overflow-hidden select-none bg-[#F8FAF8] ${className}`.trim()}>
       {/* Scenic Background Layer */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out scale-100"

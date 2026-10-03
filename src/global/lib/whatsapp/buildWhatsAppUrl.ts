@@ -5,9 +5,12 @@ export interface WhatsAppContext {
   packageId?: string;
   duration?: string;
   experienceName?: string;
+  packageOrExperienceName?: string;
+  destination?: string;
   travelDate?: string;
   travellers?: number | string;
   pageUrl?: string;
+  canonicalPath?: string;
   customMessage?: string;
 }
 
@@ -20,9 +23,12 @@ export function buildWhatsAppUrl(context: WhatsAppContext = {}): string {
     packageId,
     duration,
     experienceName,
+    packageOrExperienceName,
+    destination,
     travelDate,
     travellers,
     pageUrl,
+    canonicalPath,
     customMessage,
   } = context;
 
@@ -30,10 +36,10 @@ export function buildWhatsAppUrl(context: WhatsAppContext = {}): string {
     return `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(customMessage)}`;
   }
 
-  const subject = packageName || experienceName || 'Jawai Wildlife Expedition';
+  const subject = packageOrExperienceName || packageName || experienceName || 'Jawai Wildlife Expedition';
   const parts: string[] = [`Hi Ghoomosa, I am interested in ${subject}.`];
 
-  parts.push(`Destination: ${SITE_CONFIG.primaryDestination}.`);
+  parts.push(`Destination: ${destination || SITE_CONFIG.primaryDestination}.`);
 
   if (duration) {
     parts.push(`Duration: ${duration}.`);
@@ -51,8 +57,9 @@ export function buildWhatsAppUrl(context: WhatsAppContext = {}): string {
     parts.push(`Travellers: ${travellers}.`);
   }
 
-  if (pageUrl) {
-    parts.push(`Page: ${pageUrl}.`);
+  const effectiveUrl = pageUrl || canonicalPath;
+  if (effectiveUrl) {
+    parts.push(`Page: ${effectiveUrl}.`);
   }
 
   parts.push('Please share the best quotation and availability.');
@@ -60,3 +67,4 @@ export function buildWhatsAppUrl(context: WhatsAppContext = {}): string {
   const text = parts.join(' ');
   return `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
+

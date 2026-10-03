@@ -17,7 +17,7 @@ export default function LuxuryStaysPage() {
   );
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
@@ -25,12 +25,12 @@ export default function LuxuryStaysPage() {
           <span>/</span>
           <Link href="/jawai-hotels-resorts" className="hover:text-white transition-colors">Hotels & Resorts</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">Luxury Stays</span>
+          <span className="text-[#FDBA21]">Luxury Stays</span>
         </div>
 
         {/* Header */}
         <div className="mb-14 text-center max-w-3xl mx-auto">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
             Ultra-Luxury Safari & Royal Heritage
           </span>
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
@@ -53,7 +53,7 @@ export default function LuxuryStaysPage() {
             return (
               <div
                 key={hotel.id}
-                className="rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-[#e8a455]/40 transition-all duration-300 group"
+                className="rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-[#FDBA21]/40 transition-all duration-300 group"
               >
                 <div>
                   <div className="relative h-72 w-full overflow-hidden">
@@ -64,7 +64,7 @@ export default function LuxuryStaysPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#e8a455] border border-[#e8a455]/30">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#FDBA21] border border-[#FDBA21]/30">
                       {hotel.tag}
                     </span>
                     <span className="absolute bottom-3 left-4 text-xs font-mono text-white/80">
@@ -73,10 +73,10 @@ export default function LuxuryStaysPage() {
                   </div>
 
                   <div className="p-8">
-                    <span className="text-xs font-mono text-[#e8a455] uppercase tracking-wider block mb-1">
+                    <span className="text-xs font-mono text-[#FDBA21] uppercase tracking-wider block mb-1">
                       {hotel.categoryLabel}
                     </span>
-                    <h2 className="text-2xl font-serif font-bold text-white mb-3 group-hover:text-[#e8a455] transition-colors">
+                    <h2 className="text-2xl font-serif font-bold text-white mb-3 group-hover:text-[#FDBA21] transition-colors">
                       {hotel.name}
                     </h2>
                     <p className="text-xs md:text-sm text-white/70 leading-relaxed mb-6">
@@ -86,7 +86,7 @@ export default function LuxuryStaysPage() {
                     <div className="space-y-2 mb-6">
                       {hotel.keyFeatures.map((feat, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-xs text-white/85">
-                          <span className="material-symbols-outlined text-sm text-[#e8a455] shrink-0 mt-0.5">
+                          <span className="material-symbols-outlined text-sm text-[#FDBA21] shrink-0 mt-0.5">
                             star
                           </span>
                           <span>{feat}</span>
@@ -99,7 +99,7 @@ export default function LuxuryStaysPage() {
                 <div className="p-8 pt-0 border-t border-white/5">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-mono text-white/50">{hotel.distanceFromStation}</span>
-                    <span className="text-xs font-mono text-[#e8a455] font-bold uppercase">
+                    <span className="text-xs font-mono text-[#FDBA21] font-bold uppercase">
                       Custom Bespoke Quote
                     </span>
                   </div>
@@ -107,7 +107,7 @@ export default function LuxuryStaysPage() {
                     href={hotelWhatsApp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#e8a455] to-[#c98335] hover:from-[#ffc27e] hover:to-[#e8a455] text-black font-bold text-xs font-mono uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(232,164,85,0.3)]"
+                    className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#FDBA21] to-[#c98335] hover:from-[#FDBA21] hover:to-[#FDBA21] text-black font-bold text-xs font-mono uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(232,164,85,0.3)]"
                   >
                     <span className="material-symbols-outlined text-base">chat</span>
                     <span>Request Luxury Quotation</span>

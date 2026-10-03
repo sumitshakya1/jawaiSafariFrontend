@@ -33,7 +33,7 @@ export default function SafariBookingEnquiryPage() {
   });
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-24">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-24">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
@@ -41,12 +41,12 @@ export default function SafariBookingEnquiryPage() {
           <span>/</span>
           <Link href="/jawai" className="hover:text-white">Jawai</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">Safari Enquiry</span>
+          <span className="text-[#FDBA21]">Safari Enquiry</span>
         </div>
 
         {/* Title */}
         <div className="mb-10 text-center">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
             Safari Slot Enquiry
           </span>
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
@@ -64,7 +64,7 @@ export default function SafariBookingEnquiryPage() {
             </div>
             <h2 className="text-2xl font-serif font-bold text-white">Enquiry Received!</h2>
             <p className="text-sm text-white/80 max-w-lg mx-auto leading-relaxed">
-              Thank you, <strong className="text-white">{formData.name}</strong>. Our Jawai expedition team is reviewing your requested slot for <strong className="text-[#e8a455]">{formData.travelDate}</strong>.
+              Thank you, <strong className="text-white">{formData.name}</strong>. Our Jawai expedition team is reviewing your requested slot for <strong className="text-[#FDBA21]">{formData.travelDate}</strong>.
             </p>
             <div>
               <a
@@ -85,7 +85,7 @@ export default function SafariBookingEnquiryPage() {
           >
             {/* Contact Details */}
             <div>
-              <h2 className="text-sm font-mono uppercase tracking-wider text-[#e8a455] mb-4 flex items-center gap-2">
+              <h2 className="text-sm font-mono uppercase tracking-wider text-[#FDBA21] mb-4 flex items-center gap-2">
                 <span className="material-symbols-outlined text-base">person</span>
                 <span>1. Traveller Contact Details</span>
               </h2>
@@ -98,7 +98,7 @@ export default function SafariBookingEnquiryPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Vikramaditya Rathore"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -109,7 +109,7 @@ export default function SafariBookingEnquiryPage() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="e.g. +91 98765 43210"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function SafariBookingEnquiryPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. traveller@domain.com"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function SafariBookingEnquiryPage() {
 
             {/* Safari Details */}
             <div className="pt-6 border-t border-white/10">
-              <h2 className="text-sm font-mono uppercase tracking-wider text-[#e8a455] mb-4 flex items-center gap-2">
+              <h2 className="text-sm font-mono uppercase tracking-wider text-[#FDBA21] mb-4 flex items-center gap-2">
                 <span className="material-symbols-outlined text-base">calendar_month</span>
                 <span>2. Safari Timing & Vehicle Preference</span>
               </h2>
@@ -139,7 +139,7 @@ export default function SafariBookingEnquiryPage() {
                     type="date"
                     value={formData.travelDate}
                     onChange={(e) => setFormData({ ...formData, travelDate: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
 
@@ -148,7 +148,7 @@ export default function SafariBookingEnquiryPage() {
                   <select
                     value={formData.slotPreference}
                     onChange={(e) => setFormData({ ...formData, slotPreference: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     <option value="Dawn (05:45 AM - 08:45 AM)">Dawn (05:45 AM - 08:45 AM)</option>
                     <option value="Dusk (04:15 PM - 07:15 PM)">Dusk (04:15 PM - 07:15 PM)</option>
@@ -161,7 +161,7 @@ export default function SafariBookingEnquiryPage() {
                   <select
                     value={formData.adults}
                     onChange={(e) => setFormData({ ...formData, adults: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     {[1, 2, 3, 4, 5, 6, '7+ Group'].map((num) => (
                       <option key={num} value={String(num)}>
@@ -176,7 +176,7 @@ export default function SafariBookingEnquiryPage() {
                   <select
                     value={formData.children}
                     onChange={(e) => setFormData({ ...formData, children: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     {[0, 1, 2, 3, 4].map((num) => (
                       <option key={num} value={String(num)}>
@@ -193,7 +193,7 @@ export default function SafariBookingEnquiryPage() {
                   <select
                     value={formData.vehiclePreference}
                     onChange={(e) => setFormData({ ...formData, vehiclePreference: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     <option value="Private 4x4 Gypsy (Recommended)">Private 4x4 Gypsy (Recommended)</option>
                     <option value="Shared Safari Slot">Shared Safari Slot</option>
@@ -208,7 +208,7 @@ export default function SafariBookingEnquiryPage() {
                     value={formData.pickupLocation}
                     onChange={(e) => setFormData({ ...formData, pickupLocation: e.target.value })}
                     placeholder="e.g. Resort Name or Falna Junction"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
               </div>
@@ -222,7 +222,7 @@ export default function SafariBookingEnquiryPage() {
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="e.g. Interested in flamingos at Jawai dam, elderly guest assistance, or photography setup."
-                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
               />
             </div>
 
@@ -230,7 +230,7 @@ export default function SafariBookingEnquiryPage() {
             <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-xs text-white/50 leading-relaxed">
                 By submitting, you agree to our{' '}
-                <Link href="/privacy-policy" className="text-[#e8a455] underline">
+                <Link href="/privacy-policy" className="text-[#FDBA21] underline">
                   Privacy Policy
                 </Link>{' '}
                 and understand that wildlife sightings depend on natural animal movement.

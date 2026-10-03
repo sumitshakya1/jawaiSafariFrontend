@@ -21,15 +21,15 @@ export class BlockSpecRenderer extends BaseListRenderer<ISpecificationRowDTO> {
   }
 
   public getRowClasses(): string {
-    return 'bg-surface-container-low p-4 flex items-center justify-between';
+    return 'bg-white p-4 flex items-center justify-between';
   }
 
   public getLabelClasses(): string {
-    return 'font-label-nav text-label-nav uppercase tracking-widest text-on-surface-variant';
+    return 'font-label-nav text-label-nav uppercase tracking-widest text-[#667085]';
   }
 
   public getValueClasses(item: ISpecificationRowDTO): string {
-    return `font-headline-sm text-body-sm font-semibold ${item.highlight ? 'text-primary' : 'text-on-surface'}`;
+    return `font-headline-sm text-body-sm font-semibold ${item.highlight ? 'text-primary' : 'text-[#263238]'}`;
   }
 
   public renderRow(item: ISpecificationRowDTO, index: number): React.ReactNode {
@@ -55,11 +55,11 @@ export class HairlineProtocolRenderer extends BaseListRenderer<ISpecificationRow
   }
 
   public getLabelClasses(): string {
-    return 'text-on-surface-variant font-medium';
+    return 'text-[#667085] font-medium';
   }
 
   public getValueClasses(item: ISpecificationRowDTO): string {
-    return `${item.highlight ? 'text-primary font-semibold' : 'text-on-surface font-semibold'}`;
+    return `${item.highlight ? 'text-primary font-semibold' : 'text-[#263238] font-semibold'}`;
   }
 
   public renderRow(item: ISpecificationRowDTO, index: number): React.ReactNode {

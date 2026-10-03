@@ -14,18 +14,38 @@ export const metadata: Metadata = {
     'Jawai Leopard Safari',
     'Jawai Tour Packages',
     'Rajasthan Wildlife',
-    'Nocturnal Safari',
     'Rabari Coexistence',
-    'Granite Kopjes',
+    'Granite Hills Jawai',
     'Luxury Wildlife Expedition',
   ],
   authors: [{ name: 'Ghoomosa Editorial' }],
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
+    description: 'Plan a complete Jawai trip with wildlife safaris, bird watching, stays, transfers and customized packages.',
+    url: SITE_CONFIG.domain,
+    siteName: 'Ghoomosa',
+    images: [
+      {
+        url: '/images/ghoomosa-logo.png',
+        width: 1024,
+        height: 342,
+        alt: 'Ghoomosa – Trips That Become Stories',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#10131a',
+  themeColor: '#005B5C',
 };
 
 export default function RootLayout({
@@ -34,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-surface font-body-md text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary">
+    <html lang="en">
+      <body className="bg-[#F8FAF8] font-body-md text-[#263238] min-h-screen selection:bg-[#FDBA21] selection:text-[#263238] antialiased">
         <Header />
         <main className="w-full relative">
           {children}
@@ -46,4 +66,3 @@ export default function RootLayout({
     </html>
   );
 }
-

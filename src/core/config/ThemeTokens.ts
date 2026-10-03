@@ -1,39 +1,20 @@
 /**
- * Nocturnal Safari Editorial design system tokens.
- * Single source of truth aligning CSS variables, Tailwind classes, and runtime components.
+ * Ghoomosa Design System Tokens - Locked single source of truth
  */
 export const ThemeTokens = {
   colors: {
-    surface: '#10131a',
-    surfaceDim: '#10131a',
-    surfaceBright: '#363941',
-    surfaceContainerLowest: '#0b0e15',
-    surfaceContainerLow: '#191b23',
-    surfaceContainer: '#1d1f27',
-    surfaceContainerHigh: '#272a32',
-    surfaceContainerHighest: '#32353d',
-    onSurface: '#e1e2ec',
-    onSurfaceVariant: '#d6c3b3',
-    outline: '#9e8e7f',
-    outlineVariant: '#514438',
-    surfaceTint: '#ffb868',
-    primary: '#ffc27e',
-    onPrimary: '#482900',
-    primaryContainer: '#e8a455',
-    onPrimaryContainer: '#643b00',
-    inversePrimary: '#875204',
-    secondary: '#ffb77d',
-    onSecondary: '#4d2600',
-    secondaryContainer: '#d97707',
-    onSecondaryContainer: '#432100',
-    tertiary: '#c6cddc',
-    onTertiary: '#29313c',
-    tertiaryContainer: '#aab2c1',
-    onTertiaryContainer: '#3d4551',
-    error: '#ffb4ab',
-    onError: '#690005',
-    errorContainer: '#93000a',
-    onErrorContainer: '#ffdad6',
+    primary: '#005B5C',         // Deep Teal: brand base, primary CTA, major headings
+    primaryHover: '#0A7B75',    // Secondary Teal: hover, icons, links
+    gold: '#FDBA21',            // Sunrise Gold: premium accent, highlights, active
+    orange: '#F7941D',          // Warm Orange: limited adventure accent
+    bg: '#F8FAF8',              // Off White: page background
+    surface: '#FFFFFF',         // Cards, forms
+    surfaceSoft: '#EEF8F6',     // Light Teal Surface: Responsible Travel/soft sections
+    text: '#263238',            // Charcoal: body text
+    textMuted: '#667085',       // Muted Grey: secondary text, metadata
+    border: '#DDE7E5',          // Light neutral border
+    whatsapp: '#25D366',        // ONLY WhatsApp-specific buttons/icons
+    footer: '#003F40',          // Derived dark teal
   },
   spacing: {
     margin: '4rem',
@@ -47,10 +28,11 @@ export const ThemeTokens = {
     spaceXl: '4.5rem',
   },
   borderRadius: {
-    default: '0px', // Strict razor-sharp per DESIGN.md and button specs
-    tailwindDefault: '0.25rem',
-    lg: '0.5rem',
-    xl: '0.75rem',
+    default: '0.375rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    '2xl': '1.5rem',
     full: '9999px',
   },
 } as const;

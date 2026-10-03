@@ -18,18 +18,18 @@ export default function GroupTourPage() {
   });
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
           <Link href="/" className="hover:text-white">Home</Link>
           <span>/</span>
           <Link href="/jawai-tour-packages" className="hover:text-white">Packages</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">Group Travel</span>
+          <span className="text-[#FDBA21]">Group Travel</span>
         </div>
 
         <div className="mb-10 text-center max-w-2xl mx-auto">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
             Group Wilderness
           </span>
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">

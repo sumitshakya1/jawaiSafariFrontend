@@ -52,13 +52,13 @@ export default function WorkPage() {
   ];
 
   return (
-    <div className="w-full min-h-[calc(100vh-6rem)] bg-surface text-on-surface px-margin-mobile md:px-margin py-16">
+    <div className="w-full min-h-[calc(100vh-6rem)] bg-surface text-[#263238] px-margin-mobile md:px-margin py-16">
       <div className="max-w-[1720px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-white/10">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="w-8 h-px bg-primary-container" />
-              <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-primary-container font-bold">
+              <span className="w-8 h-px bg-[#005B5C]" />
+              <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-[#005B5C] font-bold">
                 EXPEDITION PORTFOLIO
               </span>
             </div>
@@ -66,7 +66,7 @@ export default function WorkPage() {
               Field Chapters &amp; Archives
             </h1>
           </div>
-          <p className="font-body-md text-on-surface-variant max-w-md">
+          <p className="font-body-md text-[#667085] max-w-md">
             Every expedition document is categorized by terrain, lighting condition, and focal
             predator behavior recorded by our indigenous tracking guild.
           </p>
@@ -84,7 +84,7 @@ export default function WorkPage() {
                 description={exp.description}
               />
               <div className="flex items-center justify-between pt-2">
-                <span className="font-label-counter text-xs text-primary-container tracking-widest uppercase">
+                <span className="font-label-counter text-xs text-[#005B5C] tracking-widest uppercase">
                   {exp.kicker}
                 </span>
                 <Link
@@ -99,12 +99,12 @@ export default function WorkPage() {
           ))}
         </div>
 
-        <div className="mt-20 p-12 bg-surface-container-low border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-20 p-12 bg-white border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h3 className="font-headline-sm text-xl uppercase font-bold text-white mb-2">
               Commission Private Wildlife Reconnaissance
             </h3>
-            <p className="font-body-sm text-on-surface-variant max-w-xl">
+            <p className="font-body-sm text-[#667085] max-w-xl">
               Tailored game drives, dedicated naturalist escorts, and private astronomical setups
               are arranged with minimum 3-week lead time.
             </p>

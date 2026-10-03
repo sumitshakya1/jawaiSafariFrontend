@@ -65,11 +65,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full min-h-[calc(100vh-6rem)] bg-surface text-on-surface px-margin-mobile md:px-margin py-16">
+    <div className="w-full min-h-[calc(100vh-6rem)] bg-surface text-[#263238] px-margin-mobile md:px-margin py-16">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-3">
-          <span className="w-8 h-[1px] bg-primary-container" />
-          <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-primary-container font-bold">
+          <span className="w-8 h-[1px] bg-[#005B5C]" />
+          <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-[#005B5C] font-bold">
             EXPEDITION ACCESS DESK
           </span>
         </div>
@@ -78,19 +78,19 @@ export default function ContactPage() {
           Request Night Expedition Briefing
         </h1>
 
-        <p className="font-editorial-quote italic text-on-surface-variant text-lg md:text-xl max-w-2xl mb-12">
+        <p className="font-editorial-quote italic text-[#667085] text-lg md:text-xl max-w-2xl mb-12">
           “Access to Jawai&apos;s nocturnal granite reserves is strictly curated to preserve the silent pact between indigenous trackers and apex leopards.”
         </p>
 
         {submitted ? (
-          <div className="bg-surface-container-low border border-primary-container/40 p-8 md:p-12 text-center flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-full border border-primary-container flex items-center justify-center text-primary-container mb-2">
+          <div className="bg-white border border-primary-container/40 p-8 md:p-12 text-center flex flex-col items-center gap-4">
+            <div className="w-16 h-16 rounded-full border border-primary-container flex items-center justify-center text-[#005B5C] mb-2">
               <span className="material-symbols-outlined text-3xl">check</span>
             </div>
             <h3 className="font-display-hero text-2xl uppercase tracking-wider text-white">
               Briefing Request Received
             </h3>
-            <p className="font-body-md text-on-surface-variant max-w-md">
+            <p className="font-body-md text-[#667085] max-w-md">
               Your dossier request has been registered. The chief expedition coordinator will
               contact you via private communication channel with verified seasonal moon schedules.
             </p>
@@ -116,7 +116,7 @@ export default function ContactPage() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-surface-container-low border border-white/10 p-8 md:p-12 flex flex-col gap-6 shadow-2xl"
+            className="bg-white border border-white/10 p-8 md:p-12 flex flex-col gap-6 shadow-2xl"
           >
             {errorMessage && (
               <div className="bg-error-container/40 border border-error/50 p-4 text-sm text-on-error-container font-body-sm">
@@ -153,14 +153,14 @@ export default function ContactPage() {
                 placeholder="+91 98765 43210"
               />
               <div className="flex flex-col gap-1.5 w-full">
-                <label className="font-label-nav text-[11px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold">
+                <label className="font-label-nav text-[11px] uppercase tracking-[0.2em] text-[#667085] font-semibold">
                   Expedition Program *
                 </label>
                 <select
                   name="expeditionInterest"
                   value={formData.expeditionInterest}
                   onChange={handleChange}
-                  className="w-full bg-[#121820] text-white border border-white/20 px-4 py-3.5 rounded-none font-body-md text-sm outline-none focus:border-primary-container"
+                  className="w-full bg-[#F8FAF8] text-white border border-white/20 px-4 py-3.5 rounded-none font-body-md text-sm outline-none focus:border-primary-container"
                 >
                   <option value="01_JAWAI">01 — Granite Kopjes Day &amp; Dusk</option>
                   <option value="02_SAFARI">02 — Apex Encounter 4x4 Tracking</option>
@@ -179,7 +179,7 @@ export default function ContactPage() {
             />
 
             <div className="flex flex-col gap-1.5">
-              <label className="font-label-nav text-[11px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold">
+              <label className="font-label-nav text-[11px] uppercase tracking-[0.2em] text-[#667085] font-semibold">
                 Specialized Optics, Rig or Dietary Specifications
               </label>
               <textarea
@@ -187,7 +187,7 @@ export default function ContactPage() {
                 value={formData.notes}
                 onChange={handleChange}
                 rows={3}
-                className="w-full bg-[#121820] text-white placeholder-white/40 border border-white/20 p-4 rounded-none font-body-md text-sm outline-none focus:border-primary-container"
+                className="w-full bg-[#F8FAF8] text-white placeholder-white/40 border border-white/20 p-4 rounded-none font-body-md text-sm outline-none focus:border-primary-container"
                 placeholder="Detail optical requirements (infrared telephoto, night goggles) or camp preferences..."
               />
             </div>

@@ -38,7 +38,7 @@ export default function PackageDetailPage({ params }: Props) {
   });
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
@@ -46,7 +46,7 @@ export default function PackageDetailPage({ params }: Props) {
           <span>/</span>
           <Link href="/jawai-tour-packages" className="hover:text-white">Packages</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">{pkg.name}</span>
+          <span className="text-[#FDBA21]">{pkg.name}</span>
         </div>
 
         {/* Hero Section */}
@@ -63,7 +63,7 @@ export default function PackageDetailPage({ params }: Props) {
 
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-wider">
                 {pkg.tag}
               </span>
               <span className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-mono">
@@ -80,9 +80,9 @@ export default function PackageDetailPage({ params }: Props) {
               {pkg.overview}
             </p>
 
-            <div className="p-4 rounded-xl bg-black/60 border border-white/10 inline-block mb-6">
+            <div className="p-4 rounded-xl bg-white border border-white/10 inline-block mb-6">
               <span className="text-xs font-mono text-white/60 block mb-0.5">Indicative Pricing:</span>
-              <span className="text-sm font-mono text-[#e8a455] font-bold uppercase">
+              <span className="text-sm font-mono text-[#FDBA21] font-bold uppercase">
                 Price on Request — Customized to your travel dates and stay tier
               </span>
             </div>
@@ -111,7 +111,7 @@ export default function PackageDetailPage({ params }: Props) {
               <ul className="space-y-3 text-sm text-white/80">
                 {pkg.whyChoose.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-base text-[#e8a455] mt-0.5">check_circle</span>
+                    <span className="material-symbols-outlined text-base text-[#FDBA21] mt-0.5">check_circle</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -128,7 +128,7 @@ export default function PackageDetailPage({ params }: Props) {
                     className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 relative"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-md bg-[#e8a455] text-black text-xs font-mono font-bold">
+                      <span className="px-3 py-1 rounded-md bg-[#FDBA21] text-black text-xs font-mono font-bold">
                         Day {day.day}
                       </span>
                       <h3 className="text-lg font-bold text-white">{day.title}</h3>
@@ -193,7 +193,7 @@ export default function PackageDetailPage({ params }: Props) {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {pkg.stayCategories.map((stay, i) => (
                   <div key={i} className="p-4 rounded-xl bg-black/40 border border-white/10 text-center">
-                    <span className="material-symbols-outlined text-2xl text-[#e8a455] mb-2">hotel</span>
+                    <span className="material-symbols-outlined text-2xl text-[#FDBA21] mb-2">hotel</span>
                     <span className="block text-xs font-bold text-white">{stay}</span>
                   </div>
                 ))}
@@ -203,7 +203,7 @@ export default function PackageDetailPage({ params }: Props) {
             {/* Operational Notes & Wildlife Reminder */}
             <section className="p-6 rounded-2xl bg-[#005B5C]/15 border border-[#0A7B75]/30">
               <h3 className="text-base font-bold text-white flex items-center gap-2 mb-3">
-                <span className="material-symbols-outlined text-[#e8a455]">info</span>
+                <span className="material-symbols-outlined text-[#FDBA21]">info</span>
                 <span>Important Operational Notes</span>
               </h3>
               <ul className="space-y-2 text-xs text-white/70">
@@ -212,14 +212,14 @@ export default function PackageDetailPage({ params }: Props) {
                 ))}
                 <li>
                   • Cancellations are governed by our partner lodge schedules. View our full{' '}
-                  <Link href="/cancellation-refund-policy" className="text-[#e8a455] underline">
+                  <Link href="/cancellation-refund-policy" className="text-[#FDBA21] underline">
                     Cancellation & Refund Policy
                   </Link>
                   .
                 </li>
                 <li>
                   • Please review our 12 golden principles on{' '}
-                  <Link href="/responsible-travel" className="text-[#e8a455] underline">
+                  <Link href="/responsible-travel" className="text-[#FDBA21] underline">
                     Responsible Wildlife Travel
                   </Link>
                   .
@@ -245,9 +245,9 @@ export default function PackageDetailPage({ params }: Props) {
 
           {/* Sticky Sidebar Booking RFP */}
           <div className="lg:col-span-1">
-            <div className="sticky top-28 p-6 rounded-2xl bg-black/80 border border-white/15 backdrop-blur-xl space-y-6">
+            <div className="sticky top-28 p-6 rounded-2xl bg-white border border-white/15 backdrop-blur-xl space-y-6">
               <div>
-                <span className="text-xs font-mono text-[#e8a455] uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono text-[#FDBA21] uppercase tracking-wider block mb-1">
                   Enquiry & Quote
                 </span>
                 <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
@@ -265,7 +265,7 @@ export default function PackageDetailPage({ params }: Props) {
                 </div>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-white/60">Pricing</span>
-                  <span className="font-mono text-[#e8a455] font-bold">Price on Request</span>
+                  <span className="font-mono text-[#FDBA21] font-bold">Price on Request</span>
                 </div>
               </div>
 
@@ -302,7 +302,7 @@ export default function PackageDetailPage({ params }: Props) {
       {/* Sticky Mobile CTA Bar (Section 8 requirement) */}
       <div className="lg:hidden fixed bottom-0 left-0 w-full z-50 p-4 bg-black/95 border-t border-white/15 backdrop-blur-xl flex items-center justify-between gap-4">
         <div>
-          <span className="text-[10px] font-mono text-[#e8a455] uppercase block">Price on Request</span>
+          <span className="text-[10px] font-mono text-[#FDBA21] uppercase block">Price on Request</span>
           <span className="text-xs font-bold text-white truncate max-w-[160px] block">{pkg.name}</span>
         </div>
         <a

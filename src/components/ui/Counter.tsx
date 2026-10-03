@@ -35,9 +35,9 @@ export function Counter({
         )}
       </div>
       {showBar && (
-        <div className="w-24 h-0.5 bg-surface-container-highest/60 overflow-hidden">
+        <div className="w-24 h-0.5 bg-[#EEF8F6]est/60 overflow-hidden">
           <div
-            className="h-full bg-primary-container transition-all duration-700"
+            className="h-full bg-[#005B5C] transition-all duration-700"
             style={{ width: `${(parseInt(current, 10) / parseInt(total, 10)) * 100}%` }}
           />
         </div>

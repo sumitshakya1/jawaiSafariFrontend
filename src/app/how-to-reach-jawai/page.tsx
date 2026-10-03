@@ -109,7 +109,7 @@ export default function HowToReachPage() {
   });
 
   return (
-    <div className="w-full bg-[#07090e] text-[#e1e2ec] min-h-screen pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pb-32">
       {/* 1. Custom Hero Banner */}
       <section className="relative w-full pt-36 pb-20 px-6 md:px-12 border-b border-white/10 bg-gradient-to-b from-black/90 via-[#07090e] to-[#07090e] overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -129,10 +129,10 @@ export default function HowToReachPage() {
             <span>/</span>
             <Link href="/jawai" className="hover:text-white">Jawai</Link>
             <span>/</span>
-            <span className="text-[#e8a455]">Route & Transport Guide</span>
+            <span className="text-[#FDBA21]">Route & Transport Guide</span>
           </div>
 
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-4">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4">
             Travel Logistics & Transfers
           </span>
 
@@ -168,7 +168,7 @@ export default function HowToReachPage() {
               onClick={() => setActiveRoute(route.id)}
               className={`px-5 py-3 rounded-2xl text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeRoute === route.id
-                  ? 'bg-gradient-to-r from-[#e8a455] to-[#c98335] text-black font-bold border border-[#e8a455]/80 shadow-[0_0_20px_rgba(232,164,85,0.4)] scale-105'
+                  ? 'bg-gradient-to-r from-[#FDBA21] to-[#c98335] text-black font-bold border border-[#FDBA21]/80 shadow-[0_0_20px_rgba(232,164,85,0.4)] scale-105'
                   : 'bg-white/[0.04] text-white/70 hover:text-white border border-white/10 hover:border-white/20'
               }`}
             >
@@ -184,7 +184,7 @@ export default function HowToReachPage() {
         <div className="rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/15 p-6 md:p-12 shadow-2xl mb-16">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between pb-8 border-b border-white/10 gap-6">
             <div>
-              <span className="text-xs font-mono text-[#e8a455] uppercase tracking-widest block mb-1">
+              <span className="text-xs font-mono text-[#FDBA21] uppercase tracking-widest block mb-1">
                 Selected Route
               </span>
               <h2 className="text-2xl md:text-4xl font-serif font-bold text-white">
@@ -193,13 +193,13 @@ export default function HowToReachPage() {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              <div className="px-4 py-2 rounded-xl bg-black/60 border border-white/10 text-center">
+              <div className="px-4 py-2 rounded-xl bg-white border border-white/10 text-center">
                 <span className="text-[10px] font-mono uppercase text-white/50 block">Distance</span>
                 <span className="text-sm font-bold text-white">{currentRoute.distance}</span>
               </div>
-              <div className="px-4 py-2 rounded-xl bg-black/60 border border-white/10 text-center">
+              <div className="px-4 py-2 rounded-xl bg-white border border-white/10 text-center">
                 <span className="text-[10px] font-mono uppercase text-white/50 block">Drive Time</span>
-                <span className="text-sm font-bold text-[#e8a455]">{currentRoute.time}</span>
+                <span className="text-sm font-bold text-[#FDBA21]">{currentRoute.time}</span>
               </div>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function HowToReachPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#e8a455]">route</span>
+                  <span className="material-symbols-outlined text-[#FDBA21]">route</span>
                   <span>Route Overview & Highway</span>
                 </h3>
                 <p className="text-sm text-white/80 leading-relaxed font-light">
@@ -221,7 +221,7 @@ export default function HowToReachPage() {
 
               <div>
                 <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#e8a455]">info</span>
+                  <span className="material-symbols-outlined text-[#FDBA21]">info</span>
                   <span>Ideal For</span>
                 </h3>
                 <p className="text-xs text-white/70 leading-relaxed">{currentRoute.bestFor}</p>
@@ -245,16 +245,16 @@ export default function HowToReachPage() {
               </div>
             </div>
 
-            <div className="p-6 md:p-8 rounded-2xl bg-black/60 border border-white/10 flex flex-col justify-between">
+            <div className="p-6 md:p-8 rounded-2xl bg-white border border-white/10 flex flex-col justify-between">
               <div>
                 <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#e8a455]">timeline</span>
+                  <span className="material-symbols-outlined text-[#FDBA21]">timeline</span>
                   <span>Key Milestones & Turn-by-Turn</span>
                 </h3>
                 <div className="space-y-4 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[2px] before:bg-white/10">
                   {currentRoute.steps.map((step, idx) => (
                     <div key={idx} className="flex items-start gap-4 relative pl-7">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#e8a455] absolute left-[7px] top-1.5 ring-4 ring-black" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#FDBA21] absolute left-[7px] top-1.5 ring-4 ring-black" />
                       <span className="text-xs text-white/80 leading-relaxed">{step}</span>
                     </div>
                   ))}
@@ -271,7 +271,7 @@ export default function HowToReachPage() {
         {/* 3. Train Junctions & Flights Quick Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10">
-            <span className="material-symbols-outlined text-3xl text-[#e8a455] mb-3">flight</span>
+            <span className="material-symbols-outlined text-3xl text-[#FDBA21] mb-3">flight</span>
             <h3 className="text-xl font-bold text-white mb-3">Commercial Airports Near Jawai</h3>
             <ul className="space-y-3 text-xs md:text-sm text-white/80 font-light">
               <li>
@@ -287,7 +287,7 @@ export default function HowToReachPage() {
           </div>
 
           <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/10">
-            <span className="material-symbols-outlined text-3xl text-[#e8a455] mb-3">train</span>
+            <span className="material-symbols-outlined text-3xl text-[#FDBA21] mb-3">train</span>
             <h3 className="text-xl font-bold text-white mb-3">Nearest Railway Stations</h3>
             <ul className="space-y-3 text-xs md:text-sm text-white/80 font-light">
               <li>

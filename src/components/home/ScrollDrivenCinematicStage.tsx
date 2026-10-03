@@ -118,7 +118,7 @@ export function ScrollDrivenCinematicStage() {
   };
 
   return (
-    <div className="relative w-full bg-[#07090e]">
+    <div className="relative w-full bg-[#F8FAF8]">
       {/* ── Fixed Floating HUD Overlay Across All Stacking Cards ─────────────── */}
 
       {/* 1. Counter Top-Left (e.g. 01 / 04) */}
@@ -135,7 +135,7 @@ export function ScrollDrivenCinematicStage() {
       <div className="fixed left-6 md:left-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-4 pointer-events-auto">
         <div className="w-[1px] h-20 bg-white/20 relative overflow-hidden">
           <div
-            className="absolute left-0 w-full bg-[#e8a455] will-change-transform"
+            className="absolute left-0 w-full bg-[#FDBA21] will-change-transform"
             style={{
               height: '33%',
               top: `${(activeIdx / (SCENES.length - 1)) * 67}%`,
@@ -154,7 +154,7 @@ export function ScrollDrivenCinematicStage() {
                 height: 7,
                 borderRadius: '50%',
                 cursor: 'pointer',
-                background: activeIdx === i ? '#e8a455' : 'rgba(255,255,255,0.3)',
+                background: activeIdx === i ? '#FDBA21' : 'rgba(255,255,255,0.3)',
                 transform: activeIdx === i ? 'scale(1.5)' : 'scale(1)',
                 transition: 'transform 0.3s ease, background 0.3s ease',
               }}
@@ -178,7 +178,7 @@ export function ScrollDrivenCinematicStage() {
           <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40 group-hover:text-white transition-colors [writing-mode:vertical-rl] rotate-180">
             scroll to explore
           </span>
-          <span className="material-symbols-outlined text-[13px] text-[#e8a455] rotate-90 group-hover:translate-y-1 transition-transform">
+          <span className="material-symbols-outlined text-[13px] text-[#FDBA21] rotate-90 group-hover:translate-y-1 transition-transform">
             arrow_forward
           </span>
         </button>
@@ -206,11 +206,11 @@ export function ScrollDrivenCinematicStage() {
                 scrollToCard(activeIdx + 1);
               }
             }}
-            className="w-5 h-9 rounded-full border border-white/30 flex items-start justify-center pt-1.5 cursor-pointer hover:border-[#e8a455] transition-colors"
+            className="w-5 h-9 rounded-full border border-white/30 flex items-start justify-center pt-1.5 cursor-pointer hover:border-[#FDBA21] transition-colors"
             aria-label="Scroll down"
           >
             <div
-              className="w-1 h-2 rounded-full bg-[#e8a455]"
+              className="w-1 h-2 rounded-full bg-[#FDBA21]"
               style={{ animation: 'scrollWheel 1.8s ease-in-out infinite' }}
             />
           </button>
@@ -256,11 +256,11 @@ export function ScrollDrivenCinematicStage() {
             <div className={`relative z-20 px-6 max-w-5xl mx-auto flex flex-col items-center justify-center text-center my-auto pointer-events-none pb-12 md:pb-16 ${scene.containerOffsetClass || ''}`}>
               {/* Kicker Accent */}
               <div className="pointer-events-auto inline-flex items-center gap-3 mb-2 md:mb-3">
-                <span className="w-6 md:w-10 h-[1px] bg-[#e8a455]" />
-                <span className="font-mono text-[10px] sm:text-xs md:text-sm font-semibold text-[#e8a455] tracking-[0.35em] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                <span className="w-6 md:w-10 h-[1px] bg-[#FDBA21]" />
+                <span className="font-mono text-[10px] sm:text-xs md:text-sm font-semibold text-[#FDBA21] tracking-[0.35em] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                   {scene.kicker}
                 </span>
-                <span className="w-6 md:w-10 h-[1px] bg-[#e8a455]" />
+                <span className="w-6 md:w-10 h-[1px] bg-[#FDBA21]" />
               </div>
 
               {/* Monumental Hero Title with Atmospheric Theme Gradient & Bottom Blur/Fade */}
@@ -290,7 +290,7 @@ export function ScrollDrivenCinematicStage() {
       {/* Curated Expedition Manifest Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl">
-          <div className="bg-[#0e1015] border border-white/10 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-10 shadow-2xl relative">
+          <div className="bg-[#F8FAF8] border border-white/10 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-10 shadow-2xl relative">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors cursor-pointer"

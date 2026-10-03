@@ -21,7 +21,7 @@ export default function PackagesHubPage() {
   });
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-24">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header Breadcrumbs & Title */}
         <div className="mb-10">
@@ -30,7 +30,7 @@ export default function PackagesHubPage() {
             <span>/</span>
             <Link href="/jawai" className="hover:text-white">Jawai</Link>
             <span>/</span>
-            <span className="text-[#e8a455]">Tour Packages</span>
+            <span className="text-[#FDBA21]">Tour Packages</span>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight leading-tight mb-4">
@@ -56,7 +56,7 @@ export default function PackagesHubPage() {
                 onClick={() => setSelectedDuration(tab.val)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase transition-all ${
                   selectedDuration === tab.val
-                    ? 'bg-[#e8a455] text-black font-bold'
+                    ? 'bg-[#FDBA21] text-black font-bold'
                     : 'bg-white/5 text-white/70 hover:text-white'
                 }`}
               >
@@ -79,7 +79,7 @@ export default function PackagesHubPage() {
                 onClick={() => setSelectedCategory(tab.val)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase transition-all ${
                   selectedCategory === tab.val
-                    ? 'bg-[#e8a455] text-black font-bold shadow-[0_0_12px_rgba(232,164,85,0.3)]'
+                    ? 'bg-[#FDBA21] text-black font-bold shadow-[0_0_12px_rgba(232,164,85,0.3)]'
                     : 'bg-white/5 text-white/70 hover:text-white'
                 }`}
               >
@@ -113,10 +113,10 @@ export default function PackagesHubPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#e8a455] border border-[#e8a455]/30">
+                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white backdrop-blur-md text-xs font-mono uppercase tracking-wider text-[#FDBA21] border border-[#FDBA21]/30">
                       {pkg.tag}
                     </span>
-                    <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-xs font-mono text-white">
+                    <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-white backdrop-blur-md text-xs font-mono text-white">
                       {pkg.durationShort}
                     </span>
                     <span className="absolute bottom-3 left-3 text-[11px] font-mono text-white/60">
@@ -125,10 +125,10 @@ export default function PackagesHubPage() {
                   </div>
 
                   <div className="p-6">
-                    <div className="text-xs font-mono text-[#e8a455] uppercase tracking-wider mb-2">
+                    <div className="text-xs font-mono text-[#FDBA21] uppercase tracking-wider mb-2">
                       Best For: {pkg.bestFor}
                     </div>
-                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#e8a455] transition-colors">
+                    <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#FDBA21] transition-colors">
                       {pkg.name}
                     </h2>
                     <p className="text-xs text-white/70 leading-relaxed mb-6">
@@ -137,11 +137,11 @@ export default function PackagesHubPage() {
 
                     <div className="space-y-2 mb-6 text-xs text-white/80">
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#e8a455]">verified</span>
+                        <span className="material-symbols-outlined text-sm text-[#FDBA21]">verified</span>
                         <span>{pkg.coreExperience}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#e8a455]">hotel</span>
+                        <span className="material-symbols-outlined text-sm text-[#FDBA21]">hotel</span>
                         <span>{pkg.stayCategories.join(' • ')}</span>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ export default function PackagesHubPage() {
                 <div className="p-6 pt-0">
                   <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 mb-4 flex items-center justify-between">
                     <span className="text-xs font-mono text-white/60">Pricing</span>
-                    <span className="text-xs font-mono text-[#e8a455] font-bold uppercase">
+                    <span className="text-xs font-mono text-[#FDBA21] font-bold uppercase">
                       Price on Request
                     </span>
                   </div>

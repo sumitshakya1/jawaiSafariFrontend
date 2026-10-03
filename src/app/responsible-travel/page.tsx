@@ -73,18 +73,18 @@ const GUIDELINES = [
 
 export default function ResponsibleTravelPage() {
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-32">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
           <Link href="/" className="hover:text-white">Home</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">Responsible Travel</span>
+          <span className="text-[#FDBA21]">Responsible Travel</span>
         </div>
 
         {/* Header */}
         <div className="mb-14 text-center max-w-2xl mx-auto">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#005B5C]/30 border border-[#0A7B75]/40 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#005B5C]/30 border border-[#0A7B75]/40 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
             Conservation & Etiquette
           </span>
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
@@ -102,7 +102,7 @@ export default function ResponsibleTravelPage() {
               key={idx}
               className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#005B5C]/20 text-[#e8a455] flex items-center justify-center shrink-0 border border-[#0A7B75]/30">
+              <div className="w-12 h-12 rounded-xl bg-[#005B5C]/20 text-[#FDBA21] flex items-center justify-center shrink-0 border border-[#0A7B75]/30">
                 <span className="material-symbols-outlined text-2xl">{item.icon}</span>
               </div>
               <div>
@@ -124,7 +124,7 @@ export default function ResponsibleTravelPage() {
           </p>
           <Link
             href="/jawai-tour-packages"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#e8a455] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#ffc27e] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#FDBA21] text-black font-semibold text-xs uppercase tracking-widest hover:bg-[#FDBA21] transition-all"
           >
             <span>Explore Ethical Safari Packages</span>
             <span className="material-symbols-outlined text-sm">arrow_forward</span>

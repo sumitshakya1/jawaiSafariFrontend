@@ -37,7 +37,7 @@ export default function CorporateTourPage() {
   });
 
   return (
-    <div className="w-full bg-[#0b0e15] text-[#e1e2ec] min-h-screen pt-28 pb-24">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pt-28 pb-24">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-6">
@@ -45,12 +45,12 @@ export default function CorporateTourPage() {
           <span>/</span>
           <Link href="/jawai" className="hover:text-white">Jawai</Link>
           <span>/</span>
-          <span className="text-[#e8a455]">Corporate Tours & Offsites</span>
+          <span className="text-[#FDBA21]">Corporate Tours & Offsites</span>
         </div>
 
         {/* Hero Header */}
         <div className="mb-14 text-center max-w-3xl mx-auto">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#005B5C]/30 border border-[#0A7B75]/40 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-3">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#005B5C]/30 border border-[#0A7B75]/40 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-3">
             B2B & Enterprise Solutions
           </span>
           <h1 className="text-3xl md:text-5xl font-serif font-black text-white tracking-tight mb-4">
@@ -96,7 +96,7 @@ export default function CorporateTourPage() {
             },
           ].map((block, i) => (
             <div key={i} className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <span className="material-symbols-outlined text-3xl text-[#e8a455] mb-3">{block.icon}</span>
+              <span className="material-symbols-outlined text-3xl text-[#FDBA21] mb-3">{block.icon}</span>
               <h3 className="text-base font-bold text-white mb-2">{block.title}</h3>
               <p className="text-xs text-white/70 leading-relaxed">{block.desc}</p>
             </div>
@@ -144,7 +144,7 @@ export default function CorporateTourPage() {
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     placeholder="e.g. Acme Technologies Ltd"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -155,7 +155,7 @@ export default function CorporateTourPage() {
                     value={formData.contactPerson}
                     onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
                     placeholder="e.g. Shalini Mehta (HR Head)"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -166,7 +166,7 @@ export default function CorporateTourPage() {
                     value={formData.mobile}
                     onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                     placeholder="e.g. +91 98765 43210"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function CorporateTourPage() {
                     value={formData.workEmail}
                     onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
                     placeholder="e.g. corporate@company.com"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -188,7 +188,7 @@ export default function CorporateTourPage() {
                   <select
                     value={formData.groupSize}
                     onChange={(e) => setFormData({ ...formData, groupSize: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     <option value="8-15 People (Leadership)">8-15 People (Leadership)</option>
                     <option value="15-30 People (Team Offsite)">15-30 People (Team Offsite)</option>
@@ -203,7 +203,7 @@ export default function CorporateTourPage() {
                     value={formData.originCity}
                     onChange={(e) => setFormData({ ...formData, originCity: e.target.value })}
                     placeholder="e.g. Mumbai, Delhi, Ahmedabad"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function CorporateTourPage() {
                     value={formData.preferredDates}
                     onChange={(e) => setFormData({ ...formData, preferredDates: e.target.value })}
                     placeholder="e.g. 15-18 Nov 2026"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -224,7 +224,7 @@ export default function CorporateTourPage() {
                   <select
                     value={formData.nights}
                     onChange={(e) => setFormData({ ...formData, nights: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     <option value="1 Night / 2 Days">1 Night / 2 Days</option>
                     <option value="2 Nights / 3 Days">2 Nights / 3 Days</option>
@@ -236,7 +236,7 @@ export default function CorporateTourPage() {
                   <select
                     value={formData.stayCategory}
                     onChange={(e) => setFormData({ ...formData, stayCategory: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                   >
                     <option value="Luxury Wilderness Resort Buyout">Luxury Resort Buyout</option>
                     <option value="Premium Nature Camp">Premium Nature Camp</option>
@@ -252,7 +252,7 @@ export default function CorporateTourPage() {
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   placeholder="Mention projector/sound setup, team activities, dietary requirements, or transfer needs."
-                  className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#e8a455] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-sm focus:border-[#FDBA21] focus:outline-none"
                 />
               </div>
 

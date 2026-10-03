@@ -49,9 +49,9 @@ export function Card({
 
       <div className={variant === 'geological-feature' ? 'flex flex-col gap-3' : 'p-6 flex flex-col gap-2'}>
         {metricLabel && metricValue && (
-          <div className="flex items-center justify-between text-on-surface-variant font-label-counter text-body-sm">
+          <div className="flex items-center justify-between text-[#667085] font-label-counter text-body-sm">
             <span>{metricLabel}</span>
-            <span className="text-on-surface font-bold">{metricValue}</span>
+            <span className="text-[#263238] font-bold">{metricValue}</span>
           </div>
         )}
         <h3 className={cardStyle.getTitleClasses()}>{title}</h3>

@@ -111,7 +111,7 @@ export default function BestTimeToVisitPage() {
   });
 
   return (
-    <div className="w-full bg-[#07090e] text-[#e1e2ec] min-h-screen pb-32">
+    <div className="w-full bg-[#F8FAF8] text-[#263238] min-h-screen pb-32">
       {/* 1. Custom Hero Banner */}
       <section className="relative w-full pt-36 pb-20 px-6 md:px-12 border-b border-white/10 bg-gradient-to-b from-black/90 via-[#07090e] to-[#07090e] overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -131,10 +131,10 @@ export default function BestTimeToVisitPage() {
             <span>/</span>
             <Link href="/jawai" className="hover:text-white">Jawai</Link>
             <span>/</span>
-            <span className="text-[#e8a455]">Seasonal Planning</span>
+            <span className="text-[#FDBA21]">Seasonal Planning</span>
           </div>
 
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#e8a455]/15 border border-[#e8a455]/30 text-[#e8a455] text-xs font-mono uppercase tracking-widest mb-4">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#FDBA21]/15 border border-[#FDBA21]/30 text-[#FDBA21] text-xs font-mono uppercase tracking-widest mb-4">
             Climate & Wildlife Calendar
           </span>
 
@@ -170,7 +170,7 @@ export default function BestTimeToVisitPage() {
               onClick={() => setActiveSeason(season.id)}
               className={`px-6 py-3.5 rounded-2xl text-xs font-mono uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeSeason === season.id
-                  ? 'bg-gradient-to-r from-[#e8a455] to-[#ffc27e] text-black font-bold shadow-[0_0_20px_rgba(232,164,85,0.4)] scale-105'
+                  ? 'bg-gradient-to-r from-[#FDBA21] to-[#FDBA21] text-black font-bold shadow-[0_0_20px_rgba(232,164,85,0.4)] scale-105'
                   : 'bg-white/[0.04] text-white/70 hover:text-white border border-white/10'
               }`}
             >
@@ -193,7 +193,7 @@ export default function BestTimeToVisitPage() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e15] via-black/40 to-transparent" />
-            <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-[#e8a455]/40 text-xs font-mono text-[#e8a455] uppercase tracking-wider">
+            <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-white backdrop-blur-md border border-[#FDBA21]/40 text-xs font-mono text-[#FDBA21] uppercase tracking-wider">
               {currentSeason.badge} • {currentSeason.months}
             </div>
             <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
@@ -217,7 +217,7 @@ export default function BestTimeToVisitPage() {
               </div>
               <div className="p-4 rounded-xl bg-black/50 border border-white/5">
                 <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Night Temp</span>
-                <span className="text-sm font-bold text-[#e8a455]">{currentSeason.nightTemp}</span>
+                <span className="text-sm font-bold text-[#FDBA21]">{currentSeason.nightTemp}</span>
               </div>
               <div className="p-4 rounded-xl bg-black/50 border border-white/5">
                 <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Leopard Sighting</span>
@@ -225,7 +225,7 @@ export default function BestTimeToVisitPage() {
               </div>
               <div className="p-4 rounded-xl bg-black/50 border border-white/5">
                 <span className="text-[10px] font-mono text-white/50 uppercase block mb-1">Birding Density</span>
-                <span className="text-xs font-bold text-[#e8a455]">{currentSeason.birdingRating.split(' (')[0]}</span>
+                <span className="text-xs font-bold text-[#FDBA21]">{currentSeason.birdingRating.split(' (')[0]}</span>
               </div>
             </div>
 
@@ -233,13 +233,13 @@ export default function BestTimeToVisitPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#e8a455]">verified</span>
+                  <span className="material-symbols-outlined text-[#FDBA21]">verified</span>
                   <span>Why Visit in {currentSeason.months}?</span>
                 </h3>
                 <ul className="space-y-3 text-xs md:text-sm text-white/80 font-light">
                   {currentSeason.highlights.map((hl, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="text-[#e8a455]">•</span>
+                      <span className="text-[#FDBA21]">•</span>
                       <span>{hl}</span>
                     </li>
                   ))}
@@ -248,13 +248,13 @@ export default function BestTimeToVisitPage() {
 
               <div>
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#e8a455]">checkroom</span>
+                  <span className="material-symbols-outlined text-[#FDBA21]">checkroom</span>
                   <span>Recommended Packing & Clothing</span>
                 </h3>
                 <ul className="space-y-3 text-xs md:text-sm text-white/80 font-light">
                   {currentSeason.whatToWear.map((wear, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <span className="text-[#e8a455]">•</span>
+                      <span className="text-[#FDBA21]">•</span>
                       <span>{wear}</span>
                     </li>
                   ))}

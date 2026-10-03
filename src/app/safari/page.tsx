@@ -23,7 +23,7 @@ export default async function SafariPage() {
   return (
     <div className="flex flex-col w-full relative select-none">
       {/* Immersive Cinematic Stage Bleeding Under Header */}
-      <section className="relative w-full min-h-[100svh] h-screen -mt-24 overflow-hidden bg-surface-container-lowest">
+      <section className="relative w-full min-h-[100svh] h-screen -mt-24 overflow-hidden bg-[#F8FAF8]">
         {/* Full-Bleed Background Imagery */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out scale-[1.02] hover:scale-100"
@@ -45,7 +45,7 @@ export default async function SafariPage() {
             </Link>
 
             {/* Atmospheric Metadata Tag */}
-            <div className="hidden sm:flex items-center gap-2.5 bg-surface-container-lowest/70 backdrop-blur-md px-4 py-2.5 shadow-xl">
+            <div className="hidden sm:flex items-center gap-2.5 bg-[#F8FAF8]/70 backdrop-blur-md px-4 py-2.5 shadow-xl">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               <span className="font-label-nav text-label-nav uppercase tracking-[0.22em] text-primary">
                 Dusk Tracking &amp; Savannah
@@ -69,19 +69,19 @@ export default async function SafariPage() {
           <div className="w-full max-w-2xl pointer-events-auto flex flex-col justify-end mt-auto">
             {/* Kicker Label */}
             <div className="flex items-center gap-3 mb-2">
-              <span className="w-8 h-px bg-primary-container" />
-              <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-primary-container font-bold">
+              <span className="w-8 h-px bg-[#005B5C]" />
+              <span className="font-label-nav text-label-nav uppercase tracking-[0.25em] text-[#005B5C] font-bold">
                 Dusk Tracking &amp; Savannah
               </span>
             </div>
 
             {/* Monumental Hero Typographic Landmark */}
-            <h1 className="font-display-hero text-display-hero text-on-surface font-extrabold uppercase tracking-tighter leading-none drop-shadow-2xl">
+            <h1 className="font-display-hero text-display-hero text-[#263238] font-extrabold uppercase tracking-tighter leading-none drop-shadow-2xl">
               Safari
             </h1>
 
             {/* Literary Editorial Quote */}
-            <p className="font-editorial-quote text-editorial-quote italic text-on-surface/90 mt-4 leading-relaxed max-w-xl font-normal drop-shadow-md">
+            <p className="font-editorial-quote text-editorial-quote italic text-[#263238]/90 mt-4 leading-relaxed max-w-xl font-normal drop-shadow-md">
               “Ghost of the granite boulders, stalking the golden amber twilight.”
             </p>
 
@@ -99,7 +99,7 @@ export default async function SafariPage() {
 
       {/* Dossier Narrative Briefing (Refined Editorial Split Module) */}
       <section
-        className="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-space-xl relative z-20"
+        className="w-full bg-[#F8FAF8] px-margin-mobile md:px-margin py-space-xl relative z-20"
         id="expedition-manifest"
       >
         <div className="max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
@@ -108,10 +108,10 @@ export default async function SafariPage() {
             <span className="font-label-counter text-label-counter text-primary tracking-[0.3em] uppercase">
               {currentExpedition?.phaseKicker || 'Phase 02 — Jawai Basin'}
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold uppercase tracking-tight">
+            <h2 className="font-headline-lg text-headline-lg text-[#263238] font-bold uppercase tracking-tight">
               {currentExpedition?.title || 'The Apex Encounter'}
             </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant max-w-sm leading-relaxed mt-2">
+            <p className="font-body-md text-body-md text-[#667085] max-w-sm leading-relaxed mt-2">
               {currentExpedition?.description ||
                 'Between ancient magma-carved granite monoliths and desert riverbeds, high-density leopard clans thrive alongside the nomadic Rabari herdsmen in quiet harmony.'}
             </p>

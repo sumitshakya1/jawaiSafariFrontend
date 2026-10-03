@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'GHOOMOSA',
   tagline: 'Trips That Become Stories',
-  subBrand: 'ADVENTURA — Nocturnal Safari Editorial',
+  subBrand: 'Jawai Wildlife & Heritage Expeditions',
   domain: 'https://ghoomosa.in',
   phone: '+91 73000 03101',
   phoneRaw: '+917300003101',
@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
     title: 'Jawai Tour Packages & Safari Experiences | Ghoomosa',
     description:
       'Plan a complete Jawai trip with wildlife safaris, bird watching, stays, transfers and customized packages. Get your Jawai quotation on WhatsApp.',
-    themeColor: '#10131a',
+    themeColor: '#005B5C',
   },
   social: {
     instagram: 'https://instagram.com/ghoomosa.in',
