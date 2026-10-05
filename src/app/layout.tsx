@@ -128,18 +128,29 @@ export default function RootLayout({
         {/* Preconnect to Google Fonts CDN for Material Symbols */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Material Symbols Outlined (complete icon set with font-display: swap) */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
-        />
-        {/* Preload LCP hero image — jawai-hero.png served via Next.js image optimization */}
+        {/* Asynchronous Non-blocking Material Symbols Outlined Icon Font */}
         <link
           rel="preload"
-          as="image"
-          href="/_next/image?url=%2Fimages%2Fjawai-hero.png&w=828&q=65"
-          fetchPriority="high"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+          as="style"
         />
+        <link
+          id="material-symbols-css"
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+          media="print"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.getElementById('material-symbols-css');if(l){l.addEventListener('load',function(){l.media='all'});if(l.sheet){l.media='all';}}})()`,
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

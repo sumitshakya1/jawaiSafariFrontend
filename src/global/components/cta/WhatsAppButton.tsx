@@ -41,7 +41,9 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2 rounded-full transition-all duration-200 active:scale-95 ${sizeClasses} ${variantClasses} ${className}`}
     >
-      <span className="material-symbols-outlined text-[18px]">chat</span>
+      <svg className="w-[18px] h-[18px] shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+      </svg>
       <span>{children}</span>
     </a>
   );

@@ -123,9 +123,12 @@ export function ScrollDrivenCinematicStage() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    const initTimer = window.requestAnimationFrame(() => {
+      handleScroll();
+    });
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.cancelAnimationFrame(initTimer);
       if (rafId.current !== null) {
         window.cancelAnimationFrame(rafId.current);
       }
