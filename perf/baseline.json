@@ -1,0 +1,33 @@
+{
+  "_note": "Baseline from PageSpeed Insights mobile run — as reported in task description. Local Lighthouse runs blocked by sandbox (no network). Will be updated with post-optimization runs.",
+  "date": "2026-10-05",
+  "url": "https://jawai-safari-frontend.vercel.app/",
+  "device": "mobile",
+  "tool": "PageSpeed Insights (Google)",
+  "baseline": {
+    "performance": 71,
+    "accessibility": 94,
+    "best_practices": 100,
+    "seo": 100
+  },
+  "desktop_baseline": {
+    "performance": 97
+  },
+  "build_baseline": {
+    "home_first_load_js": "117 kB",
+    "shared_chunks": "87.1 kB",
+    "framework_chunk": "53.7 kB",
+    "react_chunk": "31.6 kB"
+  },
+  "images": {
+    "jawai-hero.png":       { "size_bytes": 1440216, "dimensions": "1376x768", "format": "PNG/RGB" },
+    "jawai-cutout.png":     { "size_bytes": 1813245, "dimensions": "1376x768", "format": "PNG/RGBA" },
+    "safari-hero.png":      { "size_bytes": 638851,  "dimensions": "1376x768", "format": "PNG/colormap" },
+    "safari-cutout.png":    { "size_bytes": 827322,  "dimensions": "1376x768", "format": "PNG/RGBA" },
+    "sanctuary-hero.png":   { "size_bytes": 966490,  "dimensions": "1920x1080","format": "PNG/colormap" },
+    "sanctuary-cutout.png": { "size_bytes": 1253576, "dimensions": "1920x1080","format": "PNG/RGBA" },
+    "celestial-hero.png":   { "size_bytes": 1286250, "dimensions": "1920x1080","format": "PNG/colormap" },
+    "celestial-cutout.png": { "size_bytes": 1692734, "dimensions": "1920x1080","format": "PNG/RGBA" },
+    "ghoomosa-logo.png":    { "size_bytes": 255874,  "dimensions": "1024x342", "format": "PNG/RGBA" }
+  }
+}

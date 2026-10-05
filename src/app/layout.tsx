@@ -8,17 +8,19 @@ import { SITE_CONFIG } from '@/global/config/site.config';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '600', '700', '800', '900'],
   variable: '--font-montserrat',
   display: 'swap',
+  preload: true,
 });
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -123,16 +125,32 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
       <head>
+        {/* Preconnect to Google Fonts CDN for Material Symbols (not self-hosted) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload LCP hero image — jawai-hero.png served via Next.js image optimization */}
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fimages%2Fjawai-hero.png&w=828&q=65"
+          fetchPriority="high"
+        />
+        {/* Material Symbols: loaded after page is interactive to avoid render-blocking */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                var link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap';
-                document.head.appendChild(link);
+                function loadMaterialIcons() {
+                  var link = document.createElement('link');
+                  link.rel = 'stylesheet';
+                  link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block&text=arrow_forward+arrow_downward+close+chat+graphic_eq';
+                  document.head.appendChild(link);
+                }
+                if (document.readyState === 'complete') {
+                  loadMaterialIcons();
+                } else {
+                  window.addEventListener('load', loadMaterialIcons);
+                }
               })();
             `,
           }}
