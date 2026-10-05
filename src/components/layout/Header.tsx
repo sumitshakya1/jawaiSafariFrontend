@@ -199,6 +199,8 @@ export function Header() {
               width={168}
               height={56}
               priority
+              quality={85}
+              sizes="(max-width: 640px) 112px, (max-width: 768px) 140px, 168px"
               className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>

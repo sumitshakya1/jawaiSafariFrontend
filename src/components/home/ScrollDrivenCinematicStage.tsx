@@ -282,8 +282,9 @@ export function ScrollDrivenCinematicStage() {
                 priority={i === 0}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 fetchPriority={i === 0 ? 'high' : 'auto'}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
-                quality={65}
+                decoding={i === 0 ? 'sync' : 'async'}
+                sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1080px) 1080px, 1600px"
+                quality={i === 0 ? 60 : 50}
                 className={`object-cover ${scene.imagePositionClass || 'object-center'}`}
               />
             </div>
