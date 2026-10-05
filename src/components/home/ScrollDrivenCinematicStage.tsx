@@ -272,6 +272,7 @@ export function ScrollDrivenCinematicStage() {
                 fill
                 priority={i === 0}
                 loading={i === 0 ? 'eager' : 'lazy'}
+                fetchPriority={i === 0 ? 'high' : 'auto'}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
                 quality={65}
                 className="object-cover object-center"
