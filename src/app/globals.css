@@ -84,11 +84,6 @@
   contain-intrinsic-size: 0 600px;
 }
 
-/* Prevent FOUT flicker for Material Symbols when icon font hasn't loaded */
-.material-symbols-outlined {
-  visibility: visible;
-}
-
 /* Ensure hero image is always visible immediately (not blocked by anything) */
 .hero-priority-image {
   will-change: auto;

@@ -8,7 +8,7 @@ import { SITE_CONFIG } from '@/global/config/site.config';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-montserrat',
   display: 'swap',
   preload: true,
@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
@@ -125,9 +125,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
       <head>
-        {/* Preconnect to Google Fonts CDN for Material Symbols (not self-hosted) */}
+        {/* Preconnect to Google Fonts CDN for Material Symbols */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Material Symbols Outlined (complete icon set with font-display: swap) */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+        />
         {/* Preload LCP hero image — jawai-hero.png served via Next.js image optimization */}
         <link
           rel="preload"
@@ -135,32 +140,6 @@ export default function RootLayout({
           href="/_next/image?url=%2Fimages%2Fjawai-hero.png&w=828&q=65"
           fetchPriority="high"
         />
-        {/* Material Symbols: loaded after page is interactive to avoid render-blocking */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                function loadMaterialIcons() {
-                  var link = document.createElement('link');
-                  link.rel = 'stylesheet';
-                  link.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block&text=arrow_forward+arrow_downward+close+chat+graphic_eq';
-                  document.head.appendChild(link);
-                }
-                if (document.readyState === 'complete') {
-                  loadMaterialIcons();
-                } else {
-                  window.addEventListener('load', loadMaterialIcons);
-                }
-              })();
-            `,
-          }}
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
-          />
-        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
