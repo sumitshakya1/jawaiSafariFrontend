@@ -8,19 +8,19 @@ import { SITE_CONFIG } from '@/global/config/site.config';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-montserrat',
   display: 'swap',
   preload: true,
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
   preload: false,
+  fallback: ['Georgia', 'serif'],
 });
 
 export const metadata: Metadata = {
