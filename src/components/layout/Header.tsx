@@ -174,12 +174,12 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#DDE7E5] py-3'
-          : 'bg-white border-b border-[#DDE7E5]/80 py-3.5 sm:py-4'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#DDE7E5] py-2.5 sm:py-3'
+          : 'bg-white border-b border-[#DDE7E5]/80 py-2.5 sm:py-3.5'
       }`}
     >
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between">
-        {/* Brand Logo - Height ~40-48px mobile, ~56-64px desktop on pure white */}
+      <div className="w-full px-3.5 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between">
+        {/* Brand Logo */}
         <div className="flex items-center shrink-0">
           <Link
             className="flex items-center group"
@@ -192,7 +192,7 @@ export function Header() {
               width={168}
               height={56}
               priority
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
         </div>
@@ -218,11 +218,11 @@ export function Header() {
         </nav>
 
         {/* Right Actions: Sound + Get Quote (Deep Teal CTA) */}
-        <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
-          {/* Ambient Sound Toggle Button */}
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+          {/* Ambient Sound Toggle Button - hidden on tiny mobile, visible sm+ */}
           <button
             onClick={toggleSound}
-            className={`flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border select-none ${
+            className={`hidden sm:flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.14em] transition-all duration-200 cursor-pointer px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border select-none ${
               soundActive
                 ? 'text-[#005B5C] bg-[#EEF8F6] border-[#0A7B75] shadow-sm font-semibold'
                 : 'text-[#263238] hover:text-[#005B5C] bg-[#F8FAF8] hover:bg-[#EEF8F6] border-[#DDE7E5]'
@@ -239,35 +239,41 @@ export function Header() {
                 <span className="w-[2px] h-1.5 bg-[#005B5C] animate-pulse [animation-delay:0.1s]" />
               </div>
             ) : (
-              <span className="material-symbols-outlined text-sm text-[#005B5C]">
-                graphic_eq
-              </span>
+              <svg className="w-3.5 h-3.5 fill-current text-[#005B5C]" viewBox="0 0 24 24">
+                <path d="M7 18h2V6H7v12zm4 4h2V2h-2v20zm-8-8h2v-4H3v4zm12 4h2V6h-2v12zm4-8v4h2v-4h-2z" />
+              </svg>
             )}
             <span className="font-semibold">{soundActive ? '38 dB' : 'Sound'}</span>
           </button>
 
-          {/* Primary CTA: Get Quote (Deep Teal #005B5C, hover Secondary Teal #0A7B75) */}
+          {/* Primary CTA: Get Quote (Deep Teal #005B5C) */}
           <a
             href={getQuoteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono uppercase tracking-[0.14em] font-semibold transition-all duration-200 cursor-pointer px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-white bg-[#005B5C] hover:bg-[#0A7B75] shadow-sm hover:shadow"
+            className="flex items-center gap-1.5 text-[10px] sm:text-xs font-mono uppercase tracking-[0.14em] font-semibold transition-all duration-200 cursor-pointer px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-white bg-[#005B5C] hover:bg-[#0A7B75] shadow-sm hover:shadow"
           >
             <span>Get Quote</span>
-            <span className="material-symbols-outlined text-sm">
-              arrow_outward
-            </span>
+            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
           </a>
 
           {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 text-[#263238] hover:text-[#005B5C] focus:outline-none"
+            className="xl:hidden p-1.5 text-[#263238] hover:text-[#005B5C] focus:outline-none"
             aria-label="Toggle menu"
           >
-            <span className="material-symbols-outlined text-2xl">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>

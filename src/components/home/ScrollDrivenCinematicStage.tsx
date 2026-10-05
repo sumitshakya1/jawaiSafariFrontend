@@ -18,6 +18,7 @@ interface Scene {
   subtitle?: string;
   imageUrl: string;
   cutoutUrl?: string;
+  imagePositionClass?: string;
 }
 
 const SCENES: Scene[] = [
@@ -26,47 +27,51 @@ const SCENES: Scene[] = [
     number: '01',
     kicker: 'LAND OF THE LEOPARD',
     title: 'JAWAI',
-    fontSizeClass: 'text-[4.5rem] sm:text-[6.5rem] md:text-[8.5rem] lg:text-[10.5rem]',
-    titleOffsetClass: '-translate-y-14 sm:-translate-y-18 md:-translate-y-24',
+    fontSizeClass: 'text-[3.2rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem]',
+    titleOffsetClass: '-translate-y-4 sm:-translate-y-12 md:-translate-y-20',
     subtitle: 'Granite thrones sculpted by antiquity, where predators walk amidst quiet temples.',
     imageUrl: '/images/jawai-hero.png',
     cutoutUrl: '/images/jawai-cutout.png',
+    imagePositionClass: 'object-[35%_42%] sm:object-center',
   },
   {
     id: 'scene-02',
     number: '02',
     kicker: 'DUSK TRACKING & SAVANNAH',
     title: 'SAFARI',
-    fontSizeClass: 'text-[4.5rem] sm:text-[6.5rem] md:text-[8.5rem] lg:text-[10.5rem]',
-    titleOffsetClass: '-translate-y-12 sm:-translate-y-16 md:-translate-y-22',
-    containerOffsetClass: '-translate-y-24 sm:-translate-y-32 md:-translate-y-40 lg:-translate-y-48',
+    fontSizeClass: 'text-[3.2rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem]',
+    titleOffsetClass: '-translate-y-4 sm:-translate-y-12 md:-translate-y-20',
+    containerOffsetClass: 'md:-translate-y-24 lg:-translate-y-36',
     subtitle: 'Ghost of the granite boulders, stalking the golden amber twilight.',
     imageUrl: '/images/safari-hero.png',
     cutoutUrl: '/images/safari-cutout.png',
+    imagePositionClass: 'object-[72%_62%] sm:object-center',
   },
   {
     id: 'scene-03',
     number: '03',
     kicker: 'JAWAI DAM & LAKE SANCTUARY',
     title: 'SANCTUARY',
-    fontSizeClass: 'text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.8rem]',
-    titleOffsetClass: '-translate-y-12 sm:-translate-y-16 md:-translate-y-22',
-    containerOffsetClass: '-translate-y-24 sm:-translate-y-32 md:-translate-y-40 lg:-translate-y-48',
+    fontSizeClass: 'text-[2.6rem] sm:text-[4.2rem] md:text-[6.5rem] lg:text-[8.5rem]',
+    titleOffsetClass: '-translate-y-4 sm:-translate-y-12 md:-translate-y-20',
+    containerOffsetClass: 'md:-translate-y-24 lg:-translate-y-36',
     subtitle: 'Where reflective waters meet ancient granite hills, fostering wild harmony across the sanctuary.',
     imageUrl: '/images/sanctuary-hero.png',
     cutoutUrl: '/images/sanctuary-cutout.png',
+    imagePositionClass: 'object-[75%_55%] sm:object-center',
   },
   {
     id: 'scene-04',
     number: '04',
     kicker: 'CELESTIAL TRANSIT & NEBULA',
     title: 'NOCTURNAL',
-    fontSizeClass: 'text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.8rem]',
-    titleOffsetClass: '-translate-y-12 sm:-translate-y-16 md:-translate-y-22',
-    containerOffsetClass: '-translate-y-24 sm:-translate-y-32 md:-translate-y-40 lg:-translate-y-48',
+    fontSizeClass: 'text-[2.6rem] sm:text-[4.2rem] md:text-[6.5rem] lg:text-[8.5rem]',
+    titleOffsetClass: '-translate-y-4 sm:-translate-y-12 md:-translate-y-20',
+    containerOffsetClass: 'md:-translate-y-24 lg:-translate-y-36',
     subtitle: 'Where prehistoric granite cradles the quiet monarch beneath a billion burning suns.',
     imageUrl: '/images/celestial-hero.png',
     cutoutUrl: '/images/celestial-cutout.png',
+    imagePositionClass: 'object-[75%_65%] sm:object-center',
   },
 ];
 
@@ -201,9 +206,9 @@ export function ScrollDrivenCinematicStage() {
           <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40 group-hover:text-white transition-colors [writing-mode:vertical-rl] rotate-180">
             scroll to explore
           </span>
-          <span className="material-symbols-outlined text-[13px] text-[#FDBA21] rotate-90 group-hover:translate-y-1 transition-transform">
-            arrow_forward
-          </span>
+          <svg className="w-3.5 h-3.5 fill-none stroke-[#FDBA21] stroke-2 rotate-90 group-hover:translate-y-1 transition-transform" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </button>
       </div>
 
@@ -275,7 +280,7 @@ export function ScrollDrivenCinematicStage() {
                 fetchPriority={i === 0 ? 'high' : 'auto'}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
                 quality={65}
-                className="object-cover object-center"
+                className={`object-cover ${scene.imagePositionClass || 'object-center'}`}
               />
             </div>
 
@@ -284,10 +289,10 @@ export function ScrollDrivenCinematicStage() {
             <div className="absolute inset-0 bg-radial-gradient pointer-events-none opacity-30" />
 
             {/* 3. Top Spacer for Header Clearance */}
-            <div className="relative z-10 w-full h-24 md:h-28" />
+            <div className="relative z-10 w-full h-16 sm:h-20 md:h-28" />
 
             {/* 4. Centerpiece Typography */}
-            <div className={`relative z-20 px-6 max-w-5xl mx-auto flex flex-col items-center justify-center text-center my-auto pointer-events-none pb-12 md:pb-16 ${scene.containerOffsetClass || ''}`}>
+            <div className={`relative z-20 px-4 sm:px-6 max-w-5xl mx-auto flex flex-col items-center text-center pointer-events-none pb-4 sm:pb-8 md:pb-16 pt-2 sm:pt-4 md:my-auto ${scene.containerOffsetClass || ''}`}>
               {/* Kicker Accent */}
               <div className="pointer-events-auto inline-flex items-center gap-3 mb-2 md:mb-3">
                 <span className="w-6 md:w-10 h-[1px] bg-[#FDBA21]" />
