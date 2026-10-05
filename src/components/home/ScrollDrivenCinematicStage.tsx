@@ -94,30 +94,31 @@ export function ScrollDrivenCinematicStage() {
   const [isModalOpen, setIsModalOpen]   = useState(false);
   const containerRef                    = useRef<HTMLDivElement | null>(null);
   const cardRefs                        = useRef<(HTMLElement | null)[]>([]);
+  const rafId                           = useRef<number | null>(null);
 
   const handleScroll = useCallback(() => {
-    const vh = window.innerHeight;
+    if (rafId.current !== null) return;
+    rafId.current = window.requestAnimationFrame(() => {
+      rafId.current = null;
+      const vh = window.innerHeight;
 
-    // Check if user has scrolled past the cinematic stage container
-    if (containerRef.current) {
-      const stageRect = containerRef.current.getBoundingClientRect();
-      if (stageRect.bottom <= vh * 0.3) {
-        setIsInsideStage(false);
-      } else {
-        setIsInsideStage(true);
+      // Check if user has scrolled past the cinematic stage container
+      if (containerRef.current) {
+        const stageRect = containerRef.current.getBoundingClientRect();
+        const inside = stageRect.bottom > vh * 0.3;
+        setIsInsideStage((prev) => (prev !== inside ? inside : prev));
       }
-    }
 
-    // Determine which card is currently taking center stage in the viewport
-    let current = 0;
-    cardRefs.current.forEach((ref, idx) => {
-      if (!ref) return;
-      const rect = ref.getBoundingClientRect();
-      if (rect.top <= vh * 0.4) {
-        current = idx;
+      // Determine which card is currently taking center stage in the viewport
+      let current = 0;
+      for (let idx = 0; idx < cardRefs.current.length; idx++) {
+        const ref = cardRefs.current[idx];
+        if (ref && ref.getBoundingClientRect().top <= vh * 0.4) {
+          current = idx;
+        }
       }
+      setActiveIdx((prev) => (prev !== current ? current : prev));
     });
-    setActiveIdx(current);
   }, []);
 
   useEffect(() => {
@@ -125,6 +126,9 @@ export function ScrollDrivenCinematicStage() {
     handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (rafId.current !== null) {
+        window.cancelAnimationFrame(rafId.current);
+      }
     };
   }, [handleScroll]);
 
