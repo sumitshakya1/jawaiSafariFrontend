@@ -74,3 +74,23 @@
 .bg-radial-gradient {
   background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
 }
+
+/* ── Performance Utilities ─────────────────────────────────────────────────── */
+
+/* content-visibility: auto defers rendering of off-screen sections
+   contain-intrinsic-size reserves space to avoid CLS */
+.section-below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* Prevent FOUT flicker for Material Symbols when icon font hasn't loaded */
+.material-symbols-outlined {
+  visibility: visible;
+}
+
+/* Ensure hero image is always visible immediately (not blocked by anything) */
+.hero-priority-image {
+  will-change: auto;
+  transform: translateZ(0);
+}

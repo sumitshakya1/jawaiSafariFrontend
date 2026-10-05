@@ -39,37 +39,53 @@ export default function HomePage() {
       <ScrollDrivenCinematicStage />
 
       {/* 2–9. Below-the-fold sections: lazily loaded after hero is interactive */}
-      <Suspense fallback={<SectionSkeleton />}>
-        <SignatureExperiences />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <SignatureExperiences />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <FeaturedPackages />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <FeaturedPackages />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <WhyJawai />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <WhyJawai />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <QuickPlanner />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <QuickPlanner />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <StayInJawai />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <StayInJawai />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <TravelResponsibly />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <TravelResponsibly />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <FaqSection />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <FaqSection />
+        </Suspense>
+      </div>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <FinalCtaBanner />
-      </Suspense>
+      <div className="section-below-fold">
+        <Suspense fallback={<SectionSkeleton />}>
+          <FinalCtaBanner />
+        </Suspense>
+      </div>
     </div>
   );
 }
