@@ -1,43 +1,75 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { ScrollDrivenCinematicStage } from '@/components/home/ScrollDrivenCinematicStage';
-import { SignatureExperiences } from '@/components/home/SignatureExperiences';
-import { FeaturedPackages } from '@/components/home/FeaturedPackages';
-import { WhyJawai } from '@/components/home/WhyJawai';
-import { QuickPlanner } from '@/components/home/QuickPlanner';
-import { StayInJawai } from '@/components/home/StayInJawai';
-import { TravelResponsibly } from '@/components/home/TravelResponsibly';
-import { FaqSection } from '@/components/home/FaqSection';
-import { FinalCtaBanner } from '@/components/home/FinalCtaBanner';
+
+// Below-the-fold sections: dynamically imported to reduce first-load JS and TBT
+const SignatureExperiences = React.lazy(() =>
+  import('@/components/home/SignatureExperiences').then((m) => ({ default: m.SignatureExperiences }))
+);
+const FeaturedPackages = React.lazy(() =>
+  import('@/components/home/FeaturedPackages').then((m) => ({ default: m.FeaturedPackages }))
+);
+const WhyJawai = React.lazy(() =>
+  import('@/components/home/WhyJawai').then((m) => ({ default: m.WhyJawai }))
+);
+const QuickPlanner = React.lazy(() =>
+  import('@/components/home/QuickPlanner').then((m) => ({ default: m.QuickPlanner }))
+);
+const StayInJawai = React.lazy(() =>
+  import('@/components/home/StayInJawai').then((m) => ({ default: m.StayInJawai }))
+);
+const TravelResponsibly = React.lazy(() =>
+  import('@/components/home/TravelResponsibly').then((m) => ({ default: m.TravelResponsibly }))
+);
+const FaqSection = React.lazy(() =>
+  import('@/components/home/FaqSection').then((m) => ({ default: m.FaqSection }))
+);
+const FinalCtaBanner = React.lazy(() =>
+  import('@/components/home/FinalCtaBanner').then((m) => ({ default: m.FinalCtaBanner }))
+);
+
+// Minimal skeleton placeholder for below-fold content to avoid CLS
+function SectionSkeleton() {
+  return <div className="w-full py-20 bg-[#F8FAF8]" aria-hidden="true" />;
+}
 
 export default function HomePage() {
   return (
     <div className="w-full relative">
-      {/* 1. Scroll-driven cinematic storytelling stage (4 scenes) */}
+      {/* 1. Scroll-driven cinematic storytelling stage (4 scenes) - eager, above fold */}
       <ScrollDrivenCinematicStage />
 
-      {/* 2. Signature Experiences */}
-      <SignatureExperiences />
+      {/* 2–9. Below-the-fold sections: lazily loaded after hero is interactive */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <SignatureExperiences />
+      </Suspense>
 
-      {/* 3. Featured Expedition Packages */}
-      <FeaturedPackages />
+      <Suspense fallback={<SectionSkeleton />}>
+        <FeaturedPackages />
+      </Suspense>
 
-      {/* 4. Why Jawai Wilderness */}
-      <WhyJawai />
+      <Suspense fallback={<SectionSkeleton />}>
+        <WhyJawai />
+      </Suspense>
 
-      {/* 5. Interactive Expedition Planner */}
-      <QuickPlanner />
+      <Suspense fallback={<SectionSkeleton />}>
+        <QuickPlanner />
+      </Suspense>
 
-      {/* 6. Luxury Wilderness Stays */}
-      <StayInJawai />
+      <Suspense fallback={<SectionSkeleton />}>
+        <StayInJawai />
+      </Suspense>
 
-      {/* 7. Responsible Travel & Conservation */}
-      <TravelResponsibly />
+      <Suspense fallback={<SectionSkeleton />}>
+        <TravelResponsibly />
+      </Suspense>
 
-      {/* 8. Frequently Asked Questions */}
-      <FaqSection />
+      <Suspense fallback={<SectionSkeleton />}>
+        <FaqSection />
+      </Suspense>
 
-      {/* 9. Final CTA Booking Manifest */}
-      <FinalCtaBanner />
+      <Suspense fallback={<SectionSkeleton />}>
+        <FinalCtaBanner />
+      </Suspense>
     </div>
   );
 }
