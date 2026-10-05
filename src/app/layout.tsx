@@ -3,7 +3,7 @@ import { Montserrat, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { GlobalFooter } from '@/components/layout/GlobalFooter';
-import { FloatingWhatsApp } from '@/global/components/cta/FloatingWhatsApp';
+import { LazyWhatsApp } from '@/components/layout/LazyWhatsApp';
 import { SITE_CONFIG } from '@/global/config/site.config';
 
 const montserrat = Montserrat({
@@ -172,7 +172,7 @@ export default function RootLayout({
           {children}
         </main>
         <GlobalFooter />
-        <FloatingWhatsApp />
+        <LazyWhatsApp />
       </body>
     </html>
   );
