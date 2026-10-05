@@ -72,6 +72,8 @@ export function StayInJawai() {
                     src={h.image}
                     alt={h.name}
                     fill
+                    loading="lazy"
+                    decoding="async"
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
