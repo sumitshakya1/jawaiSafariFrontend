@@ -102,7 +102,7 @@ export default function StaysInJawaiPage() {
                     <div className="absolute top-4 left-4 flex flex-col gap-1.5 items-start">
                       {hotel.isFeatured ? (
                         <span className="px-3 py-1 rounded-full bg-[#005B5C] text-[10px] font-mono uppercase tracking-wider text-[#FDBA21] font-bold shadow-sm border border-[#FDBA21]/30">
-                          ★ Featured / Private Pool Villas
+                          ★ Featured / {hotel.primaryBadge || hotel.tag}
                         </span>
                       ) : (
                         <span className="px-3 py-1 rounded-full bg-white/95 text-[11px] font-mono uppercase tracking-wider text-[#005B5C] font-bold shadow-sm">
@@ -153,7 +153,7 @@ export default function StaysInJawaiPage() {
 
                     {/* Key Highlights */}
                     <div className="space-y-1.5 mb-5 text-xs text-[#263238] border-t border-[#DDE7E5] pt-4">
-                      {hotel.keyFeatures.slice(0, hotel.isFeatured ? 7 : 3).map((feat, idx) => (
+                      {hotel.keyFeatures.slice(0, hotel.isFeatured ? 8 : 3).map((feat, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <span className="material-symbols-outlined text-sm text-[#0A7B75] shrink-0 mt-0.5">
                             check_circle
@@ -190,7 +190,7 @@ export default function StaysInJawaiPage() {
                         href={hotel.detailsUrl}
                         className="flex-1 py-3 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm text-center"
                       >
-                        <span>View Resort Details</span>
+                        <span>{hotel.primaryCtaText || 'View Resort Details'}</span>
                         <span className="material-symbols-outlined text-sm">arrow_forward</span>
                       </Link>
                       <Link

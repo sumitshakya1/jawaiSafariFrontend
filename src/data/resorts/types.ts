@@ -4,12 +4,14 @@ export interface RoomCategory {
   room_name: string;
   room_slug: string;
   short_description: string;
-  occupancy_text: string;
-  bedroom_count: number;
-  bathroom_count: number;
-  private_pool: boolean;
-  mountain_view: boolean;
-  room_size: string | null; // Strictly nullable; rendered only if non-null, never published unless verified
+  occupancy_text?: string | null;
+  bedroom_count?: number | null;
+  bathroom_count?: number | null;
+  bed_type?: string | null;
+  approx_size?: string | null; // e.g. "Approx. 550 sq. ft." for Bijapur, null for Pugmark
+  private_pool?: boolean;
+  mountain_view?: boolean;
+  room_size?: string | null; // Strictly nullable; rendered only if non-null
   gallery_images: string[];
   feature_list: string[];
   display_order: number;
@@ -21,7 +23,13 @@ export type GalleryCategory =
   | 'Rooms'
   | 'Details'
   | 'Dining & Leisure'
-  | 'Destination';
+  | 'Destination'
+  | 'Pool'
+  | 'Suites'
+  | 'Accommodation'
+  | 'Safari'
+  | 'Culture'
+  | 'Sustainability';
 
 export interface GalleryMediaItem {
   id: string;
@@ -45,7 +53,7 @@ export interface VideoMediaItem {
 
 export interface ResortAmenity {
   name: string;
-  icon: string;
+  icon?: string;
   description?: string;
 }
 
@@ -74,12 +82,64 @@ export interface WhyStayPillar {
   icon?: string;
 }
 
+export interface DiningSectionConfig {
+  title: string;
+  subtitle?: string;
+  description: string;
+  highlights: string[];
+  image?: string;
+}
+
+export interface SustainabilitySectionConfig {
+  title: string;
+  subtitle?: string;
+  description: string;
+  initiatives: string[];
+  note?: string;
+}
+
+export interface CultureSectionConfig {
+  title: string;
+  subtitle?: string;
+  description: string;
+  experiences: string[];
+}
+
+export interface FoodRelaxationConfig {
+  title: string;
+  subtitle?: string;
+  description: string;
+  highlights: string[];
+}
+
+export interface LocationGettingThereConfig {
+  title: string;
+  description: string;
+  distance_info: string[];
+  itinerary_steps: Array<{ day: string; title: string; text: string }>;
+}
+
+export interface FormConfig {
+  show_safari_checkbox?: boolean;
+  show_pickup_checkbox?: boolean;
+  preferred_stay_label?: string;
+}
+
+export interface CrossLinkProperty {
+  name: string;
+  slug: string;
+  tag: string;
+  image: string;
+  description: string;
+}
+
 export interface PropertyItem {
   property_name: string;
   slug: string;
   destination_id: string;
   destination_name: string;
   eyebrow: string;
+  hero_title_line?: string;
   short_description: string;
   about_paragraphs: string[];
   verified_facts: string[];
@@ -100,13 +160,22 @@ export interface PropertyItem {
   highlights: string[];
   why_stay: WhyStayPillar[];
 
+  // Modular sections (optional per property)
+  dining_section?: DiningSectionConfig;
+  sustainability_section?: SustainabilitySectionConfig;
+  culture_section?: CultureSectionConfig;
+  food_relaxation_section?: FoodRelaxationConfig;
+  location_getting_there?: LocationGettingThereConfig;
+  form_config?: FormConfig;
+  cross_link_properties?: CrossLinkProperty[];
+
   seo_title: string;
   seo_description: string;
   canonical_url: string;
   faq_items: PropertyFAQ[];
 
   whatsapp_template: string;
-  whatsapp_number: string;
+  whatsapp_number?: string;
   is_featured: boolean;
   is_active: boolean;
   display_order: number;

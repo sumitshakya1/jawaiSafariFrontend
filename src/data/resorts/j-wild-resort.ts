@@ -466,7 +466,23 @@ export const J_WILD_RESORT_JAWAI: PropertyItem = {
 
   whatsapp_template:
     'Hi Ghoomosa, I would like to check availability for J Wild Resort Jawai.\nCheck-in: {checkin}\nCheck-out: {checkout}\nAdults: {adults}\nChildren: {children}\nPreferred Villa: {villa}\nPlease share the best available stay/package options.\nPage: {page_url}\nSource: {utm_source}',
-  whatsapp_number: '+917300003101',
+  whatsapp_number: '+91 73000 03101',
+  cross_link_properties: [
+    {
+      name: 'Bijapur Lodge Jawai',
+      slug: 'bijapur-lodge-jawai',
+      tag: 'Boutique Safari Lodge',
+      image: '/images/resorts/bijapur-lodge/bijapur-lodge-jawai.webp',
+      description: 'Boutique 6-suite wilderness lodge with farm-led dining, pool, and eco-initiatives.',
+    },
+    {
+      name: 'Jawai Pugmark Safari Lodge',
+      slug: 'jawai-pugmark-safari-lodge',
+      tag: 'Cottages & Luxury Tents',
+      image: '/images/resorts/jawai-pugmark/jawai-pugmark-safari-lodge.webp',
+      description: 'Nature-focused safari lodge in Sena featuring cottages, luxury tents, and pool.',
+    },
+  ],
   is_featured: true,
   is_active: true,
   display_order: 1,

@@ -179,30 +179,81 @@ export default function PackagesHubPage() {
           })}
         </div>
 
-        {/* Featured Resort Cross-Promotion Banner */}
-        <div className="mb-12 p-6 md:p-8 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#EEF8F6] text-[#005B5C] flex items-center justify-center font-bold text-xl shrink-0">
-              ★
+        {/* Featured Resorts Cross-Promotion Section */}
+        <div className="mb-12">
+          <div className="text-center mb-6">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+              Handpicked Accommodations For Your Tour
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold font-display-brand text-[#005B5C]">
+              Featured Wilderness Stays in Jawai
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* J Wild Resort */}
+            <div className="p-6 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+                  Private Pool Villas
+                </span>
+                <h4 className="text-base font-bold text-[#005B5C] mb-2">
+                  Stay at J Wild Resort Jawai
+                </h4>
+                <p className="text-xs text-[#667085] leading-relaxed mb-4">
+                  Combine your tour package with 11 secluded private pool villas set against ancient granite kopjes.
+                </p>
+              </div>
+              <Link
+                href="/j-wild-resort-jawai"
+                className="w-full py-2.5 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm text-center"
+              >
+                Explore J Wild Resort →
+              </Link>
             </div>
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
-                Featured Wilderness Stay
-              </span>
-              <h3 className="text-base sm:text-lg font-bold text-[#005B5C]">
-                Stay at J Wild Resort Jawai — Private Pool Villas
-              </h3>
-              <p className="text-xs text-[#667085] leading-relaxed">
-                Combine your tour package with 11 secluded private pool villas set against ancient granite kopjes.
-              </p>
+
+            {/* Bijapur Lodge */}
+            <div className="p-6 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+                  Boutique Safari Lodge
+                </span>
+                <h4 className="text-base font-bold text-[#005B5C] mb-2">
+                  Stay at Bijapur Lodge Jawai
+                </h4>
+                <p className="text-xs text-[#667085] leading-relaxed mb-4">
+                  6 spacious luxury suites (~550 sq. ft.), farm-led dining, swimming pool, and sustainable wilderness living.
+                </p>
+              </div>
+              <Link
+                href="/bijapur-lodge-jawai"
+                className="w-full py-2.5 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm text-center"
+              >
+                Stay at Bijapur Lodge Jawai →
+              </Link>
+            </div>
+
+            {/* Jawai Pugmark Safari Lodge */}
+            <div className="p-6 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+                  Cottages & Luxury Tents
+                </span>
+                <h4 className="text-base font-bold text-[#005B5C] mb-2">
+                  Jawai Pugmark Safari Lodge
+                </h4>
+                <p className="text-xs text-[#667085] leading-relaxed mb-4">
+                  Wilderness cottages, luxury tents, swimming pool, high tea, and dedicated leopard safari coordination in Sena.
+                </p>
+              </div>
+              <Link
+                href="/jawai-pugmark-safari-lodge"
+                className="w-full py-2.5 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm text-center"
+              >
+                Jawai Pugmark Safari Lodge →
+              </Link>
             </div>
           </div>
-          <Link
-            href="/j-wild-resort-jawai"
-            className="shrink-0 px-6 py-3 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm"
-          >
-            Explore J Wild Resort →
-          </Link>
         </div>
 
         {/* Bottom Trust & Quotation Notice */}

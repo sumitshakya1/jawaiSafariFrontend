@@ -196,12 +196,12 @@ export function Header() {
             <Image
               src="/images/ghoomosa-logo.png"
               alt="Ghoomosa – Trips That Become Stories"
-              width={168}
-              height={56}
+              width={220}
+              height={74}
               priority
-              quality={85}
-              sizes="(max-width: 640px) 112px, (max-width: 768px) 140px, 168px"
-              className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              quality={90}
+              sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, 220px"
+              className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
         </div>

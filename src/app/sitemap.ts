@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/jawai-tour-packages',
     '/jawai-hotels-resorts',
     '/j-wild-resort-jawai',
+    '/bijapur-lodge-jawai',
+    '/jawai-pugmark-safari-lodge',
     '/jawai-luxury-stays',
     '/jawai-corporate-tour',
     '/jawai-family-tour',

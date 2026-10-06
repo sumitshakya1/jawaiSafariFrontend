@@ -26,13 +26,13 @@ export function GlobalFooter() {
           <div className="space-y-3">
             <Link href="/" className="inline-block" title="Ghoomosa – Trips That Become Stories">
               {/* TODO: Replace with transparent/white SVG logo when supplied by client */}
-              <div className="bg-white p-2.5 sm:p-3 rounded-xl inline-block shadow-sm">
+              <div className="bg-white p-3 sm:p-3.5 rounded-2xl inline-block shadow-sm">
                 <Image
                   src="/images/ghoomosa-logo.png"
                   alt="Ghoomosa – Trips That Become Stories"
-                  width={144}
-                  height={48}
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  width={180}
+                  height={60}
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                 />
               </div>
             </Link>

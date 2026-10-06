@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { J_WILD_RESORT_JAWAI } from '@/data/resorts/j-wild-resort';
+import { JAWAI_PUGMARK_LODGE } from '@/data/resorts/jawai-pugmark';
 import { PropertyPageTemplate } from '@/components/resort/PropertyPageTemplate';
 
 export const metadata: Metadata = {
-  title: J_WILD_RESORT_JAWAI.seo_title,
-  description: J_WILD_RESORT_JAWAI.seo_description,
+  title: JAWAI_PUGMARK_LODGE.seo_title,
+  description: JAWAI_PUGMARK_LODGE.seo_description,
   alternates: {
-    canonical: '/j-wild-resort-jawai',
+    canonical: '/jawai-pugmark-safari-lodge',
   },
   robots: {
     index: true,
@@ -20,16 +20,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: J_WILD_RESORT_JAWAI.seo_title,
-    description: J_WILD_RESORT_JAWAI.seo_description,
-    url: 'https://ghoomosa.in/j-wild-resort-jawai',
+    title: JAWAI_PUGMARK_LODGE.seo_title,
+    description: JAWAI_PUGMARK_LODGE.seo_description,
+    url: 'https://ghoomosa.in/jawai-pugmark-safari-lodge',
     siteName: 'Ghoomosa — Trips That Become Stories',
     images: [
       {
-        url: 'https://ghoomosa.in/images/resorts/j-wild/j-wild-resort-jawai.webp',
+        url: `https://ghoomosa.in${JAWAI_PUGMARK_LODGE.featured_image}`,
         width: 1280,
         height: 853,
-        alt: 'J Wild Resort Jawai private pool villa and mountain view',
+        alt: 'Jawai Pugmark Safari Lodge cottages and luxury tents in Sena Jawai',
       },
     ],
     locale: 'en_IN',
@@ -37,40 +37,40 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: J_WILD_RESORT_JAWAI.seo_title,
-    description: J_WILD_RESORT_JAWAI.seo_description,
-    images: ['https://ghoomosa.in/images/resorts/j-wild/j-wild-resort-jawai.webp'],
+    title: JAWAI_PUGMARK_LODGE.seo_title,
+    description: JAWAI_PUGMARK_LODGE.seo_description,
+    images: [`https://ghoomosa.in${JAWAI_PUGMARK_LODGE.featured_image}`],
   },
 };
 
-export default function JWildResortJawaiPage() {
-  const resort = J_WILD_RESORT_JAWAI;
+export default function JawaiPugmarkSafariLodgePage() {
+  const lodge = JAWAI_PUGMARK_LODGE;
 
-  // JSON-LD Structured Data
+  // JSON-LD Structured Data (Strict: No prices, no offers, no aggregate ratings)
   const jsonLdHotel = {
     '@context': 'https://schema.org',
     '@type': 'Hotel',
-    name: resort.property_name,
-    description: resort.short_description,
-    image: `https://ghoomosa.in${resort.featured_image}`,
-    url: 'https://ghoomosa.in/j-wild-resort-jawai',
+    name: lodge.property_name,
+    description: lodge.short_description,
+    image: `https://ghoomosa.in${lodge.featured_image}`,
+    url: 'https://ghoomosa.in/jawai-pugmark-safari-lodge',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Jawai Bandh / Bera Region',
+      addressLocality: 'Sena, Jawai Dam Region',
       addressRegion: 'Rajasthan',
+      postalCode: '306126',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '25.1234',
-      longitude: '73.1890',
+      latitude: '25.0500',
+      longitude: '73.1333',
     },
-    amenityFeature: resort.amenities.map((a) => ({
+    amenityFeature: lodge.amenities.map((a) => ({
       '@type': 'LocationFeatureSpecification',
       name: a.name,
       value: true,
     })),
-    // STRICT COMMERCIAL INVARIANT: No priceRange, no offers, no aggregateRating
   };
 
   const jsonLdBreadcrumbs = {
@@ -92,8 +92,8 @@ export default function JWildResortJawaiPage() {
       {
         '@type': 'ListItem',
         position: 3,
-        name: resort.property_name,
-        item: 'https://ghoomosa.in/j-wild-resort-jawai',
+        name: lodge.property_name,
+        item: 'https://ghoomosa.in/jawai-pugmark-safari-lodge',
       },
     ],
   };
@@ -101,7 +101,7 @@ export default function JWildResortJawaiPage() {
   const jsonLdFaq = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: resort.faq_items.map((item) => ({
+    mainEntity: lodge.faq_items.map((item) => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -110,17 +110,6 @@ export default function JWildResortJawaiPage() {
       },
     })),
   };
-
-  const jsonLdVideo = resort.videos[0] ? {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: resort.videos[0].title || 'J Wild Resort Jawai Walkthrough',
-    description: resort.videos[0].description || 'Walkthrough of J Wild Resort Jawai',
-    thumbnailUrl: `https://ghoomosa.in${resort.videos[0].poster}`,
-    contentUrl: `https://ghoomosa.in${resort.videos[0].url}`,
-    uploadDate: resort.videos[0].uploadDate || '2026-10-06T00:00:00Z',
-    duration: resort.videos[0].duration || 'PT29S',
-  } : null;
 
   return (
     <>
@@ -136,13 +125,7 @@ export default function JWildResortJawaiPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
-      {jsonLdVideo && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdVideo) }}
-        />
-      )}
-      <PropertyPageTemplate property={resort} />
+      <PropertyPageTemplate property={lodge} />
     </>
   );
 }
