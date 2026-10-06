@@ -385,6 +385,13 @@ export const JAWAI_PUGMARK_LODGE: PropertyItem = {
       image: '/images/resorts/bijapur-lodge/bijapur-lodge-jawai.webp',
       description: 'Boutique 6-suite wilderness lodge with farm-led dining, pool, and eco-initiatives.',
     },
+    {
+      name: 'SUJAN JAWAI',
+      slug: 'sujan-jawai',
+      tag: 'Ultra-Luxury Safari Camp',
+      image: '/images/resorts/sujan-jawai/sujan-jawai-luxury-safari-camp.webp',
+      description: 'Exclusive 10-tent conservation-led luxury camp in Bisalpur with private pool suites and wilderness drives.',
+    },
   ],
 
   seo_title: 'Jawai Pugmark Safari Lodge | Leopard Safari Resort in Jawai',
@@ -438,6 +445,32 @@ export const JAWAI_PUGMARK_LODGE: PropertyItem = {
   whatsapp_template:
     'Hi Ghoomosa,\nI would like to check availability for Jawai Pugmark Safari Lodge.\nCheck-in: {checkin}\nCheck-out: {checkout}\nAdults: {adults}\nChildren: {children}\nPreferred Stay: {villa}\nSafari Required: {safari}\nPlease share the best available stay and package options.\nPage: {page_url}\nSource: {utm_source}',
   whatsapp_number: '+917300003101',
+  nearby_attractions: [
+    {
+      name: 'Jawai Dam & Reservoir',
+      distance: 'Approx. 15 km',
+      description: 'Western Rajasthan’s largest dam reservoir, famous for basking marsh crocodiles and migratory flamingos.',
+      link: '/jawai-dam',
+    },
+    {
+      name: 'Leopard Caves & Leopard Hills',
+      distance: 'Adjacent (Sena Kopjes)',
+      description: 'Granite boulder terrain and natural rock caves sheltering wild leopards.',
+      link: '/leopard-caves-jawai',
+    },
+    {
+      name: 'Rabari Village Experience',
+      distance: 'Within Sena Village',
+      description: 'Guided cultural interactions with indigenous red-turbaned Rabari shepherd families.',
+      link: '/jawai-village-experience',
+    },
+    {
+      name: 'Kambeshwar Mahadev Temple',
+      distance: 'Approx. 20 km',
+      description: 'Scenic hillside Shiva shrine offering panoramic views of granite kopjes and valleys.',
+      link: '/kambeshwar-mahadev-temple-jawai',
+    },
+  ],
   is_featured: true,
   is_active: true,
   display_order: 3,

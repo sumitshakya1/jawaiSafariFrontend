@@ -190,7 +190,7 @@ export default function PackagesHubPage() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* J Wild Resort */}
             <div className="p-6 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col justify-between">
               <div>
@@ -251,6 +251,27 @@ export default function PackagesHubPage() {
                 className="w-full py-2.5 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm text-center"
               >
                 Jawai Pugmark Safari Lodge →
+              </Link>
+            </div>
+
+            {/* SUJAN JAWAI */}
+            <div className="p-6 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+                  Ultra-Luxury Safari Camp
+                </span>
+                <h4 className="text-base font-bold text-[#005B5C] mb-2">
+                  Stay at SUJAN JAWAI
+                </h4>
+                <p className="text-xs text-[#667085] leading-relaxed mb-4">
+                  Intimate 10-tent conservation retreat featuring Rock Suites, private heated pools, Rabari culture, and expert-guided wilderness drives.
+                </p>
+              </div>
+              <Link
+                href="/sujan-jawai"
+                className="w-full py-2.5 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm text-center"
+              >
+                Stay at SUJAN JAWAI →
               </Link>
             </div>
           </div>

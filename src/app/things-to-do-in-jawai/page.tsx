@@ -226,6 +226,27 @@ export default function ThingsToDoPage() {
             </div>
           </div>
         </div>
+
+        {/* 4. Cross-Link to Places to Visit in Jawai Hub */}
+        <div className="mt-14 p-8 md:p-12 rounded-3xl bg-white border border-[#005B5C]/30 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block">
+              Regional Destinations & Heritage Excursions
+            </span>
+            <h3 className="text-xl md:text-2xl font-bold font-display-brand text-[#005B5C]">
+              Looking for Temples, Forts & Day Trips Near Jawai?
+            </h3>
+            <p className="text-xs md:text-sm text-[#667085] leading-relaxed font-light">
+              While this page focuses on experiential activities like 4x4 rock crawling and wildlife tracking, our Places to Visit guide covers Ranakpur Jain Temple, Kumbhalgarh Fort, Jawai Dam, and mountain shrines organized by distance from Jawai Bandh.
+            </p>
+          </div>
+          <Link
+            href="/places-to-visit-in-jawai"
+            className="shrink-0 px-8 py-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-md text-center"
+          >
+            Explore Places to Visit in Jawai →
+          </Link>
+        </div>
       </main>
     </div>
   );

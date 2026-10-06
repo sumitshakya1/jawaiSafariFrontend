@@ -336,6 +336,13 @@ export const BIJAPUR_LODGE_JAWAI: PropertyItem = {
       image: '/images/resorts/jawai-pugmark/jawai-pugmark-safari-lodge.webp',
       description: 'Nature-focused safari lodge in Sena featuring cottages, luxury tents, and pool.',
     },
+    {
+      name: 'SUJAN JAWAI',
+      slug: 'sujan-jawai',
+      tag: 'Ultra-Luxury Safari Camp',
+      image: '/images/resorts/sujan-jawai/sujan-jawai-luxury-safari-camp.webp',
+      description: 'Exclusive 10-tent conservation-led luxury camp in Bisalpur with private pool suites and wilderness drives.',
+    },
   ],
 
   seo_title: 'Bijapur Lodge Jawai | Luxury Safari Resort & Leopard Safari Stay',
@@ -392,6 +399,32 @@ export const BIJAPUR_LODGE_JAWAI: PropertyItem = {
   whatsapp_template:
     'Hi Ghoomosa,\nI want to check Bijapur Lodge Jawai availability.\nCheck-in: {checkin}\nCheck-out: {checkout}\nAdults: {adults}\nChildren: {children}\nSafari Required: {safari}\nPickup Required: {pickup}\nPlease share the best available stay and Jawai package options.\nProperty: Bijapur Lodge Jawai\nPage: {page_url}\nSource: {utm_source}',
   whatsapp_number: '+917300003101',
+  nearby_attractions: [
+    {
+      name: 'Jawai Dam & Reservoir',
+      distance: 'Approx. 12 km',
+      description: 'Western Rajasthan’s largest dam reservoir, famous for basking marsh crocodiles and migratory flamingos.',
+      link: '/jawai-dam',
+    },
+    {
+      name: 'Ranakpur Jain Temple',
+      distance: 'Approx. 45 km',
+      description: '15th-century marble temple complex renowned worldwide for its 1,444 uniquely carved marble pillars.',
+      link: '/ranakpur-jain-temple-near-jawai',
+    },
+    {
+      name: 'Ranakpur Dam',
+      distance: 'Approx. 48 km',
+      description: 'Scenic freshwater reservoir framed by forested Aravalli foothills.',
+      link: '/ranakpur-dam-near-jawai',
+    },
+    {
+      name: 'Kumbhalgarh Fort',
+      distance: 'Approx. 58 km',
+      description: 'UNESCO World Heritage hill fortress featuring a 36-km stone wall and Mewar history.',
+      link: '/kumbhalgarh-fort-from-jawai',
+    },
+  ],
   is_featured: true,
   is_active: true,
   display_order: 2,

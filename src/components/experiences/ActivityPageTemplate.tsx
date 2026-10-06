@@ -112,6 +112,61 @@ export function ActivityPageTemplate({ experience }: ActivityPageTemplateProps) 
               {experience.criticalNote} {experience.responsibleTravelNote}
             </p>
           </div>
+
+          {/* Plan Beyond Safari — Nearby Attractions */}
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-[#DDE7E5] shadow-sm space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#DDE7E5] pb-3">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block">
+                  Combine Your Expedition
+                </span>
+                <h3 className="text-lg font-bold font-display-brand text-[#005B5C]">
+                  Plan Beyond Safari — Nearby Jawai Attractions
+                </h3>
+              </div>
+              <Link
+                href="/places-to-visit-in-jawai"
+                className="text-xs font-mono uppercase text-[#005B5C] font-bold hover:text-[#0A7B75] flex items-center gap-1"
+              >
+                <span>All Places →</span>
+              </Link>
+            </div>
+
+            <p className="text-xs text-[#667085] leading-relaxed">
+              Enrich your safari with scenic reservoir views, ancient hill shrines, marble heritage temples, and living pastoral culture.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <Link
+                href="/jawai-dam"
+                className="p-3.5 rounded-xl bg-[#F8FAF8] hover:bg-[#EEF8F6] border border-[#DDE7E5] transition-all group block"
+              >
+                <span className="text-xs font-bold text-[#005B5C] group-hover:text-[#0A7B75] block">Jawai Dam</span>
+                <span className="text-[11px] text-[#667085]">Reservoir panoramas, crocodiles & winter flamingos.</span>
+              </Link>
+              <Link
+                href="/jawai-hills"
+                className="p-3.5 rounded-xl bg-[#F8FAF8] hover:bg-[#EEF8F6] border border-[#DDE7E5] transition-all group block"
+              >
+                <span className="text-xs font-bold text-[#005B5C] group-hover:text-[#0A7B75] block">Jawai Hills</span>
+                <span className="text-[11px] text-[#667085]">Billion-year-old monolithic granite geology & viewpoints.</span>
+              </Link>
+              <Link
+                href="/jawai-village-experience"
+                className="p-3.5 rounded-xl bg-[#F8FAF8] hover:bg-[#EEF8F6] border border-[#DDE7E5] transition-all group block"
+              >
+                <span className="text-xs font-bold text-[#005B5C] group-hover:text-[#0A7B75] block">Rabari Village Experience</span>
+                <span className="text-[11px] text-[#667085]">Living pastoral heritage and human-wildlife harmony.</span>
+              </Link>
+              <Link
+                href="/ranakpur-jain-temple-near-jawai"
+                className="p-3.5 rounded-xl bg-[#F8FAF8] hover:bg-[#EEF8F6] border border-[#DDE7E5] transition-all group block"
+              >
+                <span className="text-xs font-bold text-[#005B5C] group-hover:text-[#0A7B75] block">Ranakpur Jain Temple</span>
+                <span className="text-[11px] text-[#667085]">15th-century marble temple with 1,444 carved pillars.</span>
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Right Sticky Sidebar: WhatsApp Booking Card */}

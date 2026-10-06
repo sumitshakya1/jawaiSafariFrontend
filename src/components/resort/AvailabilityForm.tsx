@@ -11,7 +11,9 @@ interface AvailabilityFormProps {
   initialSelectedCategory?: string;
   showSafariCheckbox?: boolean;
   showPickupCheckbox?: boolean;
+  pickupLabel?: string;
   preferredStayLabel?: string;
+  includeFlexibleOption?: boolean;
   customWhatsAppTemplate?: string;
 }
 
@@ -23,7 +25,9 @@ export function AvailabilityForm({
   initialSelectedCategory = '',
   showSafariCheckbox = false,
   showPickupCheckbox = false,
+  pickupLabel = 'Airport / City Pickup Required?',
   preferredStayLabel = 'Preferred Villa / Room Category',
+  includeFlexibleOption = false,
   customWhatsAppTemplate,
 }: AvailabilityFormProps) {
   const [checkin, setCheckin] = useState('');
@@ -62,6 +66,12 @@ export function AvailabilityForm({
     }
   }, []);
 
+  useEffect(() => {
+    if (initialSelectedCategory) {
+      setPreferredVilla(initialSelectedCategory);
+    }
+  }, [initialSelectedCategory]);
+
   const handleFieldFocus = () => {
     if (!formStarted) {
       setFormStarted(true);
@@ -82,11 +92,17 @@ export function AvailabilityForm({
       const filled = customWhatsAppTemplate
         .replace('{checkin}', checkin || 'Flexible')
         .replace('{checkout}', checkout || 'Flexible')
+        .replace(/\{date\}/g, checkin || 'Flexible')
         .replace('{adults}', adults)
+        .replace(/\{n\}/g, adults)
         .replace('{children}', childrenStr)
-        .replace('{villa}', preferredVilla || 'Any Available')
+        .replace(/\{n\/ages\}/g, childrenStr)
+        .replace('{villa}', preferredVilla || 'Flexible / Any Available')
+        .replace('{suite}', preferredVilla || 'Flexible / Any Available')
+        .replace('{stay}', preferredVilla || 'Flexible / Any Available')
         .replace('{safari}', safariRequired)
         .replace('{pickup}', pickupRequired)
+        .replace('{transfer}', pickupRequired)
         .replace('{page_url}', pageUrl || `https://ghoomosa.in/${propertySlug}`)
         .replace('{utm_source}', utmSource || 'direct');
       return encodeURIComponent(filled);
@@ -326,6 +342,9 @@ export function AvailabilityForm({
                 className="w-full px-4 py-3 rounded-xl border border-[#DDE7E5] text-xs sm:text-sm text-[#263238] focus:outline-none focus:border-[#0A7B75] focus:ring-1 focus:ring-[#0A7B75] transition-all bg-[#F8FAF8]"
               >
                 <option value="">Any Available Option</option>
+                {includeFlexibleOption && (
+                  <option value="Flexible / Undecided">Flexible / Undecided</option>
+                )}
                 {roomCategories.map((room) => (
                   <option key={room.room_slug} value={room.room_name}>
                     {room.room_name}
@@ -373,7 +392,7 @@ export function AvailabilityForm({
               {showPickupCheckbox && (
                 <div>
                   <label className="block text-xs font-mono uppercase tracking-wider text-[#005B5C] font-bold mb-1.5">
-                    Airport / City Pickup Required?
+                    {pickupLabel}
                   </label>
                   <div className="flex items-center gap-4 text-xs font-semibold text-[#263238]">
                     <label className="flex items-center gap-1.5 cursor-pointer">

@@ -9,9 +9,14 @@ export interface RoomCategory {
   bathroom_count?: number | null;
   bed_type?: string | null;
   approx_size?: string | null; // e.g. "Approx. 550 sq. ft." for Bijapur, null for Pugmark
+  size_sqm?: number | string | null;
+  size_sqft?: number | string | null;
+  capacity?: string | null;
   private_pool?: boolean;
   mountain_view?: boolean;
   room_size?: string | null; // Strictly nullable; rendered only if non-null
+  last_verified_at?: string | null;
+  source_note?: string | null;
   gallery_images: string[];
   feature_list: string[];
   display_order: number;
@@ -119,10 +124,35 @@ export interface LocationGettingThereConfig {
   itinerary_steps: Array<{ day: string; title: string; text: string }>;
 }
 
+export interface NatureBirdingSectionConfig {
+  title: string;
+  subtitle?: string;
+  description: string;
+  highlights: string[];
+  image?: string;
+}
+
+export interface ActivitiesSectionConfig {
+  title: string;
+  subtitle?: string;
+  description: string;
+  activities: Array<{ title: string; description: string; icon?: string }>;
+}
+
+export interface NearbyAttraction {
+  name: string;
+  distance: string;
+  description: string;
+  link?: string;
+}
+
 export interface FormConfig {
   show_safari_checkbox?: boolean;
   show_pickup_checkbox?: boolean;
+  show_transfer_checkbox?: boolean;
+  transfer_checkbox_label?: string;
   preferred_stay_label?: string;
+  include_flexible_stay_option?: boolean;
 }
 
 export interface CrossLinkProperty {
@@ -140,6 +170,7 @@ export interface PropertyItem {
   destination_name: string;
   eyebrow: string;
   hero_title_line?: string;
+  brand_notice?: string;
   short_description: string;
   about_paragraphs: string[];
   verified_facts: string[];
@@ -165,7 +196,10 @@ export interface PropertyItem {
   sustainability_section?: SustainabilitySectionConfig;
   culture_section?: CultureSectionConfig;
   food_relaxation_section?: FoodRelaxationConfig;
+  nature_birding_section?: NatureBirdingSectionConfig;
+  activities_section?: ActivitiesSectionConfig;
   location_getting_there?: LocationGettingThereConfig;
+  nearby_attractions?: NearbyAttraction[];
   form_config?: FormConfig;
   cross_link_properties?: CrossLinkProperty[];
 

@@ -1,19 +1,24 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PropertyItem } from '@/data/resorts/types';
 import { AvailabilityForm } from '@/components/resort/AvailabilityForm';
 import { GallerySection } from '@/components/resort/GallerySection';
 import { VideoSection } from '@/components/resort/VideoSection';
-import { trackWhatsAppClick, trackRelatedPackageClick } from '@/lib/analytics';
+import {
+  trackWhatsAppClick,
+  trackRelatedPackageClick,
+  trackSuiteView,
+} from '@/lib/analytics';
 
 interface PropertyPageTemplateProps {
   property: PropertyItem;
 }
 
 export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
   const cleanNumber = (property.whatsapp_number || '+91 73000 03101').replace(/[^0-9]/g, '');
   const directWhatsAppHref = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
     `Hi Ghoomosa, I would like to check availability and rates for ${property.property_name}. Please share available options.`
@@ -84,17 +89,17 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
             priority
             fetchPriority="high"
             sizes="100vw"
-            quality={75}
+            quality={90}
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/30" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center flex flex-col items-center">
           {/* Brand Clarity Notice */}
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] font-mono uppercase tracking-wider text-white/90 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#FDBA21]" />
-            <span>Stay enquiry & trip planning by Ghoomosa.</span>
+            <span>{property.brand_notice || 'Stay enquiry & trip planning by Ghoomosa.'}</span>
           </div>
 
           <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.3em] text-[#FDBA21] font-bold mb-3 drop-shadow-md">
@@ -275,12 +280,12 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
                     <div className="absolute top-4 left-4 flex flex-col gap-1.5 items-start">
                       {room.private_pool && (
                         <span className="px-3 py-1 rounded-full bg-[#005B5C] text-[10px] font-mono text-[#FDBA21] uppercase tracking-wider font-bold shadow-sm">
-                          Private Plunge Pool
+                          Private Pool
                         </span>
                       )}
-                      {room.approx_size && (
+                      {(room.approx_size || room.size_sqft) && (
                         <span className="px-2.5 py-1 rounded-md bg-black/60 text-white text-[10px] font-mono">
-                          {room.approx_size}
+                          {room.approx_size || `Approx. ${room.size_sqft}`}
                         </span>
                       )}
                     </div>
@@ -288,9 +293,9 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
 
                   <div className="p-6">
                     {/* Render occupancy & details only if non-null */}
-                    {room.occupancy_text && (
+                    {(room.occupancy_text || room.capacity || room.bed_type) && (
                       <span className="text-[11px] font-mono text-[#667085] block mb-1">
-                        {room.occupancy_text}
+                        {room.occupancy_text || room.capacity}
                         {room.bed_type ? ` • ${room.bed_type}` : ''}
                       </span>
                     )}
@@ -300,9 +305,9 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
                     </h3>
 
                     {/* Room size rendered strictly only if non-null */}
-                    {room.room_size && (
+                    {(room.room_size || room.size_sqft) && (
                       <span className="text-xs font-mono text-[#0A7B75] font-semibold block mb-2">
-                        Size: {room.room_size}
+                        Size: {room.room_size || `Approx. ${room.size_sqft}${room.size_sqm ? ` (${room.size_sqm})` : ''}`}
                       </span>
                     )}
 
@@ -329,6 +334,13 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
 
                   <a
                     href="#availability"
+                    onClick={() => {
+                      setSelectedCategory(room.room_name);
+                      trackSuiteView({
+                        property_id: property.slug,
+                        suite_name: room.room_name,
+                      });
+                    }}
                     className="w-full py-3 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm"
                   >
                     <span>Check Availability</span>
@@ -529,10 +541,48 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
         <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#DDE7E5] flex items-center gap-3 text-xs text-[#667085]">
           <span className="text-base text-[#FDBA21]">ℹ</span>
           <p>
-            <strong className="text-[#263238]">Wildlife Notice:</strong> Wildlife safari and spotting experiences are subject to natural conditions, local rules, route access and operating conditions. Sighting wild animals cannot be guaranteed in natural habitats.
+            <strong className="text-[#263238]">Wildlife Notice:</strong> Leopard and other wildlife sightings are never guaranteed and depend on natural movement, weather, route access, local rules and operating conditions.
           </p>
         </div>
       </section>
+
+      {/* ── Optional Nature & Birding Section ─────────────────────────────────── */}
+      {property.nature_birding_section && (
+        <section className="py-16 sm:py-24 bg-[#EEF8F6] border-t border-[#DDE7E5]">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#005B5C] font-bold block">
+                  {property.nature_birding_section.subtitle || 'Avian Diversity & Wetlands'}
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-display-brand font-bold text-[#005B5C]">
+                  {property.nature_birding_section.title}
+                </h2>
+                <p className="text-xs sm:text-sm text-[#263238] font-light leading-relaxed">
+                  {property.nature_birding_section.description}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#263238]">
+                  {property.nature_birding_section.highlights.map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-[#DDE7E5]">
+                      <span className="text-[#0A7B75] font-bold">✓</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="lg:col-span-5 relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-[#DDE7E5]">
+                <Image
+                  src={property.nature_birding_section.image || property.featured_image}
+                  alt={property.nature_birding_section.title}
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── 11. Optional Culture & Local Experiences ──────────────────────────── */}
       {property.culture_section && (
@@ -562,9 +612,43 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
         </section>
       )}
 
+      {/* ── Optional Activities & Hikes Section ───────────────────────────────── */}
+      {property.activities_section && (
+        <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 md:px-12 border-t border-[#DDE7E5]">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-2">
+              {property.activities_section.subtitle || 'Active Wilderness Exploration'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-display-brand font-bold text-[#005B5C] mb-3">
+              {property.activities_section.title}
+            </h2>
+            <p className="text-xs sm:text-sm text-[#667085] leading-relaxed">
+              {property.activities_section.description}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {property.activities_section.activities.map((act, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-2xl border border-[#DDE7E5] shadow-xs flex flex-col justify-between hover:border-[#0A7B75] transition-all"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#EEF8F6] text-[#005B5C] flex items-center justify-center font-bold mb-3">
+                    ✦
+                  </div>
+                  <h3 className="text-base font-bold text-[#005B5C] mb-2">{act.title}</h3>
+                  <p className="text-xs text-[#667085] leading-relaxed">{act.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* ── 12. Optional Sustainability Section ───────────────────────────────── */}
       {property.sustainability_section && (
-        <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 md:px-12">
+        <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 md:px-12 border-t border-[#DDE7E5]">
           <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm space-y-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-2">
@@ -587,11 +671,19 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
               ))}
             </div>
 
-            {property.sustainability_section.note && (
-              <p className="text-[11px] font-mono text-[#667085] pt-2 border-t border-[#DDE7E5]">
-                {property.sustainability_section.note}
-              </p>
-            )}
+            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-[#DDE7E5]">
+              {property.sustainability_section.note ? (
+                <p className="text-[11px] font-mono text-[#667085]">
+                  {property.sustainability_section.note}
+                </p>
+              ) : <div />}
+              <Link
+                href="/responsible-travel"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#005B5C] hover:text-[#0A7B75] uppercase tracking-wider"
+              >
+                <span>Responsible Travel Guide →</span>
+              </Link>
+            </div>
           </div>
         </section>
       )}
@@ -652,9 +744,12 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
             room_name: r.room_name,
             room_slug: r.room_slug,
           }))}
+          initialSelectedCategory={selectedCategory}
           showSafariCheckbox={property.form_config?.show_safari_checkbox}
-          showPickupCheckbox={property.form_config?.show_pickup_checkbox}
+          showPickupCheckbox={property.form_config?.show_pickup_checkbox || property.form_config?.show_transfer_checkbox}
+          pickupLabel={property.form_config?.transfer_checkbox_label || (property.form_config?.show_transfer_checkbox ? 'Airport / City Transfer Required?' : 'Airport / City Pickup Required?')}
           preferredStayLabel={property.form_config?.preferred_stay_label}
+          includeFlexibleOption={property.form_config?.include_flexible_stay_option}
           customWhatsAppTemplate={property.whatsapp_template}
         />
       </section>
@@ -796,6 +891,49 @@ export function PropertyPageTemplate({ property }: PropertyPageTemplateProps) {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Nearby Attractions Slot (Data-Driven) ─────────────────────────────── */}
+      {property.nearby_attractions && property.nearby_attractions.length > 0 && (
+        <section className="py-12 sm:py-16 max-w-7xl mx-auto px-6 md:px-12 border-t border-[#DDE7E5]">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+              Regional Landmarks
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-display-brand font-bold text-[#005B5C]">
+              Nearby Attractions & Historical Points
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {property.nearby_attractions.map((attraction, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-2xl border border-[#DDE7E5] shadow-xs flex flex-col justify-between group hover:border-[#005B5C] transition-all"
+              >
+                <div>
+                  <span className="text-[10px] font-mono text-[#005B5C] uppercase font-bold block mb-1">
+                    {attraction.distance}
+                  </span>
+                  <h3 className="text-base font-bold text-[#005B5C] mb-2 group-hover:text-[#0A7B75] transition-colors">
+                    {attraction.name}
+                  </h3>
+                  <p className="text-xs text-[#667085] leading-relaxed mb-4">
+                    {attraction.description}
+                  </p>
+                </div>
+                {attraction.link && (
+                  <Link
+                    href={attraction.link}
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#005B5C] hover:text-[#0A7B75] uppercase tracking-wider pt-2 border-t border-[#DDE7E5]"
+                  >
+                    <span>Explore Place</span>
+                    <span>→</span>
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </section>
       )}
