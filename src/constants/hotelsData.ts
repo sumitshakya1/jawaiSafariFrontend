@@ -15,9 +15,61 @@ export interface HotelItem {
   idealFor: string;
   pricingTier: string;
   distanceFromStation: string;
+  isFeatured?: boolean;
+  eyebrow?: string;
+  primaryBadge?: string;
+  secondaryBadges?: string[];
+  detailsUrl?: string;
+  availabilityUrl?: string;
+  displayOrder?: number;
 }
 
 export const JAWAI_HOTELS: HotelItem[] = [
+  {
+    id: 'HOTEL-JWILD-00',
+    slug: 'j-wild-resort-jawai',
+    name: 'J Wild Resort Jawai',
+    category: 'ultra-luxury',
+    categoryLabel: 'Private Pool Villa Resort - Jawai, Rajasthan',
+    location: 'Jawai Wilderness Corridor, Rajasthan',
+    tag: 'Private Pool Villas',
+    rating: '4.9 ★ (Featured Stay)',
+    image: '/images/resorts/j-wild/j-wild-resort-jawai.webp',
+    gallery: [
+      '/images/resorts/j-wild/j-wild-resort-jawai.webp',
+      '/images/resorts/j-wild/j-wild-jawai-private-pool-villa.webp',
+      '/images/resorts/j-wild/j-wild-resort-jawai-mountain-view.webp',
+    ],
+    overview:
+      'A luxury wilderness retreat in Jawai with private pool villas, mountain views and easy access to wildlife, nature and local experiences.',
+    keyFeatures: [
+      'Private pool villa accommodation',
+      'Mountain-facing setting and sit-out/verandah',
+      'Private courtyard',
+      'Multi-cuisine dining',
+      'Game zone and outdoor recreation',
+      'Bicycles and hill trekking',
+      'Access to Jawai wildlife and local experiences',
+    ],
+    amenities: [
+      'Private Plunge Pool',
+      'Mountain View Verandah',
+      'Private Courtyard',
+      'Multi-Cuisine Dining',
+      'Game Zone & Badminton',
+      'Bicycles & Hill Trekking',
+    ],
+    idealFor: 'Couples, families, nature lovers seeking private pool wilderness seclusion',
+    pricingTier: 'Price on Request',
+    distanceFromStation: '14 km from Jawai Bandh Station (JWB)',
+    isFeatured: true,
+    eyebrow: 'Private Pool Villa Resort - Jawai, Rajasthan',
+    primaryBadge: 'Private Pool Villas',
+    secondaryBadges: ['Mountain Views', 'Family Friendly', 'Jawai Wilderness'],
+    detailsUrl: '/j-wild-resort-jawai',
+    availabilityUrl: '/j-wild-resort-jawai#availability',
+    displayOrder: 1,
+  },
   {
     id: 'HOTEL-SUJAN-01',
     slug: 'sujan-jawai',

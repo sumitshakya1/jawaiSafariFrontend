@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/jawai-wildlife-photography',
     '/jawai-tour-packages',
     '/jawai-hotels-resorts',
+    '/j-wild-resort-jawai',
     '/jawai-luxury-stays',
     '/jawai-corporate-tour',
     '/jawai-family-tour',

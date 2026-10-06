@@ -12,6 +12,10 @@ export default function StaysInJawaiPage() {
   const filteredHotels = JAWAI_HOTELS.filter((hotel) => {
     if (selectedCategory === 'all') return true;
     return hotel.category === selectedCategory;
+  }).sort((a, b) => {
+    if (a.isFeatured && !b.isFeatured) return -1;
+    if (!a.isFeatured && b.isFeatured) return 1;
+    return (a.displayOrder || 99) - (b.displayOrder || 99);
   });
 
   const categories = [
@@ -77,7 +81,11 @@ export default function StaysInJawaiPage() {
               <div
                 key={hotel.id}
                 id={hotel.slug}
-                className="rounded-3xl bg-white border border-[#DDE7E5] shadow-sm overflow-hidden flex flex-col justify-between hover:border-[#0A7B75] hover:shadow-md transition-all group duration-300"
+                className={`rounded-3xl bg-white border shadow-sm overflow-hidden flex flex-col justify-between transition-all group duration-300 ${
+                  hotel.isFeatured
+                    ? 'border-[#005B5C] ring-2 ring-[#005B5C]/15 shadow-md'
+                    : 'border-[#DDE7E5] hover:border-[#0A7B75] hover:shadow-md'
+                }`}
               >
                 <div>
                   {/* Image Card Header */}
@@ -91,9 +99,18 @@ export default function StaysInJawaiPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#003F40]/80 via-transparent to-transparent pointer-events-none" />
                     
                     {/* Top Badges */}
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[11px] font-mono uppercase tracking-wider text-[#005B5C] font-bold shadow-sm">
-                      {hotel.tag}
-                    </span>
+                    <div className="absolute top-4 left-4 flex flex-col gap-1.5 items-start">
+                      {hotel.isFeatured ? (
+                        <span className="px-3 py-1 rounded-full bg-[#005B5C] text-[10px] font-mono uppercase tracking-wider text-[#FDBA21] font-bold shadow-sm border border-[#FDBA21]/30">
+                          ★ Featured / Private Pool Villas
+                        </span>
+                      ) : (
+                        <span className="px-3 py-1 rounded-full bg-white/95 text-[11px] font-mono uppercase tracking-wider text-[#005B5C] font-bold shadow-sm">
+                          {hotel.tag}
+                        </span>
+                      )}
+                    </div>
+
                     <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-[#005B5C] text-[11px] font-mono text-white font-semibold shadow-sm">
                       {hotel.rating}
                     </span>
@@ -110,18 +127,33 @@ export default function StaysInJawaiPage() {
                   {/* Body Content */}
                   <div className="p-6">
                     <span className="text-[11px] font-mono text-[#005B5C] font-bold uppercase tracking-wider block mb-1">
-                      {hotel.categoryLabel}
+                      {hotel.eyebrow || hotel.categoryLabel}
                     </span>
-                    <h2 className="text-xl font-bold text-[#005B5C] mb-3 group-hover:text-[#0A7B75] transition-colors leading-snug">
+                    <h2 className="text-xl font-bold text-[#005B5C] mb-2 group-hover:text-[#0A7B75] transition-colors leading-snug">
                       {hotel.name}
                     </h2>
+
+                    {/* Secondary Badges for Featured Properties */}
+                    {hotel.secondaryBadges && hotel.secondaryBadges.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {hotel.secondaryBadges.map((badge, bIdx) => (
+                          <span
+                            key={bIdx}
+                            className="px-2 py-0.5 rounded-md bg-[#EEF8F6] text-[10px] font-mono text-[#005B5C] font-semibold border border-[#005B5C]/20"
+                          >
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
                     <p className="text-xs text-[#263238] font-light leading-relaxed mb-5">
                       {hotel.overview}
                     </p>
 
                     {/* Key Highlights */}
                     <div className="space-y-1.5 mb-5 text-xs text-[#263238] border-t border-[#DDE7E5] pt-4">
-                      {hotel.keyFeatures.slice(0, 3).map((feat, idx) => (
+                      {hotel.keyFeatures.slice(0, hotel.isFeatured ? 7 : 3).map((feat, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <span className="material-symbols-outlined text-sm text-[#0A7B75] shrink-0 mt-0.5">
                             check_circle
@@ -133,7 +165,7 @@ export default function StaysInJawaiPage() {
 
                     {/* Amenities pills */}
                     <div className="flex flex-wrap gap-1.5 mb-4">
-                      {hotel.amenities.slice(0, 4).map((amenity, i) => (
+                      {hotel.amenities.slice(0, 6).map((amenity, i) => (
                         <span
                           key={i}
                           className="px-2.5 py-1 rounded-md bg-[#EEF8F6] text-[10px] font-mono text-[#005B5C] border border-[#DDE7E5]"
@@ -152,15 +184,33 @@ export default function StaysInJawaiPage() {
                     <span className="text-[#005B5C] font-bold uppercase">Price on Request</span>
                   </div>
 
-                  <a
-                    href={hotelWhatsApp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-sm"
-                  >
-                    <span className="material-symbols-outlined text-base">chat</span>
-                    <span>Check Room Availability</span>
-                  </a>
+                  {hotel.detailsUrl ? (
+                    <div className="flex flex-col sm:flex-row gap-2.5">
+                      <Link
+                        href={hotel.detailsUrl}
+                        className="flex-1 py-3 px-4 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm text-center"
+                      >
+                        <span>View Resort Details</span>
+                        <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                      </Link>
+                      <Link
+                        href={hotel.availabilityUrl || `${hotel.detailsUrl}#availability`}
+                        className="flex-1 py-3 px-4 rounded-full bg-[#EEF8F6] hover:bg-[#DDE7E5] text-[#005B5C] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all border border-[#005B5C]/30 text-center"
+                      >
+                        <span>Check Availability</span>
+                      </Link>
+                    </div>
+                  ) : (
+                    <a
+                      href={hotelWhatsApp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-3 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-sm"
+                    >
+                      <span className="material-symbols-outlined text-base">chat</span>
+                      <span>Check Room Availability</span>
+                    </a>
+                  )}
                 </div>
               </div>
             );

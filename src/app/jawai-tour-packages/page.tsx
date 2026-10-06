@@ -179,6 +179,32 @@ export default function PackagesHubPage() {
           })}
         </div>
 
+        {/* Featured Resort Cross-Promotion Banner */}
+        <div className="mb-12 p-6 md:p-8 rounded-3xl bg-white border border-[#005B5C]/20 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-[#EEF8F6] text-[#005B5C] flex items-center justify-center font-bold text-xl shrink-0">
+              ★
+            </div>
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#005B5C] font-bold block mb-1">
+                Featured Wilderness Stay
+              </span>
+              <h3 className="text-base sm:text-lg font-bold text-[#005B5C]">
+                Stay at J Wild Resort Jawai — Private Pool Villas
+              </h3>
+              <p className="text-xs text-[#667085] leading-relaxed">
+                Combine your tour package with 11 secluded private pool villas set against ancient granite kopjes.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/j-wild-resort-jawai"
+            className="shrink-0 px-6 py-3 rounded-full bg-[#005B5C] hover:bg-[#0A7B75] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-sm"
+          >
+            Explore J Wild Resort →
+          </Link>
+        </div>
+
         {/* Bottom Trust & Quotation Notice */}
         <div className="p-8 md:p-12 rounded-3xl bg-[#EEF8F6] border border-[#DDE7E5] text-center shadow-sm">
           <h3 className="text-xl font-bold font-display-brand text-[#005B5C] mb-2">Need a Customized Jawai Itinerary?</h3>
